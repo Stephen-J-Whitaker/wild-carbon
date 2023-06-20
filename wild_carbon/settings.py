@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = ['wild-carbon-803b1e2f6e91.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'wild-carbon-803b1e2f6e91.herokuapp.com']
 
 
 # Application definition
@@ -126,6 +126,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Settings provided by Code Institute
+# Cache control
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+
 # Bucket Config
 AWS_STORAGE_BUCKET_NAME = 'wild-carbon'
 AWS_S3_REGION_NAME = 'eu-west-1'
