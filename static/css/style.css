@@ -2,7 +2,7 @@
 
 /* css custom variables */
 :root {
-    --body-background-colour: rgba(30, 88, 45, 0.1);
+    --body-background-colour: rgba(249, 255, 215, 0.8);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --main-font-colour: rgba(249, 255, 215, 0.8);
     --button-background: rgba(249, 255, 215, 0.8);
@@ -11,6 +11,7 @@
 
 html,
 body {
+    background-color: var(--body-background-colour);
     height: 100%;
     width: 100%;
 }
@@ -52,20 +53,17 @@ header {
 .header-nav-right {
     grid-area: header-nav-right;
     min-height: 60px;
+    width: 100%;
 }
 
 .header-nav-items {
     grid-area: header-nav-items;
-    position: relative;
 }
 
 .nav-grid {
     display: grid;
     grid-template-columns: 75px auto 75px;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "header-nav-left header-nav-logo header-nav-right"
-        "header-nav-items header-nav-items header-nav-items";
+    grid-template-areas: "header-nav-left header-nav-logo header-nav-right";
     width: 100%;
 }
 
@@ -81,6 +79,11 @@ header {
 
 .navbar-toggler-style:active {
     background-color: var(--button-active-background);
+}
+
+.navbar-collapse {
+    width: 100vw;
+    background-color: var(--header-footer-background-colour);
 }
 
 .navbar-brand {
@@ -167,12 +170,15 @@ footer {
         justify-content: flex-start;
     }
 
+    .navbar-collapse {
+        grid-area: navbar-collapse;
+        width: auto;
+    }
+
     .nav-grid {
         display: grid;
         grid-template-columns: 300px auto 150px;
-        grid-template-rows: none;
-        grid-template-areas:
-            "header-nav-logo header-nav-items header-nav-right";
+        grid-template-areas: "header-nav-logo navbar-collapse header-nav-right";
         width: 100%;
     }
 }
