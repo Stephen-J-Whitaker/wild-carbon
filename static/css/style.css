@@ -3,43 +3,52 @@
 /* css custom variables */
 :root {
     --body-background-colour: rgba(30, 88, 45, 0.1);
-    --header-footer-background-colour: rgba(18, 53, 27, 0.1);
+    --header-footer-background-colour: rgba(9, 27, 14, 0.9);
+    --main-font-colour: rgba(245, 255, 189, 0.8);
+    --button-background: rgba(249, 255, 215, 0.8);
 }
 
 html,
 body {
+    height: 100%;
     width: 100%;
 }
 
 /* Header css */
-.nav-header-left,
-.nav-header-right,
-.nav-header-logo,
-.nav-header-nav-items {
-    display: flex;
-    justify-content: center;
+header {
+    position: relative;
+    z-index: 1;
+    background-color: var(--header-footer-background-colour);
+    color: var(--main-font-colour);
+    backdrop-filter: blur(1px);
 }
 
-.nav-header-left {
-    grid-area: nav-header-left;
+.header-nav-left,
+.header-nav-right,
+.header-nav-logo,
+.header-nav-items {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.header-nav-left {
+    grid-area: header-nav-left;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.nav-header-logo {
-    grid-area: nav-header-logo;
-    justify-self: center;
-    align-self: center;
+.header-nav-logo {
+    grid-area: header-nav-logo;
     width: 100%;
 }
 
-.nav-header-right {
-    grid-area: nav-header-right;
+.header-nav-right {
+    grid-area: header-nav-right;
 }
 
-.nav-header-nav-items {
-    grid-area: nav-header-nav-items;
-    /* width: 100%; */
+.header-nav-items {
+    grid-area: header-nav-items;
 }
 
 .nav-grid {
@@ -47,8 +56,8 @@ body {
     grid-template-columns: 75px auto 75px;
     grid-template-rows: auto;
     grid-template-areas:
-        "nav-header-left nav-header-logo nav-header-right"
-        "nav-header-nav-items nav-header-nav-items nav-header-nav-items";
+        "header-nav-left header-nav-logo header-nav-right"
+        "header-nav-items header-nav-items header-nav-items";
     width: 100%;
 }
 
@@ -58,22 +67,41 @@ body {
     padding: 4px 4px;
 }
 
+.navbar-toggler-style {
+    background-color: var(--button-background);
+}
+
 .navbar-brand {
     margin: 0;
 }
 
 .nav-link {
     padding: 11px;
+    color: var(--main-font-colour);
 }
 
 .logo-company {
+    color: var(--main-font-colour);
     display: flex;
     justify-content: center;
     font-size: large;
 }
 
 .logo-tagline {
+    color: var(--main-font-colour);
     display: none;
+}
+
+/* Main section styles */
+main {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.page-title-container {
+    background: url('/static/media/images/home-glade.jpg') no-repeat center center/cover;
+    height: 100vh;
 }
 
 /* Media queries */
@@ -89,7 +117,7 @@ body {
 
 /* Add media query for wide screens */
 @media screen and (min-width: 992px) {
-    .nav-header-left {
+    .header-nav-left {
         display: none;
     }
 
@@ -102,7 +130,7 @@ body {
         grid-template-columns: 300px auto 150px;
         grid-template-rows: none;
         grid-template-areas:
-            "nav-header-logo nav-header-nav-items nav-header-right";
+            "header-nav-logo header-nav-items header-nav-right";
         width: 100%;
     }
 }
