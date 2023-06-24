@@ -169,11 +169,10 @@ main {
     flex-wrap: wrap;
 }
 
-.footer-left-back-to-top:hover,
-.footer-right-contact:hover,
-.footer-right-facebook:hover {
+.footer-left-back-to-top,
+.footer-right-contact,
+.footer-right-facebook {
     border-radius: 50%;
-    border: 3px solid var(--button-background);
 }
 
 .footer-middle {

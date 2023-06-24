@@ -17,13 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Remove hover effect from buttons that remain after click
-    document.getElementById('footer-left-back-to-top').addEventListener('click', removeHoverEffect);
-    document.getElementById('footer-right-contact').addEventListener('click', removeHoverEffect);
-    document.getElementById('footer-right-facebook').addEventListener('click', removeHoverEffect);
+    document.getElementById('footer-left-back-to-top').addEventListener('mouseover', addHoverEffect);
+    document.getElementById('footer-right-contact').addEventListener('mouseover', addHoverEffect);
+    document.getElementById('footer-right-facebook').addEventListener('mouseover', addHoverEffect);
+    document.getElementById('footer-left-back-to-top').addEventListener('mouseleave', removeHoverEffect);
+    document.getElementById('footer-right-contact').addEventListener('mouseleave', removeHoverEffect);
+    document.getElementById('footer-right-facebook').addEventListener('mouseleave', removeHoverEffect);
 });
 
 /**
- * Remove hover effects from buttons after click
+ * Add hover effects to buttons on mouse enter
+ */
+function addHoverEffect() {
+    this.style.border = '3px solid var(--button-background)';
+}
+
+/**
+ * Remove hover effects from buttons on mouse leave
  */
 function removeHoverEffect() {
     this.style.border = 'none';
