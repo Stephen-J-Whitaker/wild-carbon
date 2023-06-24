@@ -138,15 +138,16 @@ footer {
 
 /* Main section styles */
 .main-container {
+    position: absolute;
+    top: 0;
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.main-container-absolute {
-    position: absolute;
-    top: 0;
+.main-container-offset {
+    top: var(--header-height);
 }
 
 main {
