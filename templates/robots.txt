@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://wild-carbon-803b1e2f6e91.herokuapp.com/sitemap.xml
