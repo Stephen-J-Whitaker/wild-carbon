@@ -6,6 +6,7 @@
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --main-font-colour: rgba(249, 255, 215, 0.8);
     --button-background: rgba(249, 255, 215, 0.8);
+    --button-background-solid: rgb(249, 255, 215);
     --brand-background-hover: rgba(38, 70, 47, 1);
     --brand-background-colour: rgba(38, 70, 47, 0.7);
     --button-active-background: rgba(132, 138, 91, 0.8);
@@ -155,16 +156,18 @@ main {
 
 .footer-left {
     grid-area: footer-left;
+    justify-self: start;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     height: 60px;
     width: 60px;
-
 }
 
-.footer-left:hover {
+.footer-left:hover,
+.footer-right-contact:hover,
+.footer-right-facebook:hover {
     border-radius: 50%;
     border: 3px solid var(--button-background);
 }
@@ -178,11 +181,26 @@ main {
 
 .footer-right {
     grid-area: footer-right;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    column-gap: 3px;
+}
+
+.footer-right-contact,
+.footer-right-facebook {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 60px;
+    width: 60px;
 }
 
 footer {
     display: grid;
-    grid-template-columns: 75px auto 75px;
+    grid-template-columns: 130px auto 130px;
     grid-template-areas: "footer-left footer-middle footer-right";
     justify-items: center;
     align-items: center;
@@ -200,8 +218,24 @@ footer {
     padding: 0;
 }
 
-.back-to-top-button {
+.back-to-top-button,
+.social-media-icon {
     height: 50px;
+}
+
+.contact-icon-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: var(--button-background-solid);
+    border-radius: 50%;
+}
+
+.contact-icon {
+    width: 31px;
 }
 
 /* Media queries */
@@ -212,6 +246,11 @@ footer {
     .logo-tagline {
         display: flex;
         font-size: small;
+    }
+
+    .footer-left {
+        height: 60px;
+        width: 60px;
     }
 }
 
