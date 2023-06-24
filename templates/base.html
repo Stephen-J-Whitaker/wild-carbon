@@ -60,32 +60,34 @@
                 {% endblock %}
             </main>
             <footer>
-                <div class="footer-left">
-                    <span class="footer-left-back-to-top">
-                        <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                        <img class="back-to-top-button" id="back-to-top-button" role="button" src="{% static 'static_media/icons/home-circle-up-solid.svg' %}" alt="Back to top up arrow button">
-                    </span>
-                </div>
-                <div class="footer-middle">
-                    <a class="navbar-brand" href="#">
-                        <div class="logo-company"><strong>Wild Carbon</strong></div>
-                    </a>
-                    <a class="privacy-policy link" href="#">Privacy Policy</a>
-                    <div>&copy 2023 Wild Carbon</div>
-                </div>
-                <div class="footer-right">
-                    <span class="footer-right-contact">
-                        <a href="#" class="contact-icon-container" target="_blank" rel="external nofollow noopener" aria-label="Contact details for Wild Carbon">
+                <div class="footer-inner-container">
+                    <div class="footer-left">
+                        <div class="footer-left-back-to-top">
                             <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                            <img src="{% static 'static_media/icons/home-contact.svg' %}"  class="contact-icon" alt="Contact us icon">
+                            <img class="back-to-top-button" id="back-to-top-button" role="button" src="{% static 'static_media/icons/home-circle-up-solid.svg' %}" alt="Back to top up arrow button">
+                        </div>
+                    </div>
+                    <div class="footer-middle">
+                        <a class="navbar-brand" href="#">
+                            <div class="logo-company"><strong>Wild Carbon</strong></div>
                         </a>
-                    </span>
-                    <span class="footer-right-facebook">
-                        <a href="#" class="facebook-link-container" target="_blank" rel="external nofollow noopener" aria-label="Visit Wild Carbons Facebook Business Page">
-                            <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                            <img src="{% static 'static_media/icons/home-facebook-brands.svg' %}"  class="social-media-icon" alt="Facebook social media icon">
-                        </a>
-                    </span>
+                        <a class="privacy-policy link" href="#">Privacy Policy</a>
+                        <div class="copyright-notice">&copy 2023 Wild Carbon</div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-right-contact">
+                            <a href="#" class="contact-icon-container" target="_blank" rel="external nofollow noopener" aria-label="Contact details for Wild Carbon">
+                                <!-- Icon supplied by font awesome https://fontawesome.com/  -->
+                                <img src="{% static 'static_media/icons/home-contact.svg' %}"  class="contact-icon" alt="Contact us icon">
+                            </a>
+                        </div>
+                        <div class="footer-right-facebook">
+                            <a href="#" class="facebook-link-container" target="_blank" rel="external nofollow noopener" aria-label="Visit Wild Carbons Facebook Business Page">
+                                <!-- Icon supplied by font awesome https://fontawesome.com/  -->
+                                <img src="{% static 'static_media/icons/home-facebook-brands.svg' %}"  class="social-media-icon" alt="Facebook social media icon">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>

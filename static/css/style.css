@@ -11,6 +11,8 @@
     --brand-background-colour: rgba(38, 70, 47, 0.7);
     --button-active-background: rgba(132, 138, 91, 0.8);
     --header-height: 75px;
+    --footer-icon-size: 3rem;
+    --footer-icon-inner-size: 2.5rem;
 }
 
 html,
@@ -161,11 +163,9 @@ main {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    height: 4rem;
-    width: 4rem;
 }
 
-.footer-left:hover,
+.footer-left-back-to-top:hover,
 .footer-right-contact:hover,
 .footer-right-facebook:hover {
     border-radius: 50%;
@@ -183,8 +183,8 @@ main {
     grid-area: footer-right;
     display: flex;
     justify-content: center;
-    align-content: center;
     column-gap: 3px;
+    flex-wrap: wrap;
 }
 
 .footer-left-back-to-top,
@@ -194,11 +194,11 @@ main {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    height: 4rem;
-    width: 4rem;
+    height: var(--footer-icon-size);
+    width: var(--footer-icon-size);
 }
 
-footer {
+.footer-inner-container {
     display: grid;
     grid-template-columns: 130px auto 130px;
     grid-template-areas: "footer-left footer-middle footer-right";
@@ -218,14 +218,20 @@ footer {
     padding: 0;
 }
 
+.copyright-notice {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .back-to-top-button,
 .social-media-icon {
-    height: 3.5rem;
+    height: var(--footer-icon-inner-size);
 }
 
 .facebook-link-container {
-    height: 4rem;
-    width: 4rem;
+    height: var(--footer-icon-size);
+    width: var(--footer-icon-size);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -233,8 +239,8 @@ footer {
 }
 
 .contact-icon-container {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: var(--footer-icon-inner-size);
+    width: var(--footer-icon-inner-size);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -244,7 +250,7 @@ footer {
 }
 
 .contact-icon {
-    width: 2rem;
+    width: calc(var(--footer-icon-size)/2);
 }
 
 /* Media queries */
