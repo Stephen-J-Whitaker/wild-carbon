@@ -222,6 +222,8 @@ main {
     display: flex;
     justify-content: center;
     align-content: center;
+    font-size: smaller;
+    white-space: nowrap;
 }
 
 .back-to-top-button,
