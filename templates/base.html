@@ -76,10 +76,10 @@
                     </div>
                     <div class="footer-right">
                         <div class="footer-right-contact" id="footer-right-contact">
-                            <a href="#" class="contact-icon-container" target="_blank" rel="external nofollow noopener" aria-label="Contact details for Wild Carbon">
+                            <button id="contact-us-button" class="contact-icon-container" aria-label="Contact details for Wild Carbon">
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
                                 <img src="{% static 'static_media/icons/home-contact.svg' %}"  class="contact-icon" alt="Contact us icon">
-                            </a>
+                            </button>
                         </div>
                         <div class="footer-right-facebook" id="footer-right-facebook">
                             <a href="#" class="facebook-link-container" target="_blank" rel="external nofollow noopener" aria-label="Visit Wild Carbons Facebook Business Page">
@@ -90,6 +90,18 @@
                     </div>
                 </div>
             </footer>
+            <!-- contact us modal -->
+            <section id="contact-us-modal" class="contact-us-modal-container display-none">
+                <div class="contact-us-inner-container">
+                    <div class="contact-us-modal">
+                        <h2>Contact Us</h2>
+                        <div>Mayo, Ireland</div>
+                        <div>wild.carbon.sequestration@gmail.com</div>
+                        <button id="contact-us-close button" class="contact-us-close-button">Done</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Privacy policy modal -->
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
