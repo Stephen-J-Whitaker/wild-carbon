@@ -4,7 +4,8 @@
 :root {
     --body-background-colour: rgba(249, 255, 215, 0.8);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
-    --modal-background-colour: rgba(9, 27, 14, 1);
+    --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
+    --modal-background-colour: rgba(9, 27, 14, 0.7);
     --main-font-colour: rgba(249, 255, 215, 0.8);
     --button-background: rgba(249, 255, 215, 0.8);
     --button-background-solid: rgb(249, 255, 215);
@@ -107,7 +108,8 @@ header {
 }
 
 .link,
-.nav-link {
+.nav-link,
+.privacy-policy {
     padding: 11px;
     color: var(--main-font-colour);
 }
@@ -218,7 +220,8 @@ main {
     padding: 7px;
 }
 
-.link {
+.link,
+.privacy-policy {
     text-decoration: none;
 }
 
@@ -270,37 +273,68 @@ main {
     display: none;
 }
 
-.contact-us-modal-container {
+.contact-us-modal-container,
+.privacy-policy-modal-container {
     position: absolute;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     /* Image sourced at https: //www.pexels.com/photo/green-forest-under-white-sky-during-daytime-165537/ */
     background: url("/static/static_media/images/home-glade.jpg") no-repeat center center/cover;
-    height: 100vh;
     z-index: 2;
     top: 0;
     left: 0;
 }
 
 
-.contact-us-inner-container {
+.contact-us-inner-container,
+.privacy-policy-inner-container {
     height: 100%;
     width: 100%;
-    background-color: var(--header-footer-background-colour);
+    background-color: var(--modal-backdrop-background-colour);
     display: flex;
     align-content: center;
     justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
 }
 
 .contact-us-modal {
+    text-align: center;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     flex-direction: column;
-    height: 50%;
-    width: 50%;
+    height: 95%;
+    width: 95%;
     background-color: var(--modal-background-colour);
     color: var(--main-font-colour);
+    flex-wrap: wrap;
+}
+
+.privacy-policy-modal-container {
+    /* Image sourced at https: //www.pexels.com/photo/green-forest-under-white-sky-during-daytime-165537/ */
+    background: url("/static/static_media/images/home-glade.jpg") no-repeat center center/cover fixed;
+}
+
+.privacy-policy-modal {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    background-color: var(--modal-background-colour);
+    color: var(--main-font-colour);
+    flex-wrap: wrap;
+}
+
+.contact-us-close-button
+.privacy-policy-close-button {
+    width: 100px;
+}
+
+.contact-email {
+    font-size: 3vw;
 }
 
 /* Media queries */
