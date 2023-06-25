@@ -13,11 +13,23 @@
 
 {% block content %}
     <div class="page-title-container">
-        <div>
-
+        <div class="page-title">
+            <h1 class="page-title-main">Wild Carbon</h1>
+            <h2 class="page-title-secondary">Rewild your way to carbon neutrality</h2>
+            <!-- Image supplied by font awesome https://fontawesome.com/  -->
+            <img class="page-title-image" src="{% static 'static_media/images/home-index-seedling.svg' %}" alt="A seedling">
         </div>
     </div>
-    <h2>What we do</h2>
-    <h2>Coming Soon</h2>
-    <h2>Newsletter</h2>
+    <div class="content-container">
+        <div class="inner-content-container">
+            <h2 class="content-header">What we do</h2>
+            <p class="text-content">
+                ‘Wild Carbon’ is a company that can enable you to rewild your way to a carbon neutral or even carbon negative life! 
+
+                We provide you with the opportunity to commission the growth and planting of trees of your choosing at our location in the west of Ireland.
+    
+                On placing your order with us, we begin the process of growing your selected trees. Once of the required maturity, these trees are then planted out onto our protected site and allowed to grow indefinitely, gradually sequestering carbon for you.
+            </p>
+        </div>
+    </div>
 {% endblock%}

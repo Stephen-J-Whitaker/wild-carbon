@@ -6,7 +6,12 @@
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
     --modal-background-colour: rgba(9, 27, 14, 0.7);
+    --page-title-background-colour: rgba(9, 27, 14, 0.8);
+    --inner-content-container-colour: rgb(127, 182, 131);
+    --inner-content-container-shadow: rgb(162, 167, 139);
+    --title-font-colour: rgba(200, 207, 159, 1);
     --main-font-colour: rgba(249, 255, 215, 0.8);
+    --content-font-colour:rgba(249, 255, 215, 1);
     --button-background: rgba(249, 255, 215, 0.8);
     --button-background-solid: rgb(249, 255, 215);
     --brand-background-hover: rgba(38, 70, 47, 1);
@@ -92,7 +97,6 @@ header {
 }
 
 .navbar-brand {
-    background-color: var(--brand-background-colour);
     border-radius: 7px;
     padding: 7px;
     margin: 0;
@@ -159,10 +163,64 @@ main {
 
 .page-title-container {
     /* Image sourced at https: //www.pexels.com/photo/green-forest-under-white-sky-during-daytime-165537/ */
-    background: url("/static/static_media/images/home-glade.jpg") no-repeat center center/cover;
+    background: url("/static/static_media/images/base-home-index-glade.jpg") no-repeat center center/cover;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.page-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    color: var(--main-font-colour);
+    width: 70%;
+    height: 40%;
+    border-radius: 10px;
+    background-color: var(--page-title-background-colour);
+}
+
+.page-title-main {
+    font-weight: bold;
+}
+
+.page-title-secondary {
+    font-size: small;
+}
+
+.page-title-image {
+    margin-top: 3rem;
+    height: 3rem;
+}
+
+/* content styles */
+.content-container {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-content-container {
+    width: 95%;
+    background-color: var(--inner-content-container-colour);
+    box-shadow: 0px 0px 5px 1px var(--inner-content-container-shadow);
+    padding: 10px;
+    margin: 10px;
+    color: var(--main-font-colour);
+}
+
+.content-header {
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-content {
+    white-space: pre-line;
+}
+
+/* Footer styles */
 .footer-left {
     grid-area: footer-left;
     justify-self: start;
@@ -279,7 +337,7 @@ main {
     height: 100vh;
     width: 100vw;
     /* Image sourced at https: //www.pexels.com/photo/green-forest-under-white-sky-during-daytime-165537/ */
-    background: url("/static/static_media/images/home-glade.jpg") no-repeat center center/cover;
+    background: url("/static/static_media/images/base-home-index-glade.jpg") no-repeat center center/cover;
     z-index: 2;
     top: 0;
     left: 0;
@@ -324,6 +382,10 @@ main {
 .contact-us-close-button
 .privacy-policy-close-button {
     width: 100px;
+}
+
+.privacy-policy-close-button {
+    margin-bottom: 100px;
 }
 
 .contact-email {
