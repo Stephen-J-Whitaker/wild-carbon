@@ -29,36 +29,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show contact us modal when button pressed
     document.getElementById("contact-us-button").addEventListener("click", function () {
-        //Make button look pressed down by styling border
         document.getElementsByTagName('body')[0].style.position = 'fixed';
-
         document.getElementById('contact-us-modal').classList.toggle('display-none');
-        // windowHeight = document.getElementsByTagName('body')[0].scrollHeight;
-        // console.log(windowHeight);
-        // window.scrollTo(0, windowHeight);
-        // document.getElementById('contact-us-modal').style.position = 'fixed';
     });
 
     // Close contact us modal when button pressed
     document.getElementById("contact-us-close-button").addEventListener("click", function () {
-        //Make button look pressed down by styling border
-        this.classList.toggle('button-press');
-        document.getElementsByTagName('body')[0].style.position = 'fixed';
-
-        setTimeout(function () { topTenButton.classList.toggle('button-press'); }, 200);
+        document.getElementsByTagName('body')[0].style.position = '';
         document.getElementById('contact-us-modal').classList.toggle('display-none');
     });
 
     // Show privacy policy modal when button pressed
     document.getElementById("privacy-policy-link").addEventListener("click", function () {
-        //Make button look pressed down by styling border
-        // document.getElementsByTagName('body')[0].style.position = 'fixed';
-
+        document.getElementsByTagName('body')[0].style.position = 'fixed';
         document.getElementById('privacy-policy-modal').classList.toggle('display-none');
-        // windowHeight = document.getElementsByTagName('body')[0].scrollHeight;
-        // console.log(windowHeight);
-        // window.scrollTo(0, windowHeight);
-        // document.getElementById('contact-us-modal').style.position = 'fixed';
+    });
+
+    // Close privacy policy modal when button pressed
+    document.getElementById("privacy-policy-close-button").addEventListener("click", function () {
+        document.getElementsByTagName('body')[0].style.position = '';
+        document.getElementById('privacy-policy-modal').classList.toggle('display-none');
     });
 });
 

@@ -298,34 +298,27 @@ main {
     border-radius: 10px;
 }
 
-.contact-us-modal {
+.contact-us-modal,
+.privacy-policy-modal {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 95%;
     width: 95%;
     background-color: var(--modal-background-colour);
     color: var(--main-font-colour);
-    flex-wrap: wrap;
 }
 
-.privacy-policy-modal-container {
-    /* Image sourced at https: //www.pexels.com/photo/green-forest-under-white-sky-during-daytime-165537/ */
-    background: url("/static/static_media/images/home-glade.jpg") no-repeat center center/cover fixed;
-}
-
-.privacy-policy-modal {
-    text-align: center;
+.contact-us-modal {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 95%;
-    background-color: var(--modal-background-colour);
-    color: var(--main-font-colour);
     flex-wrap: wrap;
+}
+
+.privacy-policy-modal {
+    padding: 5px;
+    padding-bottom: 10px;
+    overflow: scroll;
 }
 
 .contact-us-close-button
@@ -334,7 +327,7 @@ main {
 }
 
 .contact-email {
-    font-size: 3vw;
+    font-size: 5vw;
 }
 
 /* Media queries */
