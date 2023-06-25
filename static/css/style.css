@@ -20,6 +20,38 @@
     --header-height: 75px;
     --footer-icon-size: 3rem;
     --footer-icon-inner-size: 2.5rem;
+    --success: rgb(0, 150, 62);
+    --info: rgb(0, 127, 150);
+    --warning: rgb(150, 97, 0);
+    --error: rgb(150, 10, 0);
+}
+
+/* Message */
+.message-container {
+    position: absolute;
+    top: 80px;
+    right: 15px;
+    z-index: 111;
+}
+
+.success {
+    background-color: var(--success);
+    color: var(--title-font-colour);
+}
+
+.info {
+    background-color: var(--info);
+    color: var(--title-font-colour);
+}
+
+.warning {
+    background-color: var(--warning);
+    color: var(--title-font-colour);
+}
+
+.error {
+    background-color: var(--error);
+    color: var(--title-font-colour);
 }
 
 html,

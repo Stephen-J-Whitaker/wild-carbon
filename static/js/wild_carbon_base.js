@@ -7,6 +7,16 @@
  */
 document.addEventListener('DOMContentLoaded', function () {
 
+    //Initialise bootstrap toasts
+    const toastElList = document.querySelectorAll('.toast');
+    const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl));
+    if (toastList) {
+        for (let i = 0; i < toastList.length; i++) {
+            toastList[i].show();
+            console.log(toastList[i]);
+        };
+    };
+
     // Scroll back to top of page on back to top button click
     document.getElementById('back-to-top-button').addEventListener('click', function () {
         window.scroll({
