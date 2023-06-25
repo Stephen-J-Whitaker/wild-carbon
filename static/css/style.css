@@ -28,7 +28,7 @@
 
 /* Message */
 .message-container {
-    position: absolute;
+    position: fixed;
     top: 80px;
     right: 15px;
     z-index: 111;
