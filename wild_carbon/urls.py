@@ -21,6 +21,7 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     # Code to serve robots.txt sourced at:
     # https://ngangasn.com/sitemap-robot-txt-django/?expand_article=1
