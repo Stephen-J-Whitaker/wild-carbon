@@ -54,6 +54,14 @@
     color: var(--title-font-colour);
 }
 
+.common-name-status::after {
+    content: 'Sorry, this plant common name is taken';
+    font-weight: bolder;
+    font-size: 0.875em;
+    color: #dc3545;
+    text-align: center;
+}
+
 html,
 body {
     background-color: var(--body-background-colour);

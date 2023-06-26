@@ -10,6 +10,7 @@
 {% block content %}
     <div class="row">
         <div class="col-12 col-md-6">
+            <div class="note">Note: leading, trailing and multiple spaces in a row are removed</div>
             <form method="POST" action="{% url 'add_plant' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
@@ -21,7 +22,7 @@
                 {% endfor %}
                 <div class="text-right">
                     <a class="btn btn-outline-black rounded-0" href="{% url 'plant_list' %}">Back</a>
-                    <button class="btn btn-black rounded-0" type="submit">Add</button>
+                    <button id="plant-submit-btn" class="btn btn-black rounded-0" type="submit">Add</button>
                 </div>
             </form>
         </div>            
@@ -29,5 +30,5 @@
 {% endblock %}
 
 {% block extra_js %}
-
+    <script src="{% static 'js/plants/add_plant.js' %}"></script>
 {% endblock %}

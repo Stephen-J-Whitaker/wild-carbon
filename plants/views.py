@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from django.db.models import Q
+from django.http import HttpResponse
 
 from .models import Plant
 from .forms import AddPlantForm
@@ -86,3 +87,18 @@ def add_plant(request):
     }
 
     return render(request, template, context)
+
+
+def common_name_validate(request):
+    """
+    Verify the common name is unique in the system
+    Code taken from music aid project:
+    https://github.com/Stephen-J-Whitaker/music-aid/blob/
+        main/static/js/songbook_js/songbook_song_add_edit.js
+    """
+    if request.method == 'GET':
+        common_name = request.GET['common_name']
+        if Plant.objects.filter(common_name__iexact=common_name).exists():
+            return HttpResponse("in_use")
+        else:
+            return HttpResponse("available")

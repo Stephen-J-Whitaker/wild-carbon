@@ -6,8 +6,8 @@ class Plant(models.Model):
     Model class to hold plant instances
     """
     common_name = models.CharField(max_length=150)
-    genus = models.CharField(max_length=150, blank=True)
-    species = models.CharField(max_length=150, blank=True)
+    genus = models.CharField(max_length=150)
+    species = models.CharField(max_length=150)
     description = models.TextField()
     image = models.ImageField(null=True, blank=True)
     sku = models.CharField(max_length=150, blank=True)
