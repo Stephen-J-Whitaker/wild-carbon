@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 
 from .models import Plant
-from .forms import AddPlantForm
+from .forms import PlantForm
 
 
 def all_plants(request):
@@ -70,7 +70,7 @@ def add_plant(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = AddPlantForm(request.POST, request.FILES)
+        form = PlantForm(request.POST, request.FILES)
         if form.is_valid():
             plant = form.save()
             messages.success(request, 'Successfully added plant!')
@@ -79,11 +79,44 @@ def add_plant(request):
             messages.error(request, 'Failed to add plant.'
                            'Please ensure the form is valid.')
     else:
-        form = AddPlantForm()
+        form = PlantForm()
 
     template = 'plants/add_plant.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_plant(request, plant_id):
+    """
+    Edit a product in the system
+    edit_plant view code supplied by Code Institute
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Wild Carbon staff can do that.')
+        return redirect(reverse('home'))
+
+    plant = get_object_or_404(Plant, pk=plant_id)
+    if request.method == 'POST':
+        form = PlantForm(request.POST, request.FILES, instance=plant)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated plant!')
+            return redirect(reverse('plant_list'))
+        else:
+            messages.error(request, 'Failed to update plant. '
+                           'Please ensure the form is valid.')
+    else:
+        form = PlantForm(instance=plant)
+        messages.info(request, f'You are editing {plant.common_name}')
+
+    template = 'plants/edit_plant.html'
+    context = {
+        'form': form,
+        'plant': plant,
     }
 
     return render(request, template, context)

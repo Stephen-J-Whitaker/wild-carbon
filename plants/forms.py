@@ -3,7 +3,7 @@ from .widgets import CustomClearableFileInput
 from .models import Plant
 
 
-class AddPlantForm(forms.ModelForm):
+class PlantForm(forms.ModelForm):
     """
     Form class for adding plants
     AddPlantForm class code supplied by Code Institute

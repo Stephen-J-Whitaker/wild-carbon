@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (toastList) {
         for (let i = 0; i < toastList.length; i++) {
             toastList[i].show();
-            console.log(toastList[i]);
         };
     };
 
