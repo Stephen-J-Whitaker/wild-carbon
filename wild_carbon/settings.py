@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.staticfiles',
     'home',
+    'plants',
     'crispy_forms',
     'storages',
 ]
