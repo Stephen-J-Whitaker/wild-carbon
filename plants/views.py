@@ -1,9 +1,13 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import generic
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from django.db.models import Q
 from django.http import HttpResponse
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Plant
 from .forms import PlantForm
@@ -120,6 +124,41 @@ def edit_plant(request, plant_id):
     }
 
     return render(request, template, context)
+
+
+class PlantDelete(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
+    """
+    A class based view to confirm a deletion of a plant
+    Code adapted from music aid project:
+    https://github.com/Stephen-J-Whitaker/
+        music-aid/blob/main/songbook/views.py
+    """
+    model = Plant
+    template_name = 'plants/plant_confirm_delete.html'
+    success_message = "The plant has been deleted"
+
+    def get_context_data(self, **kwargs):
+        """
+        Add contexts
+        """
+        context = super().get_context_data(**kwargs)
+        context['pk'] = self.kwargs['pk']
+        context['plant_pk'] = self.kwargs.get('plant_pk', None)
+        return context
+
+        # Code sourced from stackoverflow.com:
+        # questions/24822509/success-message-in-deleteview-not-shown
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(PlantDelete, self).delete(request, *args, **kwargs)
+        # End of code sourced from stackoverflow
+        # questions/24822509/success-message-in-deleteview-not-shown
+
+    def get_success_url(self, **kwargs):
+        """
+        If success send back to correct view
+        """
+        return reverse_lazy('plant_list')
 
 
 def common_name_validate(request):

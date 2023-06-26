@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}
+    Confirm deletion of a plant
+{% endblock %}
+
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block content %}
+    <h2 class="general-header">Confirm plant deletion</h2>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <p class="confirm-delete"><br><br>Are you sure you want to delete "{{ object }}"?</p>
+            {{ form }}
+            <div class="button-container">
+                <button type="submit">Delete Plant</button>
+                <a href="{% url 'plant_list' %}">No Thanks</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

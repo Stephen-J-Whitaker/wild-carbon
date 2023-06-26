@@ -44,6 +44,7 @@
         <span>{{ plant.species }}</span>
         <div>{{ plant.price }}</div>
         <div>{{ plant.sku }}</div>
-        <a href="{% url 'edit_plant' plant.id %}">Edit</a>
+        <a href="{% url 'edit_plant' plant.id %}">Edit</a> |
+        <a href="{% url 'plant_delete' plant.id %}">Delete</a>
     {% endfor %}
 {% endblock%}
