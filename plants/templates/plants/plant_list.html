@@ -2,10 +2,12 @@
 {% load static %}
 
 {% block head_title %}
-    Complete plant list
+    plant list
 {% endblock %}
 {% block main_style %}main-container-offset{% endblock %}
 {% block content %}
+    <h1>Plants</h1>
+    <a href="{% url 'add_plant' %}">Add Plant</a>
     <!-- Search box and sort box HTML supplied by Code Institute -->
     <div>
         <form method="GET" action="{% url 'plant_list' %}">

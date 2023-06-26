@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from django.db.models import Q
 
 from .models import Plant
+from .forms import AddPlantForm
 
 
 def all_plants(request):
@@ -53,3 +55,34 @@ def all_plants(request):
     }
 
     return render(request, 'plants/plant_list.html', context)
+
+
+@login_required
+def add_plant(request):
+    """
+    Add a plant instance to the database
+    add_plant view code supplied by Code Institute
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Wild Carbon '
+                       'staff can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = AddPlantForm(request.POST, request.FILES)
+        if form.is_valid():
+            plant = form.save()
+            messages.success(request, 'Successfully added plant!')
+            return redirect(reverse('plant_list'))
+        else:
+            messages.error(request, 'Failed to add plant.'
+                           'Please ensure the form is valid.')
+    else:
+        form = AddPlantForm()
+
+    template = 'plants/add_plant.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

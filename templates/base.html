@@ -160,5 +160,7 @@
             integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
         <script src="{% static 'js/libraries/jquery_3_7_0.js' %}"></script>        
         <script src="{% static 'js/wild_carbon_base.js' %}"></script>
+        {% block extra_js %}
+        {% endblock %}
     </body>
 </html>
