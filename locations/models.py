@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 from plants.models import Plant
 
 
@@ -10,7 +10,6 @@ class Location(models.Model):
     location_name = models.CharField(max_length=150)
     location_friendly_name = models.CharField(max_length=150)
     location_plants = models.ManyToManyField(Plant,
-                                             blank=True,
                                              related_name="location_plants")
 
     class Meta:
@@ -29,3 +28,10 @@ class Location(models.Model):
         Override __str__ with the correct location name
         """
         return self.location_name
+
+    def get_absolute_url(self):
+        """
+        Provide a default success url reverse lookup
+        for generic views
+        """
+        return reverse('home')

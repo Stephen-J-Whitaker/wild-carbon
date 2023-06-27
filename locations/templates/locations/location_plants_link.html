@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}
+    Associate plants with a location
+{% endblock %}
+
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block content %}
+<h2>Location Plants</h2>
+<div>
+    <form method="post">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <div>
+            <button type="submit" >Save associations</button>
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}
