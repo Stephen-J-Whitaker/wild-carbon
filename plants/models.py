@@ -18,3 +18,12 @@ class Plant(models.Model):
         Override __str__ with the plant common name
         """
         return self.common_name
+
+    class Meta:
+        """
+        Ensure a system can't have duplciate plant common names
+        """
+        constraints = [
+            models.UniqueConstraint(fields=['common_name'],
+                                    name='unique_common_name')
+        ]
