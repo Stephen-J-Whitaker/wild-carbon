@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTimeout(submitForm, 300);
     });
-    // End of code taken from music aid project
+    // End of check if plant common name code taken from music aid project
 
     /**
      * Update image filename notification text supplied by Code Institute

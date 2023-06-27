@@ -20,7 +20,7 @@ def all_plants(request):
 
     all_plants view code supplied by Code Institute
     """
-    plants = Plant.objects.all()
+    plants = Plant.objects.all().order_by('common_name')
     query = None
     sort = None
     direction = None
@@ -31,9 +31,8 @@ def all_plants(request):
             sort = sortkey
             if sortkey == 'common_name':
                 sortkey = 'lower_common_name'
-                plants = plants.annotate(lower_name=Lower('common_name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
+                plants = plants.annotate(lower_common_name=Lower
+                                         ('common_name'))
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -45,13 +44,13 @@ def all_plants(request):
             if not query:
                 messages.error(request,
                                "You didn't enter any search criteria!")
-                return redirect(reverse('plants'))
+                return redirect(reverse('list_plants'))
 
-            queries = ('Q(name__icontains=query) | '
-                       'Q(description__icontains=query)')
+            queries = (Q(common_name__icontains=query) |
+                       Q(description__icontains=query))
             plants = plants.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'
+    current_sorting = f'{sort}__{direction}'
 
     context = {
         'plants': plants,
