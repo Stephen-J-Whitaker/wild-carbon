@@ -137,23 +137,16 @@ class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
     template_name = 'plants/confirm_plant_delete.html'
     success_message = "The plant has been deleted"
 
-    def get_context_data(self, **kwargs):
-        """
-        Add contexts
-        """
-        context = super().get_context_data(**kwargs)
-        context['pk'] = self.kwargs['pk']
-        context['plant_pk'] = self.kwargs.get('plant_pk', None)
-        return context
-
-        # Code sourced from stackoverflow.com:
-        # questions/24822509/success-message-in-deleteview-not-shown
+    # Code sourced from stackoverflow.com:
+    # questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
         if not request.user.is_superuser:
             messages.error(request, 'Sorry, only Wild Carbon '
                            'staff can do that.')
             return redirect(reverse('list_plants'))
-
+        plant_id = self.kwargs['pk']
+        plant = get_object_or_404(Plant, pk=plant_id)
+        plant.image.delete()
         messages.success(self.request, self.success_message)
         return super(DeletePlant, self).delete(request, *args, **kwargs)
         # End of code sourced from stackoverflow
