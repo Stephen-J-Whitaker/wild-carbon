@@ -14,6 +14,7 @@ class PlantAdmin(admin.ModelAdmin):
         'price',
         'sku',
     )
+    search_fields = ['genus', 'species', 'common_name']
 
 
 admin.site.register(Plant, PlantAdmin)
