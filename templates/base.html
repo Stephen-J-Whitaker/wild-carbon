@@ -67,6 +67,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'list_plants' %}">Plan Admin</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'location_plants_link' 1 %}">Plant Availability</a>
+                                </li>
                             {% endif %}
                             {% if user.is_staff %}
                                 <li>

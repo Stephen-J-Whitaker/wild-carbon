@@ -32,7 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['localhost', 'wild-carbon-803b1e2f6e91.herokuapp.com',
-                 '8000-stephenjwhit-wildcarbon-p7aapfz8tp4.ws-eu100.gitpod.io']
+                 '8000-stephenjwhit-wildcarbon-p7aapfz8tp4.ws-eu100.gitpod.io',
+                 '8000-stephenjwhit-wildcarbon-p7aapfz8tp4.ws-eu101.gitpod.io']
 
 
 # Application definition
