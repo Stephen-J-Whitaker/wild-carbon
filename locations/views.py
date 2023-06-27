@@ -12,3 +12,10 @@ class LocationsPlants(generic.UpdateView):
     model = Location
     form_class = LocationPlantsForm
     template_name = 'locations/location_plants_link.html'
+
+
+def index(request):
+    """
+    A view to render the carbon capture page
+    """
+    return render(request, 'locations/carbon_capture.html')
