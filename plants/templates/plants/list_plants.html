@@ -33,21 +33,28 @@
         </select>
     </div>
     <!-- End of search box and sort box HTML supplied by Code Institute -->
-    {% for plant in plants %}
-        {% if plant.image %}
-            <img src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
-        {% else %}
-            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ plant.common_name }}">
-        {% endif %}
-        <div>{{ plant.common_name }}</div>
-        <span>{{ plant.genus }}</span>
-        <span>{{ plant.species }}</span>
-        <div>{{ plant.price }}</div>
-        <div>{{ plant.sku }}</div>
-        <a href="{% url 'edit_plant' plant.id %}">Edit</a> |
-        <a href="{% url 'delete_plant' plant.id %}">Delete</a>
-        <hr>
-    {% endfor %}
+    <div class="plant-list-container">
+        <div class="plant-list">
+            {% for plant in plants %}
+                <div class="plant-instance">
+                    {% if plant.image %}
+                        <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
+                    {% else %}
+                        <img class="plant-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ plant.common_name }}">
+                    {% endif %}
+                    <div>{{ plant.common_name }}</div>
+                    <span>{{ plant.genus }}</span>
+                    <span>{{ plant.species }}</span>
+                    <div>{{ plant.price }}</div>
+                    <div>{{ plant.sku }}</div>
+                    <div>
+                        <a href="{% url 'edit_plant' plant.id %}">Edit</a> |
+                        <a href="{% url 'delete_plant' plant.id %}">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock%}
 
 {% block extra_js %}

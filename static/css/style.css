@@ -431,6 +431,32 @@ main {
     font-size: 5vw;
 }
 
+/* Plant list styles */
+.plant-list-container {
+    width: 100vw;
+}
+
+.plant-list {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.plant-instance {
+    /* width: 30rem; */
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    min-height: 100px;
+    border: 3px solid black;
+}
+
+.plant-image {
+    width: auto;
+}
+
 /* Media queries */
 
 /* Media query for medium width screens */
