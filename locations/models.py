@@ -10,6 +10,7 @@ class Location(models.Model):
     location_name = models.CharField(max_length=150)
     location_friendly_name = models.CharField(max_length=150)
     location_plants = models.ManyToManyField(Plant,
+                                             blank=True,
                                              related_name="location_plants")
 
     class Meta:
