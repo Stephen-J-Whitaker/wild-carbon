@@ -391,6 +391,10 @@ main {
     left: 0;
 }
 
+.modal-offset {
+    top: -75px;
+}
+
 
 .contact-us-inner-container,
 .privacy-policy-inner-container {

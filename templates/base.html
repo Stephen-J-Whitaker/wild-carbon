@@ -144,7 +144,7 @@
                 </div>
             </footer>
             <!-- contact us modal -->
-            <section id="contact-us-modal" class="contact-us-modal-container display-none">
+            <section id="contact-us-modal" class="contact-us-modal-container display-none {% block modal_style %}{% endblock %}">
                 <div class="contact-us-inner-container">
                     <div class="contact-us-modal">
                         <h2>Contact Us</h2>
@@ -155,7 +155,7 @@
                 </div>
             </section>
             <!-- Privacy policy modal -->
-            <section id="privacy-policy-modal" class="privacy-policy-modal-container display-none">
+            <section id="privacy-policy-modal" class="privacy-policy-modal-container display-none {% block privacy_modal_style %}{% endblock %}">
                 <div class="privacy-policy-inner-container">
                     <div class="privacy-policy-modal">
                         {% include 'includes/privacy_policy.html' %}

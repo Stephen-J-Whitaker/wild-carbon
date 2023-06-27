@@ -17,7 +17,7 @@
             <h1 class="page-title-main">Carbon Capture</h1>
             <h2 class="page-title-secondary">Commission the growing and planting of trees at our location in the west of Ireland</h2>
             <!-- Image supplied by font awesome https://fontawesome.com/  -->
-            <img class="page-title-image" src="{% static 'static_media/images/home-index-seedling.svg' %}" alt="A seedling">
+            <img class="page-title-image" src="{% static 'static_media/images/home_index_seedling.svg' %}" alt="A seedling">
         </div>
     </div>
     <div class="content-container">
@@ -71,12 +71,15 @@
                     <span>{{ plant.species }}</span>
                     <div>&#8364 {{ plant.price }}</div>
                     <div>{{ plant.sku }}</div>
-                    <div>
-                        <a href="{% url 'edit_plant' plant.id %}">Edit</a> |
-                        <a href="{% url 'delete_plant' plant.id %}">Delete</a>
-                    </div>
                 </div>
             {% endfor %}
         </div>
     </div>    
 {% endblock%}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/wild_carbon/search_sort.js' %}"></script>
+{% endblock %}
