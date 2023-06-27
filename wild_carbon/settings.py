@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'plants',
+    'locations',
     'crispy_forms',
     'storages',
 ]
