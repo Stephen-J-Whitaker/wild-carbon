@@ -5,6 +5,11 @@
     plant list
 {% endblock %}
 {% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="This page lists all the plants on the Wild Carbon system">
+{% endblock %}
+
 {% block content %}
     <h1>Plants</h1>
     <a href="{% url 'add_plant' %}">Add Plant</a>

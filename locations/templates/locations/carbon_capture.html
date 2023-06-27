@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}
+    Associate plants with a location
+{% endblock %}
+
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="On this page you can select plants that can be grown at the Wild Carbon location">
+{% endblock %}
+
+{% block content %}
+    <div class="page-title-container">
+        <div class="page-title">
+            <h1 class="page-title-main">Wild Carbon</h1>
+            <h2 class="page-title-secondary">Rewild your way to carbon neutrality</h2>
+            <!-- Image supplied by font awesome https://fontawesome.com/  -->
+            <img class="page-title-image" src="{% static 'static_media/images/home-index-seedling.svg' %}" alt="A seedling">
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="inner-content-container">
+            <h2 class="content-header">What we do</h2>
+            <p class="text-content">
+                ‘Wild Carbon’ is a company that can enable you to rewild your way to a carbon neutral or even carbon negative life! 
+
+                We provide you with the opportunity to commission the growth and planting of trees of your choosing at our location in the west of Ireland.
+    
+                On placing your order with us, we begin the process of growing your selected trees. Once of the required maturity, these trees are then planted out onto our protected site and allowed to grow indefinitely, gradually sequestering carbon for you.
+            </p>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="inner-content-container">
+            <h2 class="content-header">Coming Soon</h2>
+            <p class="text-content">
+                Revisit soon when you’ll have the opportunity to sponsor a cubic meter of blanket bog. Blanket bog is currently being cut and used as fuel. By sponsoring the purchase of blanket bog you are contributing to the reflooding and restoration of the bog. 
+
+                A cubic meter of blanket bog can release up to 385kg of CO2! By paying to preserve bog that would otherwise release carbon you could offset your life’s carbon by sponsoring just 37 meters squared of 2 meter deep blanket bog for €100!                
+            </p>
+        </div>
+    </div>
+{% endblock%}
