@@ -31,7 +31,6 @@
     position: fixed;
     top: 80px;
     right: 15px;
-    z-index: 111;
 }
 
 .success {

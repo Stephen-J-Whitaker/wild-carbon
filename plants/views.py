@@ -149,6 +149,11 @@ class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         # Code sourced from stackoverflow.com:
         # questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only Wild Carbon '
+                           'staff can do that.')
+            return redirect(reverse('list_plants'))
+
         messages.success(self.request, self.success_message)
         return super(DeletePlant, self).delete(request, *args, **kwargs)
         # End of code sourced from stackoverflow

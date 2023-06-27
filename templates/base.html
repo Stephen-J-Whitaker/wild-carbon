@@ -55,11 +55,6 @@
                                         <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
                                     </li>
                                 {% endif %}
-                                {% if user.is_staff %}
-                                    <li>
-                                        <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
-                                    </li>
-                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -69,9 +64,14 @@
                                 <a class="nav-link" href="{% url 'home' %}">Home</a>
                             </li>
                             {% if user.is_superuser %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'list_plants' %}">Plan Admin</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'list_plants' %}">Plan Admin</a>
+                                </li>
+                            {% endif %}
+                            {% if user.is_staff %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                                </li>
                             {% endif %}
                             <li class="nav-item">
                                 <a class="nav-link" href="#">First link</a>
