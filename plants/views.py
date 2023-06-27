@@ -47,7 +47,10 @@ def all_plants(request):
                 return redirect(reverse('list_plants'))
 
             queries = (Q(common_name__icontains=query) |
+                       Q(genus__icontains=query) |
+                       Q(species__icontains=query) |
                        Q(description__icontains=query))
+
             plants = plants.filter(queries)
 
     current_sorting = f'{sort}__{direction}'
