@@ -21,7 +21,7 @@
                     {% endif %}
                 {% endfor %}
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'plant_list' %}">Back</a>
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'list_plants' %}">Back</a>
                     <button id="plant-submit-btn" class="btn btn-black rounded-0" type="submit">Add</button>
                 </div>
             </form>
@@ -30,5 +30,5 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script src="{% static 'js/plants/add_plant.js' %}"></script>
+    <script src="{% static 'js/plants/add_edit_plant.js' %}"></script>
 {% endblock %}

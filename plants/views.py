@@ -59,7 +59,7 @@ def all_plants(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'plants/plant_list.html', context)
+    return render(request, 'plants/list_plants.html', context)
 
 
 @login_required
@@ -78,7 +78,7 @@ def add_plant(request):
         if form.is_valid():
             plant = form.save()
             messages.success(request, 'Successfully added plant!')
-            return redirect(reverse('plant_list'))
+            return redirect(reverse('list_plants'))
         else:
             messages.error(request, 'Failed to add plant.'
                            'Please ensure the form is valid.')
@@ -109,7 +109,7 @@ def edit_plant(request, plant_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated plant!')
-            return redirect(reverse('plant_list'))
+            return redirect(reverse('list_plants'))
         else:
             messages.error(request, 'Failed to update plant. '
                            'Please ensure the form is valid.')
@@ -126,7 +126,7 @@ def edit_plant(request, plant_id):
     return render(request, template, context)
 
 
-class PlantDelete(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
+class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
     """
     A class based view to confirm a deletion of a plant
     Code adapted from music aid project:
@@ -134,7 +134,7 @@ class PlantDelete(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         music-aid/blob/main/songbook/views.py
     """
     model = Plant
-    template_name = 'plants/plant_confirm_delete.html'
+    template_name = 'plants/confirm_plant_delete.html'
     success_message = "The plant has been deleted"
 
     def get_context_data(self, **kwargs):
@@ -150,7 +150,7 @@ class PlantDelete(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         # questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
-        return super(PlantDelete, self).delete(request, *args, **kwargs)
+        return super(DeletePlant, self).delete(request, *args, **kwargs)
         # End of code sourced from stackoverflow
         # questions/24822509/success-message-in-deleteview-not-shown
 
@@ -158,7 +158,7 @@ class PlantDelete(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         """
         If success send back to correct view
         """
-        return reverse_lazy('plant_list')
+        return reverse_lazy('list_plants')
 
 
 def common_name_validate(request):

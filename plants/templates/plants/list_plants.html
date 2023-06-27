@@ -10,7 +10,7 @@
     <a href="{% url 'add_plant' %}">Add Plant</a>
     <!-- Search box and sort box HTML supplied by Code Institute -->
     <div>
-        <form method="GET" action="{% url 'plant_list' %}">
+        <form method="GET" action="{% url 'list_plants' %}">
             <div class="input-group w-50">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                 <div class="input-group-append">
@@ -45,6 +45,7 @@
         <div>{{ plant.price }}</div>
         <div>{{ plant.sku }}</div>
         <a href="{% url 'edit_plant' plant.id %}">Edit</a> |
-        <a href="{% url 'plant_delete' plant.id %}">Delete</a>
+        <a href="{% url 'delete_plant' plant.id %}">Delete</a>
+        <hr>
     {% endfor %}
 {% endblock%}
