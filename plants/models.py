@@ -25,5 +25,7 @@ class Plant(models.Model):
         """
         constraints = [
             models.UniqueConstraint(fields=['common_name'],
-                                    name='unique_common_name')
+                                    name='unique_common_name'),
+            models.UniqueConstraint(fields=['sku'],
+                                    name='sku_name')
         ]
