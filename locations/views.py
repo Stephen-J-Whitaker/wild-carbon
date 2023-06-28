@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, redirect
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View, generic
 from .forms import LocationPlantsForm
@@ -66,10 +66,13 @@ def location_plants(request):
 
     current_sorting = f'{sort}__{direction}'
 
+    location_name = get_object_or_404(Location, pk=1).location_friendly_name
+  
     context = {
         'plants': plants,
         'search_term': query,
         'current_sorting': current_sorting,
+        'location_name': location_name,
     }
 
     return render(request, 'locations/carbon_capture.html', context)

@@ -212,6 +212,7 @@ main {
 .carbon-capture-title-container {
     /* Image sourced at https://iowalandcompany.com/jones-county-iowa-80-acres-for-sale/ */
     background: url("/static/static_media/images/carbon_capture_location.jpg") no-repeat center center/cover;
+    height: 175px;
 }
 
 .page-title {
