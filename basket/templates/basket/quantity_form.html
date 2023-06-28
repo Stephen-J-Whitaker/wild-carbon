@@ -1,0 +1,29 @@
+<form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
+        {% csrf_token %}
+        <div>
+            <p><strong>Quantity:</strong></p>
+            <div>
+                <div id="input-group-1-{{ item.item_id }}" class="input-group">
+                    <div class="input-group-prepend">
+                        <button id="decrement-qty-1-{{ item.item_id }}" class="btn">
+                            <span class="icon">
+                                <i class="fas fa-minus"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <input id="id-qty-1-{{ item.item_id }}" class="form-control" type="number" name="quantity" value="1" min="1" max="99">
+                    <div class="input-group-append">
+                        <button id="increment-qty-1-{{ item.item_id }}" class="btn">
+                            <span class="icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            <button type="submit" class="btn">Add To Basket</button>
+        </div>
+    </form>
+<a class="update-link text-info"><small>Update</small></a>
+<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
