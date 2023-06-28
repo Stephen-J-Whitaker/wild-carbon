@@ -60,6 +60,13 @@
                         <a href="{% url 'view_basket' %}">
                             <!-- Icon supplied by font awesome https://fontawesome.com/  -->
                             <img class="basket-icon" src="{% static 'static_media/icons/base-basket.svg' %}" alt="Open your basket">
+                            <p class="my-0">
+                                {% if grand_total %}
+                                    €{{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    €0.00
+                                {% endif %}
+                            </p>
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -83,9 +90,6 @@
                                     <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                                 </li>
                             {% endif %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">First link</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
