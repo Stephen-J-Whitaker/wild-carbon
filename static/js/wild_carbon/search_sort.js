@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * Reload the plant listing page with plants ordered as per the ordering selector box
      * Sort search js supplied by Code Institute
      */
+     /* globals $ */
     $('#sort-selector').change(function() {
         const selector = $(this);
         let currentUrl = new URL(window.location);
