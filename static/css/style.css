@@ -395,6 +395,14 @@ main {
     top: -75px;
 }
 
+.error-page-link {
+    color: black;
+}
+
+.error-page-link:hover {
+    color: black;
+    text-decoration: underline;
+}
 
 .contact-us-inner-container,
 .privacy-policy-inner-container {

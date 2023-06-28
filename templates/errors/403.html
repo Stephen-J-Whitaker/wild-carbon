@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
+{% block main_style %}main-container-offset{% endblock %}
+
 {% block content %}
     <div>Error: 403</div>
     <div>Sorry, permission is denied</div>
+    <a class="nav-link error-page-link" href="{% url 'home' %}">Home</a>
 {% endblock %}

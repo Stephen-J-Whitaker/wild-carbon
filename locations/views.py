@@ -1,13 +1,15 @@
-from django.shortcuts import render, reverse
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, reverse, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View, generic
 from .forms import LocationPlantsForm
 from .models import Location
 from django.db.models.functions import Lower
 from django.db.models import Q
+from django.contrib import messages
 
 
-class LocationsPlants(generic.UpdateView):
+class LocationsPlants(LoginRequiredMixin, UserPassesTestMixin,
+                      generic.UpdateView):
     """
     A class based view to associate plants with a location
     """
@@ -15,6 +17,12 @@ class LocationsPlants(generic.UpdateView):
     form_class = LocationPlantsForm
     template_name = 'locations/location_plants_link.html'
     success_url = '/carbon_capture'
+
+    def test_func(self):
+        if not self.request.user.is_superuser:
+            messages.error(self.request, 'Sorry, only Wild Carbon '
+                           'staff can do that.')
+        return self.request.user.is_superuser
 
 
 def location_plants(request):
