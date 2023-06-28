@@ -175,6 +175,10 @@ header {
     display: none;
 }
 
+.basket-icon {
+    height: 2.3rem;
+}
+
 header,
 footer {
     background-color: var(--header-footer-background-colour);
