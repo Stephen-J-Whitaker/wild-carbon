@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.shortcuts import get_object_or_404
 from plants.models import Plant
 from locations.models import Location
+from django.conf import settings
 
 
 def basket_contents(request):
@@ -28,7 +29,7 @@ def basket_contents(request):
             'plant': plant,
         })
 
-    vat = 23 * total
+    vat = (setting.VAT / 10) * total
 
     grand_total = total + vat
 

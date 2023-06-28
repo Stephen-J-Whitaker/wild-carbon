@@ -203,6 +203,9 @@ if USE_AWS is True:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Vat rate in percent
+VAT = 23
+
 # Backend settings below for print email to console instead of send emails
 if DEBUG is True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
