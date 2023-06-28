@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.shortcuts import get_object_or_404
 from plants.models import Plant
+from locations.models import Location
 
 
 def basket_contents(request):
@@ -10,11 +11,15 @@ def basket_contents(request):
     """
     basket_items = []
     total = 0
-    product_count = 0
+    plant_count = 0
     basket = request.session.get('basket', {})
 
     for item_id, item_data in basket.items():
-        plant = get_object_or_404(Plant, pk=item_id)
+        get_object_or_404(Location, pk=1)
+        location_plants = (Location.objects.get(pk=1).
+                           location_plants.all())
+        plant = get_object_or_404(location_plants, pk=item_id)
+
         total += item_data * plant.price
         plant_count += item_data
         basket_items.append({
@@ -30,7 +35,7 @@ def basket_contents(request):
     context = {
         'basket_items': basket_items,
         'total': total,
-        'plant_count': product_count,
+        'plant_count': plant_count,
         'vat': vat,
         'grand_total': grand_total,
     }
