@@ -58,7 +58,7 @@
     <div class="plant-list-container">
         <div class="plant-list">
             {% for plant in plants %}
-                <div class="plant-instance">
+                <a  href="{% url 'plant_detail' plant.pk %}" class="plant-instance shop-plant-instance">
                     {% if plant.image %}
                         <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
                     {% else %}
@@ -69,7 +69,7 @@
                     <span>{{ plant.species }}</span>
                     <div>&#8364 {{ plant.price }}</div>
                     <div>{{ plant.sku }}</div>
-                </div>
+                </a>
             {% endfor %}
         </div>
     </div>    

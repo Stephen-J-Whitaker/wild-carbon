@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}
+    Associate plants with a location
+{% endblock %}
+
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="On this page you can select plants that can be grown at the Wild Carbon location">
+{% endblock %}
+
+{% block content %}
+    <div class="content-container">
+        <div class="inner-content-container">
+            <h2 class="content-header">{{ plant.name }}</h2>
+            <div class="plant-instance">
+                {% if plant.image %}
+                    <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
+                {% else %}
+                    <img class="plant-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ plant.common_name }}">
+                {% endif %}
+                <div>{{ plant.common_name }}</div>
+                <span>{{ plant.genus }}</span>
+                <span>{{ plant.species }}</span>
+                <div>&#8364 {{ plant.price }}</div>
+                <div>{{ plant.sku }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock%}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}

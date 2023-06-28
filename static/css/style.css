@@ -467,7 +467,6 @@ main {
 }
 
 .plant-instance {
-    /* width: 30rem; */
     display: flex;
     flex-direction: column;
     max-width: 300px;
@@ -477,6 +476,10 @@ main {
 
 .plant-image {
     width: auto;
+}
+
+.shop-plant-instance:hover {
+    box-shadow: 0px 0px 5px 1px var(--inner-content-container-shadow);
 }
 
 /* Media queries */

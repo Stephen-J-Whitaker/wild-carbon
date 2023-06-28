@@ -161,6 +161,9 @@ class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         return reverse_lazy('list_plants')
 
 
+
+
+
 def common_name_validate(request):
     """
     Verify the common name is unique in the system
