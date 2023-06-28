@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Plant
+from locations.models import Location
 from .forms import PlantForm
 
 
@@ -161,7 +162,25 @@ class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         return reverse_lazy('list_plants')
 
 
+class PlantDetail(generic.DetailView):
+    """
+    Class based view to view plant details
+    """
+    model = Plant
+    template_name = 'plants/plant_detail.html'
 
+    def get_queryset(self):
+        """
+        Define the queryset to be used and confirm the plant is
+        available at the location
+        """
+        location_id = self.kwargs['location_id']
+        get_object_or_404(Location, pk=location_id)
+        location_plants = (Location.objects.get(pk=location_id).
+                           location_plants.all())
+        get_object_or_404(location_plants, pk=self.kwargs['pk'])
+
+        return super().get_queryset()
 
 
 def common_name_validate(request):

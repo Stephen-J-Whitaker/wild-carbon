@@ -20,7 +20,7 @@
     </div>
     <div class="content-container">
         <div class="inner-content-container">
-            <h2 class="content-header">{{ location_name }}</h2>
+            <h2 class="content-header">{{ location.location_friendly_name }}</h2>
             <p class="text-content location-text">
                 Located in the west of Ireland, our 80 acre site has the capacity for approximately 50000 trees! You choose the trees you want planted in you name and we will make sure it happens as soon as possible. 
 
@@ -58,7 +58,7 @@
     <div class="plant-list-container">
         <div class="plant-list">
             {% for plant in plants %}
-                <a  href="{% url 'plant_detail' plant.pk %}" class="plant-instance shop-plant-instance">
+                <a  href="{% url 'plant_detail' location.pk plant.pk %}" class="plant-instance shop-plant-instance">
                     {% if plant.image %}
                         <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
                     {% else %}
@@ -72,7 +72,7 @@
                 </a>
             {% endfor %}
         </div>
-    </div>    
+    </div>
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}

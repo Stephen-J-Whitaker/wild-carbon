@@ -14,7 +14,7 @@
 {% block content %}
     <div class="content-container">
         <div class="inner-content-container">
-            <h2 class="content-header">{{ plant.name }}</h2>
+            <h2 class="content-header">{{ plant.common_name }}</h2>
             <div class="plant-instance">
                 {% if plant.image %}
                     <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
@@ -27,6 +27,7 @@
                 <div>&#8364 {{ plant.price }}</div>
                 <div>{{ plant.sku }}</div>
             </div>
+            <a class="nav-link" href="{% url 'carbon_capture' %}">Continue Shopping</a> 
         </div>
     </div>
 {% endblock%}

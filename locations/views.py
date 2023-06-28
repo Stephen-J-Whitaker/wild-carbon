@@ -66,13 +66,13 @@ def location_plants(request):
 
     current_sorting = f'{sort}__{direction}'
 
-    location_name = get_object_or_404(Location, pk=1).location_friendly_name
-  
+    location = get_object_or_404(Location, pk=1)
+
     context = {
         'plants': plants,
         'search_term': query,
         'current_sorting': current_sorting,
-        'location_name': location_name,
+        'location': location,
     }
 
     return render(request, 'locations/carbon_capture.html', context)
