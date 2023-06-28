@@ -28,10 +28,48 @@
                 <div>&#8364 {{ plant.price }}</div>
                 <div>{{ plant.sku }}</div>
             </div>
-            <a class="nav-link" href="{% url 'carbon_capture' %}">Continue Shopping</a> 
+            <!-- Quantity selector template code provided by Code Institute -->
+            <!-- <form class="form" action="#" method="POST"> -->
+                {% csrf_token %}
+                <div>
+                    <p><strong>Quantity:</strong></p>
+                    <div>
+                        <div id="input-group" class="input-group">
+                            <div class="input-group-prepend">
+                                <button id="decrement-qty" class="btn">
+                                    <span class="icon">
+                                        <i class="fas fa-minus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <input id="id-qty" class="form-control" type="number" name="quantity" value="1" min="1" max="99">
+                            <div class="input-group-append">
+                                <button id="increment-qty" class="btn">
+                                    <span class="icon">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    <!-- <button type="submit" class="btn">Add To Basket</button> -->
+                </div>
+            <!-- </form> -->
+            <!-- End of quantity selector template code provided by Code Institute -->
+            <a class="nav-link" href="{% url 'carbon_capture' %}">
+                <span>
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>Continue Shopping</span>
+            </a> 
         </div>
     </div>
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}
 {% block privacy_modal_style %}modal-offset{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/plants/quantity_input_script.js' %}"></script>
+{% endblock %}
