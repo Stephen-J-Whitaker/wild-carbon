@@ -32,17 +32,17 @@
                 <div>
                     <p><strong>Quantity:</strong></p>
                     <div>
-                        <div id="input-group" class="input-group">
+                        <div id="input-group-{{ plant.id }}" class="input-group">
                             <div class="input-group-prepend">
-                                <button id="decrement-qty" class="btn">
+                                <button id="decrement-qty-{{ item.item_id }}" class="btn">
                                     <span class="icon">
                                         <i class="fas fa-minus"></i>
                                     </span>
                                 </button>
                             </div>
-                            <input id="id-qty" class="form-control" type="number" name="quantity" value="1" min="1" max="99">
+                            <input id="id-qty-{{ item.item_id }}" class="form-control" type="number" name="quantity" value="1" min="1" max="99">
                             <div class="input-group-append">
-                                <button id="increment-qty" class="btn">
+                                <button id="increment-qty-{{ item.item_id }}" class="btn">
                                     <span class="icon">
                                         <i class="fas fa-plus"></i>
                                     </span>
@@ -69,5 +69,5 @@
 {% block privacy_modal_style %}modal-offset{% endblock %}
 
 {% block extra_js %}
-    <script src="{% static 'js/plants/quantity_input_script.js' %}"></script>
+    <script src="{% static 'js/wild_carbon/quantity_input_script.js' %}"></script>
 {% endblock %}

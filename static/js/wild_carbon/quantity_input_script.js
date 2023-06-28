@@ -44,5 +44,38 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#id-qty').val(currentValue - 1);
         handleEnableDisable();
     });
+
+    function handleEnableDisable1() {
+
+        let currentValue = parseInt($(`#id-qty-1`).val());
+        console.log(currentValue)
+
+        let minusDisabled = currentValue < 2;
+        let plusDisabled = currentValue > 98;
+         /* globals $ */
+        $('#decrement-qty-1').prop('disabled', minusDisabled);
+        $('#increment-qty-1').prop('disabled', plusDisabled);
+    }
+
+    // Check enable/disable every time the input is changed
+    $('#qty-input-1').change(function() {
+        handleEnableDisable1();
+    });
+
+    // Increment quantity
+    $('#increment-qty-1').click(function(e) {
+        e.preventDefault();
+        let currentValue = parseInt($('#id-qty-1').val());
+        $('#id-qty-1').val(currentValue + 1);
+        handleEnableDisable1();
+    });
+
+    // Decrement quantity
+    $('#decrement-qty-1').click(function(e) {
+        e.preventDefault();
+        let currentValue = parseInt($('#id-qty-1').val());
+        $('#id-qty-1').val(currentValue - 1);
+        handleEnableDisable1();
+    });
     // End of quantity selector code supplied by Code Institute
 });
