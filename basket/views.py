@@ -40,3 +40,57 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def adjust_basket(request, item_id):
+    """
+    Adjust the quantity of the specified product 
+    to the specified amount
+    adjust_basket code supplied by Code Institute
+    """
+
+    get_object_or_404(Location, pk=1)
+    location_plants = (Location.objects.get(pk=1).
+                       location_plants.all())
+    plant = get_object_or_404(location_plants, pk=item_id)
+
+    quantity = int(request.POST.get('quantity'))
+
+    basket = request.session.get('basket', {})
+
+    if quantity > 0:
+        basket[item_id] = quantity
+        messages.success(request, (f'Updated {plant.common_name} '
+                                   f'quantity to {basket[item_id]}'))
+    else:
+        basket.pop(item_id)
+        messages.success(request,
+                         f'Removed {plant.common_name} from your baasket')
+
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))
+
+
+def remove_from_basket(request, item_id):
+    """
+    Remove the item from the shopping bag
+    remove_from_basket code supplied by Code Institute
+    """
+
+    try:
+        get_object_or_404(Location, pk=1)
+        location_plants = (Location.objects.get(pk=1).
+                           location_plants.all())
+        plant = get_object_or_404(location_plants, pk=item_id)
+
+        basket = request.session.get('basket', {})
+
+        bag.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your basket')
+
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
