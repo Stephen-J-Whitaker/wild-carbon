@@ -42,6 +42,10 @@
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
                                 <img class="account-menu-icon" src="{% static 'static_media/icons/base_account_menu.svg' %}" alt="Open the account menu">
                             </button>
+                            <a href="{% url 'basket' %}">
+                                <!-- Icon supplied by font awesome https://fontawesome.com/  -->
+                                <img class="basket-icon" src="{% static 'static_media/icons/base_account_menu.svg' %}" alt="Open your basket">
+                            </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 {% if user.is_authenticated %}
                                     <li>
