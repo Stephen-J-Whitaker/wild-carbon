@@ -5,7 +5,7 @@
 /**
  * Add functions for page manipulation on page load completion
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * Use ajax to check if plant common name input entry is unique for the user

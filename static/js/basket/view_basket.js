@@ -5,7 +5,7 @@
 /**
  * Add functions for page manipulation on page load completion
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     /**
      * Remove item and reload on click
      * Code supplied by Code Institute
