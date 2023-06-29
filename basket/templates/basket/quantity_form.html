@@ -20,6 +20,6 @@
             </div>
         </div>
     </div>
+    <button type="submit" class="update-link text-info"><small>Update</small></button>
 </form>
-<a class="update-link text-info"><small>Update</small></a>
-<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-csrf_token="{{ csrf_token }}"><small>Remove</small></a>
