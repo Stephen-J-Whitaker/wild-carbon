@@ -12,70 +12,52 @@ document.addEventListener('DOMContentLoaded', function () {
     * which prevents any errors 
     * The following quantity selector code was supplied by Code Institute
     */
-    function handleEnableDisable() {
 
-        let currentValue = parseInt($(`#id-qty`).val());
-        console.log(currentValue)
+     function handleEnableDisable(itemId) {
 
-        let minusDisabled = currentValue < 2;
-        let plusDisabled = currentValue > 98;
-         /* globals $ */
-        $('#decrement-qty').prop('disabled', minusDisabled);
-        $('#increment-qty').prop('disabled', plusDisabled);
-    }
-
-    // Check enable/disable every time the input is changed
-    $('#qty-input').change(function() {
-        handleEnableDisable();
-    });
-
-    // Increment quantity
-    $('#increment-qty').click(function(e) {
-        e.preventDefault();
-        let currentValue = parseInt($('#id-qty').val());
-        $('#id-qty').val(currentValue + 1);
-        handleEnableDisable();
-    });
-
-    // Decrement quantity
-    $('#decrement-qty').click(function(e) {
-        e.preventDefault();
-        let currentValue = parseInt($('#id-qty').val());
-        $('#id-qty').val(currentValue - 1);
-        handleEnableDisable();
-    });
-
-    function handleEnableDisable1() {
-
-        let currentValue = parseInt($(`#id-qty-1`).val());
-        console.log(currentValue)
+        /* globals $ */
+        let currentValue = parseInt($(`.id_qty_${itemId}`).val());
 
         let minusDisabled = currentValue < 2;
         let plusDisabled = currentValue > 98;
-         /* globals $ */
-        $('#decrement-qty-1').prop('disabled', minusDisabled);
-        $('#increment-qty-1').prop('disabled', plusDisabled);
+
+        $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+        $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
+    }
+
+    // Ensure proper enabling/disabling of all inputs on page load
+    let allQtyInputs = $('.qty_input');
+    for(let i = 0; i < allQtyInputs.length; i++){
+        let itemId = $(allQtyInputs[i]).data('item_id');
+        handleEnableDisable(itemId);
     }
 
     // Check enable/disable every time the input is changed
-    $('#qty-input-1').change(function() {
-        handleEnableDisable1();
+    $('.qty_input').change(function() {
+        let itemId = $(this).data('item_id');
+        handleEnableDisable(itemId);
     });
 
     // Increment quantity
-    $('#increment-qty-1').click(function(e) {
+    $('.increment-qty').click(function(e) {
         e.preventDefault();
-        let currentValue = parseInt($('#id-qty-1').val());
-        $('#id-qty-1').val(currentValue + 1);
-        handleEnableDisable1();
+        let itemId = $(this).data('item_id');
+        let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        let allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+        let currentValue = parseInt($(closestInput).val());
+        $(allQuantityInputs).val(currentValue + 1);
+        handleEnableDisable(itemId);
     });
 
     // Decrement quantity
-    $('#decrement-qty-1').click(function(e) {
-        e.preventDefault();
-        let currentValue = parseInt($('#id-qty-1').val());
-        $('#id-qty-1').val(currentValue - 1);
-        handleEnableDisable1();
+    $('.decrement-qty').click(function(e) {
+       e.preventDefault();
+        let itemId = $(this).data('item_id');
+        let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        let allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+        let currentValue = parseInt($(closestInput).val());
+        $(allQuantityInputs).val(currentValue - 1);
+        handleEnableDisable(itemId);
     });
     // End of quantity selector code supplied by Code Institute
 });
