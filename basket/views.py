@@ -44,7 +44,7 @@ def add_to_basket(request, item_id):
 
 def adjust_basket(request, item_id):
     """
-    Adjust the quantity of the specified product 
+    Adjust the quantity of the specified product
     to the specified amount
     adjust_basket code supplied by Code Institute
     """
@@ -65,7 +65,7 @@ def adjust_basket(request, item_id):
     else:
         basket.pop(item_id)
         messages.success(request,
-                         f'Removed {plant.common_name} from your baasket')
+                         f'Removed {plant.common_name} from your basket')
 
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
@@ -85,8 +85,9 @@ def remove_from_basket(request, item_id):
 
         basket = request.session.get('basket', {})
 
-        bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your basket')
+        basket.pop(item_id)
+        messages.success(request, f'Removed {plant.common_name} '
+                         f'from your basket')
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
