@@ -29,7 +29,7 @@ def basket_contents(request):
             'plant': plant,
         })
 
-    vat = total * Decimal(settings.VAT / 10)
+    vat = total * Decimal(settings.VAT / 100)
 
     grand_total = total + vat
 
