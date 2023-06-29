@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('plants.urls'), name='plants_urls'),
     path('', include('locations.urls'), name='locations_urls'),
     path('', include('basket.urls'), name='basket_urls'),
+    path('checkout/', include('checkout.urls')),
     # Code to serve robots.txt sourced at:
     # https://ngangasn.com/sitemap-robot-txt-django/?expand_article=1
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',
