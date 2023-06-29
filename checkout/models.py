@@ -51,7 +51,7 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.vat = self.order_total * (settings.VAT / 100)
+        self.vat = self.order_total * settings.VAT / 100
         self.grand_total = self.order_total + self.vat
         self.save()
 
@@ -91,7 +91,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        self.lineitem_total = self.plant.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):

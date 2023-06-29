@@ -4,7 +4,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
-# from .forms import OrderForm
+from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 from plants.models import Plant
@@ -101,8 +101,8 @@ def checkout(request):
                            "There's nothing in your basket at the moment")
             return redirect(reverse('carbon_capture'))
 
-        basket = basket(request)
-        total = basket['grand_total']
+        current_basket = basket_contents(request)
+        total = current_basket['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -129,13 +129,13 @@ def checkout(request):
         #     except UserProfile.DoesNotExist:
         #         order_form = OrderForm()
         # else:
-        #     order_form = OrderForm()
+        order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
-    template = 'checkout/checkout.html'
+    template = 'checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
@@ -179,8 +179,8 @@ def checkout(request):
 #         Your order number is {order_number}. A confirmation \
 #         email will be sent to {order.email}.')
 
-#     if 'bag' in request.session:
-#         del request.session['bag']
+#     if 'basket' in request.session:
+#         del request.session['basket']
 
 #     template = 'checkout/checkout_success.html'
 #     context = {
