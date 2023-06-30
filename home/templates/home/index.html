@@ -66,6 +66,46 @@
                 Sign up for our newsletter for more fun fact, useful hints on reducing your carbon 
                 footprint and other news and events relating to Wild Carbon.           
             </p>
+            <!-- Mailchimp HTML provided by Mailchimp https://mailchimp.com/ -->
+            <div id="mc_embed_shell">
+                <div id="mc_embed_signup" class="mc_embed_signup ">
+                    <form action="https://herokuapp.us8.list-manage.com/subscribe/post?u=1f0650f50e5ef942f8fbd1d5d&amp;id=0e3cd3ba55&amp;f_id=00e17ce0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <h2>Subscribe</h2>
+                            <div class="indicates-required"></div>
+                            <span class="asterisk">*</span>
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address<span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                            <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                            <input type="text" name="b_1f0650f50e5ef942f8fbd1d5d_0e3cd3ba55" tabindex="-1" value="">
+                        </div>
+                        <div class="optionalParent">
+                            <div class="clear foot">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                                <!-- <p class="brandingLogo" style="margin: 0px auto;">
+                                    <a href="http://eepurl.com/iuFWRU" title="Mailchimp - email marketing made easy and fun">
+                                        <img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="referral badge">
+                                    </a>
+                                </p> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End of Mailchimp HTML provided by Mailchimp https://mailchimp.com/ -->
         </div>
     </div>
 {% endblock%}
+
+{% block extra_js %}
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+{% endblock %}
