@@ -86,6 +86,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'carbon_capture' %}">Carbon Capture</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+                            </li>
                             {% if user.is_superuser %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'list_plants' %}">Plan Admin</a>

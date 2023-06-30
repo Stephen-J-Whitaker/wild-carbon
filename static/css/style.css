@@ -214,16 +214,29 @@ main {
     align-items: center;
 }
 
-.image-nav-container {
+.about-us-page-title-container {
     /* Image sourced at https://www.pexels.com/photo/close-up-shot-of-a-person-holding-a-plant-5027792/ */
     background: url("/static/home/images/home_about_us_plug_plant.jpg") no-repeat center center/cover;
+}
+
+.image-nav-container {
     height: 500px;
     width: 500px;
 }
 
+.carbon-capture-image-nav-container {
+    /* Image sourced at https://iowalandcompany.com/jones-county-iowa-80-acres-for-sale/ */
+    background: url("/static/images/carbon_capture_location.jpg") no-repeat center center/cover;
+}
+
+.about-us-image-nav-container {
+    /* Image sourced at https://www.pexels.com/photo/close-up-shot-of-a-person-holding-a-plant-5027792/ */
+    background: url("/static/home/images/home_about_us_plug_plant.jpg") no-repeat center center/cover;
+}
+
 .carbon-capture-title-container {
     /* Image sourced at https://iowalandcompany.com/jones-county-iowa-80-acres-for-sale/ */
-    background: url("/locations/static/images/carbon_capture_location.jpg") no-repeat center center/cover;
+    background: url("/static/images/carbon_capture_location.jpg") no-repeat center center/cover;
     height: 175px;
 }
 
@@ -278,7 +291,7 @@ main {
 }
 
 .text-content {
-    white-space: pre-line;
+    text-align: center;
 }
 
 .location-text {
@@ -494,7 +507,8 @@ main {
     width: auto;
 }
 
-.shop-plant-instance:hover {
+.shop-plant-instance:hover,
+.image-nav-container:hover {
     box-shadow: 0px 0px 5px 1px var(--inner-content-container-shadow);
 }
 
