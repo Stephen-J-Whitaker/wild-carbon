@@ -16,7 +16,7 @@ class LocationsPlants(LoginRequiredMixin, UserPassesTestMixin,
     model = Location
     form_class = LocationPlantsForm
     template_name = 'locations/location_plants_link.html'
-    success_url = '/carbon_capture'
+    success_url = '/locations/carbon_capture'
 
     def test_func(self):
         if not self.request.user.is_superuser:

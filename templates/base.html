@@ -46,7 +46,7 @@
                         <div class="dropdown-center">
                             <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                                <img class="account-menu-icon" src="{% static 'static_media/icons/base_account_menu.svg' %}" alt="Open the account menu">
+                                <img class="account-menu-icon" src="{% static 'icons/base_account_menu.svg' %}" alt="Open the account menu">
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
@@ -68,7 +68,7 @@
                         </div>
                         <a href="{% url 'view_basket' %}">
                             <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                            <img class="basket-icon" src="{% static 'static_media/icons/base-basket.svg' %}" alt="Open your basket">
+                            <img class="basket-icon" src="{% static 'icons/base-basket.svg' %}" alt="Open your basket">
                             <p class="my-0">
                                 {% if grand_total %}
                                     €{{ grand_total|floatformat:2 }}
@@ -134,7 +134,7 @@
                     <div class="footer-left">
                         <div class="footer-left-back-to-top" id="footer-left-back-to-top">
                             <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                            <img class="back-to-top-button" id="back-to-top-button" role="button" src="{% static 'static_media/icons/base_circle_up.svg' %}" alt="Back to top up arrow button">
+                            <img class="back-to-top-button" id="back-to-top-button" role="button" src="{% static 'icons/base_circle_up.svg' %}" alt="Back to top up arrow button">
                         </div>
                     </div>
                     <div class="footer-middle">
@@ -148,13 +148,13 @@
                         <div class="footer-right-contact" id="footer-right-contact">
                             <button id="contact-us-button" class="contact-icon-container" aria-label="Contact details for Wild Carbon">
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                                <img src="{% static 'static_media/icons/base_contact.svg' %}"  class="contact-icon" alt="Contact us icon">
+                                <img src="{% static 'icons/base_contact.svg' %}"  class="contact-icon" alt="Contact us icon">
                             </button>
                         </div>
                         <div class="footer-right-facebook" id="footer-right-facebook">
                             <a href="#" class="facebook-link-container" target="_blank" rel="external nofollow noopener" aria-label="Visit Wild Carbons Facebook Business Page">
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
-                                <img src="{% static 'static_media/icons/base_facebook_brands.svg' %}"  class="social-media-icon" alt="Facebook social media icon">
+                                <img src="{% static 'icons/base_facebook_brands.svg' %}"  class="social-media-icon" alt="Facebook social media icon">
                             </a>
                         </div>
                     </div>
