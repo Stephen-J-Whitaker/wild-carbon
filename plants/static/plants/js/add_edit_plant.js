@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $.ajax(
             {
                 type:'GET',
-                url: '/common_name_validate',
+                url: '/plants/common_name_validate',
                 data:{
                     common_name: commonName
                 },
