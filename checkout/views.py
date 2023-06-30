@@ -135,7 +135,7 @@ def checkout(request):
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
-    template = 'checkout.html'
+    template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
@@ -182,7 +182,7 @@ def checkout_success(request, order_number):
     if 'basket' in request.session:
         del request.session['basket']
 
-    template = 'checkout_success.html'
+    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
     }

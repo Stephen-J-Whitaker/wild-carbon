@@ -22,10 +22,10 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', include('home.urls'), name='home_urls'),
-    path('', include('plants.urls'), name='plants_urls'),
-    path('', include('locations.urls'), name='locations_urls'),
-    path('', include('basket.urls'), name='basket_urls'),
+    path('', include('home.urls')),
+    path('plants', include('plants.urls')),
+    path('locations/', include('locations.urls')),
+    path('basket/', include('basket.urls')),
     path('checkout/', include('checkout.urls')),
     # Code to serve robots.txt sourced at:
     # https://ngangasn.com/sitemap-robot-txt-django/?expand_article=1
