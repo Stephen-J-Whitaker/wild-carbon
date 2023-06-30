@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /* globals $ */
         let csrfToken = $(this).data('csrf_token');
         let itemId = $(this).attr('id').split('remove_')[1];
-        let url = `/remove_from_basket/${itemId}/`;
+        let url = `/basket/remove_from_basket/${itemId}/`;
         let data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
