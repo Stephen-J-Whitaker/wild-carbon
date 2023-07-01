@@ -56,3 +56,11 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def carbon_summary(request):
+    """
+    Display the user's carbon summary
+    """
+    return render(request, 'profiles/carbon_summary.html')

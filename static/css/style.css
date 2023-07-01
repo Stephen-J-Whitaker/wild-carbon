@@ -163,6 +163,11 @@ header {
     text-decoration: underline;
 }
 
+#administration-link {
+    color: var(--main-font-colour);
+    text-decoration: underline;
+}
+
 .logo-company {
     color: var(--main-font-colour);
     display: flex;
@@ -184,6 +189,10 @@ footer {
     background-color: var(--header-footer-background-colour);
     color: var(--main-font-colour);
     backdrop-filter: blur(1px);
+}
+
+.dropdown-menu {
+    background-color: var(--header-footer-background-colour);
 }
 
 /* Main section styles */

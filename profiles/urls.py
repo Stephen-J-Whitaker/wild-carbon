@@ -5,4 +5,6 @@ urlpatterns = [
     path('', views.profile, name='profile'),
     path('order_history/<order_number>', views.order_history,
          name='order_history'),
+    path('carbon_summary/', views.carbon_summary,
+         name='carbon_summary'),
 ]
