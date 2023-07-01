@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
+import profiles.carbon_calculations as carbon_calculations
 
 from checkout.models import Order
 
@@ -69,4 +70,12 @@ def carbon_summary(request):
     """
     Display the user's carbon summary
     """
+
+    if request.method == 'GET':
+
+        user = request.user
+        print(carbon_summary)
+        plant_count = carbon_calculations.user_trees(request)
+        print('in carbon summary', plant_count)
+      
     return render(request, 'profiles/carbon_summary.html')
