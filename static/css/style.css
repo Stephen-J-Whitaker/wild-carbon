@@ -232,6 +232,12 @@ main {
     background: url("/static/home/images/home_about_us_plug_plant.jpg") no-repeat center center/cover;
 }
 
+.how-it-works-page-title-container {
+    /* Image sourced at https://ecotree.green/en/how-much-co2-does-a-tree-absorb */
+    background: url("/static/home/images/home-how-it-works.jpg") no-repeat center center/cover;
+}
+
+
 .image-nav-container {
     height: 500px;
     width: 500px;
@@ -245,6 +251,11 @@ main {
 .about-us-image-nav-container {
     /* Image sourced at https://www.pexels.com/photo/close-up-shot-of-a-person-holding-a-plant-5027792/ */
     background: url("/static/home/images/home_about_us_plug_plant.jpg") no-repeat center center/cover;
+}
+
+.how-it-works-image-nav-container {
+    /* Image sourced at https://ecotree.green/en/how-much-co2-does-a-tree-absorb */
+    background: url("/static/home/images/home-how-it-works.jpg") no-repeat center center/cover;
 }
 
 .carbon-capture-title-container {
@@ -523,6 +534,10 @@ main {
 .shop-plant-instance:hover,
 .image-nav-container:hover {
     box-shadow: 0px 0px 5px 1px var(--inner-content-container-shadow);
+}
+
+.fact-item {
+    padding-top: 10px;
 }
 
 /* Mailchimp styles */

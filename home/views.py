@@ -14,3 +14,10 @@ def about_us(request):
     A view to render the about us page
     """
     return render(request, 'home/about_us.html')
+
+
+def how_it_works(request):
+    """
+    A view to render the how it works page
+    """
+    return render(request, 'home/how_it_works.html')
