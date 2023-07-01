@@ -226,3 +226,9 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+# Carbon calculation settings
+TREE_CO2_PER_YEAR = 10  # kg apoproximate
+TREE_LIFE_EXPECTANCY = 100  # years approximate
+HUMAN_LIFE_EXPECTANCY = 80  # year average
+HUMAN_ANNUAL_CARBON_FOOTPRINT = 13000  # kg approximate
