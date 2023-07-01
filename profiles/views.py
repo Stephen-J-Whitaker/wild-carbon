@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
@@ -37,12 +37,18 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """
     Display the details of a historic user order as selected
     order_history code supplied by Code Institute
     """
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user != order.user_profile.user:
+        messages.success(request, 'Sorry, you dont have permission'
+                         'to look at this order')
+        return redirect(reverse('home'))
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
