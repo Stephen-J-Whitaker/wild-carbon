@@ -7,13 +7,27 @@
     <meta name="description" content="On this page you can review the impact on your life's carbon footprint that your tree commissions will have">
 {% endblock %}
 
+{% block main_style %}main-container-offset{% endblock %}
+
 {% block content %}
     <div class="content-container">
         <div class="inner-content-container">
             <h2 class="content-header">Carbon Summary</h2>
             <div class="text-content">
-                
+                <P>
+                    To date you have commissioned the growing and planting of: {{ plant_count }} trees
+                </P>
+                <P>
+                    These trees will sequester approximately {{ sequestered_co2 }}kg of
+                    CO2 in their {{ tree_life }} year lives
+                </P>
+                <P>
+                    Planting another {{ plants_outstanding }} trees will offset the remaining {{ co2_outstanding }} kg of your estimated life’s carbon
+                </P>
             </div>
         </div>
     </div>
 {% endblock%}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}

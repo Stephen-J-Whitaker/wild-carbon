@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 import profiles.co2_calculations as co2_calculations
+from django.conf import settings
 
 from checkout.models import Order
 
@@ -73,15 +74,20 @@ def carbon_summary(request):
 
     if request.method == 'GET':
 
-        user = request.user
         plant_count = co2_calculations.user_plants(request)
-        print('in carbon summary', plant_count)
         sequestered_co2 = co2_calculations.sequestered_co2(plant_count)
-        print('tree carbon', sequestered_co2)
         co2_outstanding = co2_calculations.co2_outstanding(sequestered_co2)
-        print('co2 outstanding', co2_outstanding)
         plants_outstanding = (co2_calculations.
                               plants_outstanding(co2_outstanding))
-        print('plants outstanding', plants_outstanding)
+        tree_life = settings.TREE_LIFE_EXPECTANCY
 
-    return render(request, 'profiles/carbon_summary.html')
+        template = 'profiles/carbon_summary.html'
+        context = {
+            'plant_count': plant_count,
+            'tree_life': tree_life,
+            'sequestered_co2': sequestered_co2,
+            'co2_outstanding': co2_outstanding,
+            'plants_outstanding': plants_outstanding,
+        }
+
+    return render(request, 'profiles/carbon_summary.html', context)
