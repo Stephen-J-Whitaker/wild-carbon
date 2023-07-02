@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}Add a plant records{% endblock %}
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="This page enables you to add a plant record on the Wild Carbon system">
+{% endblock %}
+
+{% block content %}
+    <h1>Add A Plant Record</h1>
+    <form method="POST" action="{% url 'add_plant_record' %}" class="form mb-2">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit">Create Record</button>
+    </form>
+
+{% endblock%}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}

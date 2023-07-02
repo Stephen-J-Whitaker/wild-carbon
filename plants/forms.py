@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Plant
+from .models import Plant, PlantRecord
 
 
 class PlantForm(forms.ModelForm):
@@ -14,3 +14,12 @@ class PlantForm(forms.ModelForm):
 
     image = forms.ImageField(label='Image', required=False,
                              widget=CustomClearableFileInput)
+
+
+class AddPlantRecordForm(forms.ModelForm):
+    """
+    Form class for adding plant records
+    """
+    class Meta:
+        model = PlantRecord
+        fields = ('plant',)

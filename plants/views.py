@@ -8,10 +8,11 @@ from django.db.models.functions import Lower
 from django.db.models import Q
 from django.http import HttpResponse
 from django.contrib.messages.views import SuccessMessageMixin
+from wild_carbon.mixins import SuperUserRequiredMixin
 
 from .models import Plant, PlantRecord, PlantState
 from locations.models import Location
-from .forms import PlantForm
+from .forms import PlantForm, AddPlantRecordForm
 
 
 def all_plants(request):
@@ -260,4 +261,17 @@ def change_plant_state(request, record_pk):
             return redirect(reverse('list_plant_records'))
         record.plant_state = record.plant_state.next_plant_state
         record.save()
+        messages.success(request, ('The state of the plant has been changed'))
         return redirect(reverse('list_plant_records'))
+
+
+class AddPlantRecord(SuperUserRequiredMixin, SuccessMessageMixin,
+                     generic.CreateView):
+    """
+    Class based iview to add a plant record
+    """
+    form_class = AddPlantRecordForm
+    model = PlantRecord
+    template_name = 'plants/add_plant_record.html'
+    success_message = 'The plant record has been added'
+    success_url = reverse_lazy('list_plant_records')

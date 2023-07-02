@@ -16,4 +16,6 @@ urlpatterns = [
           name='list_plant_records'),
      path('change_plant_state/<int:record_pk>', views.change_plant_state,
           name='change_plant_state'),
+     path('add_plant_record/', views.AddPlantRecord.as_view(),
+          name='add_plant_record'),
 ]
