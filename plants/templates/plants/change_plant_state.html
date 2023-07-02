@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}Change plant state{% endblock %}
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="This page enable you to move plant records through the states">
+{% endblock %}
+
+{% block content %}
+    <h1>Change Plant State</h1>
+    <form method="POST" action="{% url 'change_plant_state' record.pk %}" class="form mb-2">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <h2>{{ record.plant.common_name }}</h2>
+        <div>ID: {{ record.plant_number }}</div>
+        <div>Current state: {{ record.plant_state.plant_state_friendly_name }}</div>
+        <div>Moving the plant to the next state cannot be undone.</div>
+        <div>Please tick the box to indicate that you wish to proceed</div>
+        <input type="checkbox" required>
+        <div class="text-right">
+            <a class="btn btn-outline-black rounded-0" href="{% url 'list_plant_records' %}">Back</a>
+            <button id="plant-submit-btn" class="btn btn-black rounded-0" type="submit">Move to {{ record.plant_state.next_plant_state.plant_state_friendly_name }}</button>
+        </div>
+    </form>
+{% endblock%}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}

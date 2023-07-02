@@ -14,4 +14,6 @@ urlpatterns = [
           name='common_name_validate'),
      path('list_plant_records/', views.list_plant_records,
           name='list_plant_records'),
+     path('change_plant_state/<int:record_pk>', views.change_plant_state,
+          name='change_plant_state'),
 ]

@@ -210,8 +210,7 @@ def list_plant_records(request):
 
     if request.method == 'GET':
         all_records = PlantRecord.objects.all()
-        states = PlantState.objects.all()
-        pending_state = states.filter(plant_state_name='pending')
+
         pending = ((all_records.
                    filter(plant_state__plant_state_name__contains='pending')).
                    order_by('date_state_changed'))
@@ -229,3 +228,36 @@ def list_plant_records(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def change_plant_state(request, record_pk):
+    """
+    Change the plant state in the plant record
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Wild Carbon '
+                       'staff can do that.')
+        return redirect(reverse('home'))
+
+    record = get_object_or_404(PlantRecord, pk=record_pk)
+    if request.method == 'GET':
+        if record.plant_state.plant_state_name == 'planted':
+            messages.error(request, 'Sorry, thant plant is planted'
+                           ' which is the last state')
+            return redirect(reverse('list_plant_records'))
+
+        template = 'plants/change_plant_state.html'
+        context = {
+            'record': record,
+        }
+        return render(request, template, context)
+
+    if request.method == 'POST':
+        if record.plant_state.plant_state_name == 'planted':
+            messages.error(request, 'Sorry, thant plant is planted'
+                           ' which is the last state')
+            return redirect(reverse('list_plant_records'))
+        record.plant_state = record.plant_state.next_plant_state
+        record.save()
+        return redirect(reverse('list_plant_records'))
