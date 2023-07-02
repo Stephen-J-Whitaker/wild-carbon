@@ -8,6 +8,7 @@ from django_countries.fields import CountryField
 
 from plants.models import Plant
 from profiles.models import UserProfile
+from locations.models import Location
 
 
 class Order(models.Model):
@@ -83,6 +84,9 @@ class OrderLineItem(models.Model):
                               related_name='lineitems')
     plant = models.ForeignKey(Plant, null=False, blank=False,
                               on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.SET_NULL,
+                                 null=True, blank=False,
+                                 related_name='location_line_items')
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,

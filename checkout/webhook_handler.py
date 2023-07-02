@@ -6,6 +6,7 @@ from django.conf import settings
 from .models import Order, OrderLineItem
 from plants.models import Plant
 from profiles.models import UserProfile
+from locations.models import Location
 
 import json
 import time
@@ -136,10 +137,12 @@ class StripeWH_Handler:
                 )
                 for item_id, item_data in json.loads(bag).items():
                     plant = Plant.objects.get(id=item_id)
+                    location = Location.objects.get(id=1)
                     order_line_item = OrderLineItem(
                         order=order,
                         plant=plant,
                         quantity=item_data,
+                        location=location,
                     )
                     order_line_item.save()
             except Exception as e:

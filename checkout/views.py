@@ -11,6 +11,7 @@ from plants.models import Plant
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from basket.contexts import basket_contents
+from locations.models import Location
 
 import stripe
 import json
@@ -71,11 +72,12 @@ def checkout(request):
             for item_id, item_data in basket.items():
                 try:
                     plant = Plant.objects.get(id=item_id)
-
+                    location = Location.objects.get(id=1)
                     order_line_item = OrderLineItem(
                         order=order,
                         plant=plant,
                         quantity=item_data,
+                        location=location,
                     )
                     order_line_item.save()
                 except Plant.DoesNotExist:
