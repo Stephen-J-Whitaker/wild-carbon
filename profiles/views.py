@@ -81,13 +81,13 @@ def carbon_summary(request):
                               plants_outstanding(co2_outstanding))
         tree_life = settings.TREE_LIFE_EXPECTANCY
 
-        template = 'profiles/carbon_summary.html'
-        context = {
-            'plant_count': plant_count,
-            'tree_life': tree_life,
-            'sequestered_co2': sequestered_co2,
-            'co2_outstanding': co2_outstanding,
-            'plants_outstanding': plants_outstanding,
-        }
+    template = 'profiles/carbon_summary.html'
+    context = {
+        'plant_count': plant_count,
+        'tree_life': tree_life,
+        'sequestered_co2': sequestered_co2,
+        'co2_outstanding': co2_outstanding,
+        'plants_outstanding': plants_outstanding,
+    }
 
-    return render(request, 'profiles/carbon_summary.html', context)
+    return render(request, template, context)

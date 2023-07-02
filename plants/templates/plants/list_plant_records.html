@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}plant records{% endblock %}
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="This page lists all the plant the plant records on the Wild Carbon system">
+{% endblock %}
+
+{% block content %}
+    <h1>Plant Records</h1>
+    <div class="table-responsive rounded d-none d-md-block">
+        <h2>Pending Trees</h2>
+        <table class="table table-sm table-borderless">
+            <thead class="text-black">
+                <tr>
+                    <th scope="col">Plant name</th>
+                    <th scope="col">plant id</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            {% for record in pending_records %}
+                <tr>
+                    <td class="p-3 w-25">
+                        {{ record.plant.common_name }}
+                    </td>
+                    <td class="py-3">
+                        {{ record.id }}
+                    </td>
+                    <td class="py-3">
+                        <a href="#">Update State</a> |
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock%}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/wild_carbon/search_sort.js' %}"></script>
+{% endblock %}

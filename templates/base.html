@@ -100,6 +100,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="#" id="administration-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administration</a>
                                     <ul class="dropdown-menu border-0" aria-labelledby="administration-link">
+                                        <li><a class="nav-link dropdown-item" href="{% url 'list_plant_records' %}">Plant Records</a></li>
                                         <li><a class="nav-link dropdown-item" href="{% url 'list_plants' %}">Plan Admin</a></li>
                                         <li><a class="nav-link dropdown-item" href="{% url 'location_plants_link' 1 %}">Plant Availability</a></li>
                                         {% if user.is_staff %}

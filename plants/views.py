@@ -9,7 +9,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.contrib.messages.views import SuccessMessageMixin
 
-from .models import Plant
+from .models import Plant, PlantRecord, PlantState
 from locations.models import Location
 from .forms import PlantForm
 
@@ -146,7 +146,7 @@ class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         if not request.user.is_superuser:
             messages.error(request, 'Sorry, only Wild Carbon '
                            'staff can do that.')
-            return redirect(reverse('list_plants'))
+            return redirect(reverse('home'))
         plant_id = self.kwargs['pk']
         plant = get_object_or_404(Plant, pk=plant_id)
         plant.image.delete()
@@ -196,3 +196,31 @@ def common_name_validate(request):
             return HttpResponse("in_use")
         else:
             return HttpResponse("available")
+
+
+@login_required
+def list_plant_records(request):
+    """
+    List all of the plant records
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Wild Carbon '
+                       'staff can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'GET':
+        all_records = PlantRecord.objects.all()
+        states = PlantState.objects.all()
+        pending_state = states.filter(plant_state_name='pending')
+        print(pending_state)
+        pending_records = all_records.filter(plant_state=pending_state.id)
+        print(pending_records)
+        # growing_records
+        # planted_records
+    template = 'plants/list_plant_records.html'
+    context = {
+        # 'records': records,
+
+    }
+
+    return render(request, template, context)
