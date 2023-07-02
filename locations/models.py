@@ -27,7 +27,7 @@ class Location(models.Model):
         """
         Override __str__ with the correct location name
         """
-        return self.location_name
+        return self.location_friendly_name
 
     def get_absolute_url(self):
         """
