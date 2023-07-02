@@ -56,7 +56,7 @@ class PlantRecord(models.Model):
     from locations.models import Location  # Prevent circular imports
     plant = models.ForeignKey(Plant, on_delete=models.SET_NULL, null=True,
                               blank=False, related_name='plant_records')
-    plant_number = models.IntegerField(null=True, blank=True)
+    plant_number = models.BigIntegerField(null=True, blank=True)
     date_state_changed = models.DateField(auto_now=True, blank=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True,
                               blank=True, related_name='order_plant_records')
@@ -72,7 +72,7 @@ class PlantRecord(models.Model):
         Ensure the system can't have duplicate plant ids
         """
         constraints = [
-            models.UniqueConstraint(fields=['plant_id'],
+            models.UniqueConstraint(fields=['plant_number'],
                                     name='unique_plant_id'),
         ]
 
