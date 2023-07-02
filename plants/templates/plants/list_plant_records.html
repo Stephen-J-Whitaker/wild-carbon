@@ -17,19 +17,81 @@
                 <tr>
                     <th scope="col">Plant name</th>
                     <th scope="col">plant id</th>
+                    <th scope="col">Date went pending</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
-            {% for record in pending_records %}
+            {% for record in pending %}
                 <tr>
                     <td class="p-3 w-25">
                         {{ record.plant.common_name }}
                     </td>
                     <td class="py-3">
-                        {{ record.id }}
+                        {{ record.plant_number }}
                     </td>
                     <td class="py-3">
-                        <a href="#">Update State</a> |
+                        {{ record.date_state_changed }}
+                    </td>
+                    <td class="py-3">
+                        <a href="#">Update State</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="table-responsive rounded d-none d-md-block">
+        <h2>Growing Trees</h2>
+        <table class="table table-sm table-borderless">
+            <thead class="text-black">
+                <tr>
+                    <th scope="col">Plant name</th>
+                    <th scope="col">plant id</th>
+                    <th scope="col">Date started growing</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            {% for record in growing %}
+                <tr>
+                    <td class="p-3 w-25">
+                        {{ record.plant.common_name }}
+                    </td>
+                    <td class="py-3">
+                        {{ record.plant_number }}
+                    </td>
+                    <td class="py-3">
+                        {{ record.date_state_changed }}
+                    </td>
+                    <td class="py-3">
+                        <a href="#">Update State</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="table-responsive rounded d-none d-md-block">
+        <h2>Planted Trees</h2>
+        <table class="table table-sm table-borderless">
+            <thead class="text-black">
+                <tr>
+                    <th scope="col">Plant name</th>
+                    <th scope="col">plant id</th>
+                    <th scope="col">Date planted</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            {% for record in planted %}
+                <tr>
+                    <td class="p-3 w-25">
+                        {{ record.plant.common_name }}
+                    </td>
+                    <td class="py-3">
+                        {{ record.plant_number }}
+                    </td>
+                    <td class="py-3">
+                        {{ record.date_state_changed }}
+                    </td>
+                    <td class="py-3">
+                        <a href="#">Update State</a>
                     </td>
                 </tr>
             {% endfor %}

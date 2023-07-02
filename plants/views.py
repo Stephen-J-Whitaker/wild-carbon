@@ -212,15 +212,20 @@ def list_plant_records(request):
         all_records = PlantRecord.objects.all()
         states = PlantState.objects.all()
         pending_state = states.filter(plant_state_name='pending')
-        print(pending_state)
-        pending_records = all_records.filter(plant_state=pending_state.id)
-        print(pending_records)
-        # growing_records
-        # planted_records
+        pending = ((all_records.
+                   filter(plant_state__plant_state_name__contains='pending')).
+                   order_by('date_state_changed'))
+        growing = ((all_records.
+                   filter(plant_state__plant_state_name__contains='growing')).
+                   order_by('date_state_changed'))
+        planted = ((all_records.
+                   filter(plant_state__plant_state_name__contains='planted')).
+                   order_by('date_state_changed'))
     template = 'plants/list_plant_records.html'
     context = {
-        # 'records': records,
-
+        'pending': pending,
+        'growing': growing,
+        'planted': planted,
     }
 
     return render(request, template, context)
