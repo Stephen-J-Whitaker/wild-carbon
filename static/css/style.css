@@ -364,10 +364,6 @@ main {
     width: var(--footer-icon-size);
 }
 
-.footer-right-facebook {
-    display: none;
-}
-
 .footer-inner-container {
     display: grid;
     grid-template-columns: 130px auto 130px;
