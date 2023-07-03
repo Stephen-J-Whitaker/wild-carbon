@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Plant
+from .models import Plant, PlantRecord
 
 
 class PlantAdmin(admin.ModelAdmin):
@@ -18,3 +18,12 @@ class PlantAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Plant, PlantAdmin)
+
+
+@admin.register(PlantRecord)
+class PlantRecord(admin.ModelAdmin):
+    """
+    Plant Record admin registration class
+    """
+    list_display = ('plant', 'order', 'plant_state', 'date_state_changed')
+    search_fields = ['order', 'plant']

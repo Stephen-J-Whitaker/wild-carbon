@@ -24,7 +24,7 @@
                 <span>{{ plant.species }}</span>
                 <div>{{ plant.description }}</div>
                 <div>&#8364 {{ plant.price }}</div>
-                <div>{{ plant.sku }}</div>
+                <div>SKU: {{ plant.sku }}</div>
             </div>
             <!-- Quantity selector template code provided by Code Institute -->
             <form class="form" action="{% url 'add_to_basket' plant.id %}" method="POST">

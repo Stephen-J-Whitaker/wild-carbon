@@ -49,7 +49,7 @@
                     <span>{{ plant.genus }}</span>
                     <span>{{ plant.species }}</span>
                     <div>&#8364 {{ plant.price }}</div>
-                    <div>{{ plant.sku }}</div>
+                    <div>SKU: {{ plant.sku }}</div>
                     <div>
                         <a href="{% url 'edit_plant' plant.id %}">Edit</a> |
                         <a href="{% url 'delete_plant' plant.id %}">Delete</a>
