@@ -18,4 +18,7 @@ urlpatterns = [
           name='change_plant_state'),
      path('add_plant_record/', views.AddPlantRecord.as_view(),
           name='add_plant_record'),
+     path('delete_plant_record/<int:pk>',
+          views.DeletePlantRecord.as_view(),
+          name='delete_plant_record'),
 ]

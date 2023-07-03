@@ -34,6 +34,7 @@
                     </td>
                     <td class="py-3">
                         <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
+                        <a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>
                     </td>
                 </tr>
             {% endfor %}
@@ -62,6 +63,7 @@
                     </td>
                     <td class="py-3">
                         <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
+                        <a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>
                     </td>
                 </tr>
             {% endfor %}

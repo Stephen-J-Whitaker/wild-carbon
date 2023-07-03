@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}Confirm deletion of a plant record{% endblock %}
+
+{% block main_style %}main-container-offset{% endblock %}
+
+{% block description %}
+    <meta name="description" content="On this page you can confirm deletion of a plant record from the Wild Carbon system">
+{% endblock %}
+
+{% block content %}
+    <h2 class="general-header">Confirm plant record deletion</h2>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <p class="confirm-delete"><br><br>Are you sure you want to delete the record for plant with id "{{ object.plant_number }}"?</p>
+            {{ form }}
+            <div class="button-container">
+                <button type="submit">Delete Plant Record</button>
+                <a href="{% url 'list_plant_records' %}">No Thanks</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block modal_style %}modal-offset{% endblock %}
+{% block privacy_modal_style %}modal-offset{% endblock %}

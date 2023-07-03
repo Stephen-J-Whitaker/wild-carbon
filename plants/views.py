@@ -9,6 +9,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.contrib.messages.views import SuccessMessageMixin
 from wild_carbon.mixins import SuperUserRequiredMixin
+from django.http import Http404
 
 from .models import Plant, PlantRecord, PlantState
 from locations.models import Location
@@ -130,7 +131,8 @@ def edit_plant(request, plant_id):
     return render(request, template, context)
 
 
-class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
+class DeletePlant(SuperUserRequiredMixin, SuccessMessageMixin,
+                  generic.DeleteView):
     """
     A class based view to confirm a deletion of a plant
     Code adapted from music aid project:
@@ -138,16 +140,12 @@ class DeletePlant(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
         music-aid/blob/main/songbook/views.py
     """
     model = Plant
-    template_name = 'plants/confirm_plant_delete.html'
-    success_message = "The plant has been deleted"
+    template_name = 'plants/confirm_delete_plant.html'
+    success_message = 'The plant has been deleted'
 
     # Code sourced from stackoverflow.com:
     # questions/24822509/success-message-in-deleteview-not-shown
     def delete(self, request, *args, **kwargs):
-        if not request.user.is_superuser:
-            messages.error(request, 'Sorry, only Wild Carbon '
-                           'staff can do that.')
-            return redirect(reverse('home'))
         plant_id = self.kwargs['pk']
         plant = get_object_or_404(Plant, pk=plant_id)
         plant.image.delete()
@@ -283,3 +281,35 @@ class AddPlantRecord(SuperUserRequiredMixin, SuccessMessageMixin,
         plant_location = Location.objects.get(location_name='west_mayo')
         form.instance.location = plant_location
         return super().form_valid(form)
+
+
+class DeletePlantRecord(SuperUserRequiredMixin, SuccessMessageMixin,
+                        generic.DeleteView):
+    """
+    A class based view to confirm a deletion of a plant record
+    """
+    model = PlantRecord
+    template_name = 'plants/confirm_delete_plant_record.html'
+    success_message = 'The plant record has been deleted'
+    error_message = 'Sorry, this plant is in a state of planted'
+
+    # Code sourced from stackoverflow.com:
+    # questions/24822509/success-message-in-deleteview-not-shown
+    def delete(self, request, *args, **kwargs):
+        record_pk = self.kwargs['pk']
+        plant_record = get_object_or_404(PlantRecord, pk=record_pk)
+        print(plant_record.plant_state.plant_state_name)
+        if plant_record.plant_state.plant_state_name == 'planted':
+            # messages.error(self.request, self.error_message)
+            raise Http404(self.error_message)
+            # redirect(reverse('list_plant_records'))
+        messages.success(self.request, self.success_message)
+        return super(DeletePlantRecord, self).delete(request, *args, **kwargs)
+        # End of code sourced from stackoverflow
+        # questions/24822509/success-message-in-deleteview-not-shown
+
+    def get_success_url(self, **kwargs):
+        """
+        If success send back to correct view
+        """
+        return reverse_lazy('list_plant_records')
