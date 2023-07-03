@@ -31,7 +31,8 @@ def profile(request):
     order_data = []
     for order in orders:
         order_record_data = {}
-        order_records = order.order_plant_records.all().order_by('plant')
+        order_records = (order.order_plant_records.all().
+                         order_by('-plant_state'))
         order_record_data['order'] = order
         order_record_data['plant_records'] = order_records
         order_data.append(order_record_data)

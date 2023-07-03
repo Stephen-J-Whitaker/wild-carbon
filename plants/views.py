@@ -298,7 +298,7 @@ class DeletePlantRecord(SuperUserRequiredMixin, SuccessMessageMixin,
     def delete(self, request, *args, **kwargs):
         record_pk = self.kwargs['pk']
         plant_record = get_object_or_404(PlantRecord, pk=record_pk)
-        print(plant_record.plant_state.plant_state_name)
+
         if plant_record.plant_state.plant_state_name == 'planted':
             raise Http404(self.error_message)
         messages.success(self.request, self.success_message)
