@@ -275,3 +275,11 @@ class AddPlantRecord(SuperUserRequiredMixin, SuccessMessageMixin,
     template_name = 'plants/add_plant_record.html'
     success_message = 'The plant record has been added'
     success_url = reverse_lazy('list_plant_records')
+
+    def form_valid(self, form):
+        """
+        Add the location of the plant to the form
+        """
+        plant_location = Location.objects.get(location_name='west_mayo')
+        form.instance.location = plant_location
+        return super().form_valid(form)

@@ -11,12 +11,10 @@ def create_plant_record_on_line_item_save(sender, instance, created, **kwargs):
     Create plant record on order line item create
     """
     if created:
-        plant_state = PlantState.objects.get(plant_state_name='pending')
         for i in range(instance.quantity):
             PlantRecord.objects.create(plant=instance.plant,
                                        order=instance.order,
-                                       location=instance.location,
-                                       plant_state=plant_state)
+                                       location=instance.location)
 
 
 @receiver(post_save, sender=PlantRecord)
@@ -25,5 +23,7 @@ def update_plant_record_on_create(sender, instance, created, **kwargs):
     Populate plant_number from primary key on creation
     """
     if created:
+        plant_state = PlantState.objects.get(plant_state_name='pending')
         instance.plant_number = instance.id
+        instance.plant_state = plant_state
         instance.save()
