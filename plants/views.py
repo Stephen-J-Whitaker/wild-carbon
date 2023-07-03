@@ -212,13 +212,13 @@ def list_plant_records(request):
 
         pending = ((all_records.
                    filter(plant_state__plant_state_name__contains='pending')).
-                   order_by('date_state_changed'))
+                   order_by('date_state_changed', 'plant'))
         growing = ((all_records.
                    filter(plant_state__plant_state_name__contains='growing')).
-                   order_by('date_state_changed'))
+                   order_by('date_state_changed', 'plant'))
         planted = ((all_records.
                    filter(plant_state__plant_state_name__contains='planted')).
-                   order_by('date_state_changed'))
+                   order_by('date_state_changed', 'plant'))
     template = 'plants/list_plant_records.html'
     context = {
         'pending': pending,

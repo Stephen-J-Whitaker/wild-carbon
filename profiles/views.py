@@ -27,12 +27,19 @@ def profile(request):
                            ' ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('date')
+    order_data = []
+    for order in orders:
+        order_record_data = {}
+        order_records = order.order_plant_records.all().order_by('plant')
+        order_record_data['order'] = order
+        order_record_data['plant_records'] = order_records
+        order_data.append(order_record_data)
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
-        'orders': orders,
+        'order_data': order_data,
         'on_profile_page': True
     }
 

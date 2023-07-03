@@ -15,7 +15,7 @@
         {{ form | crispy }}
         <button type="submit">Create Record</button>
     </form>
-
+    <a href="{% url 'list_plant_records' %}">Back</a>
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}
