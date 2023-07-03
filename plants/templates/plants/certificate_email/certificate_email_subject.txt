@@ -1,0 +1,1 @@
+Wild Carbon Confirmation of planting {{ plant_record.plant.plant_common_name }} number {{ plant_record.plant_number }}

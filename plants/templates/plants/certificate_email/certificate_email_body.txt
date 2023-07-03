@@ -1,0 +1,7 @@
+Hello {{ plant_record.order.full_name }}!
+
+This is a digital certificate to confirm that {{ plant_record.plant.common_name }} 
+ID: {{ plant_record.plant_number }} was planted for you on {{ plant_record.date_state_changed }}
+at our {{ plant_record.location.location_friendly_name }} site.
+
+Wild Carbon

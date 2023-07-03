@@ -3,6 +3,7 @@ from django.dispatch import receiver
 
 from .models import PlantRecord, PlantState
 from checkout.models import OrderLineItem
+from .workflow_automation import planted_actions
 
 
 @receiver(post_save, sender=OrderLineItem)
@@ -21,7 +22,11 @@ def create_plant_record_on_line_item_save(sender, instance, created, **kwargs):
 def update_plant_record_on_create(sender, instance, created, **kwargs):
     """
     Populate plant_number from primary key on creation
+    and take action based on workflow state changes
     """
+    if instance.plant_state.plant_state_name == 'planted':
+        planted_actions(instance)
+
     if created:
         plant_state = PlantState.objects.get(plant_state_name='pending')
         instance.plant_number = instance.id
