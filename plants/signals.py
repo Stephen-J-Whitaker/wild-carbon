@@ -24,11 +24,12 @@ def update_plant_record_on_create(sender, instance, created, **kwargs):
     Populate plant_number from primary key on creation
     and take action based on workflow state changes
     """
-    if instance.plant_state.plant_state_name == 'planted':
-        planted_actions(instance)
 
     if created:
         plant_state = PlantState.objects.get(plant_state_name='pending')
         instance.plant_number = instance.id
         instance.plant_state = plant_state
         instance.save()
+
+    if instance.plant_state.plant_state_name == 'planted':
+        planted_actions(instance)
