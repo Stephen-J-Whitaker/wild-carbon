@@ -67,7 +67,7 @@
                     <div>{{ plant.common_name }}</div>
                     <span>{{ plant.genus }}</span>
                     <span>{{ plant.species }}</span>
-                    <div>&#8364 {{ plant.price | calc_vat | floatformat:2}} inc VAT</div>
+                    <div>&#8364 {{ plant.price | calc_vat | floatformat:2 }} inc VAT</div>
                     <div>SKU: {{ plant.sku }}</div>
                 </a>
             {% endfor %}

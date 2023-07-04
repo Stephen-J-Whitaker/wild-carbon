@@ -33,10 +33,12 @@ def add_to_basket(request, item_id):
         basket[item_id] += quantity
         name = plant.common_name
         messages.success(request,
-                         f'Updated {name} quantity to {basket[item_id]}')
+                         f'Updated {name} quantity to {basket[item_id]}',
+                         extra_tags='show-basket')
     else:
         basket[item_id] = quantity
-        messages.success(request, f'Added {plant.common_name} to your basket')
+        messages.success(request, f'Added {plant.common_name} to your basket',
+                         extra_tags='show-basket')
 
     request.session['basket'] = basket
     return redirect(redirect_url)
@@ -61,11 +63,13 @@ def adjust_basket(request, item_id):
     if quantity > 0:
         basket[item_id] = quantity
         messages.success(request, (f'Updated {plant.common_name} '
-                                   f'quantity to {basket[item_id]}'))
+                                   f'quantity to {basket[item_id]}'
+                                   ), extra_tags='show-basket')
     else:
         basket.pop(item_id)
         messages.success(request,
-                         f'Removed {plant.common_name} from your basket')
+                         f'Removed {plant.common_name} from your basket',
+                         extra_tags='show-basket')
 
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
@@ -82,7 +86,8 @@ def remove_from_basket(request, item_id):
 
         basket.pop(item_id)
         messages.success(request, f'Removed plant '
-                         f'from your basket')
+                         f'from your basket',
+                         extra_tags='show-basket')
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
