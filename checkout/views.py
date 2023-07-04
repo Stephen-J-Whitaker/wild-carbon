@@ -12,6 +12,7 @@ from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from basket.contexts import basket_contents
 from locations.models import Location
+from basket.basket_checks import clean_basket
 
 import stripe
 import json
@@ -23,19 +24,44 @@ def cache_checkout_data(request):
     Cache the missing checkout data to the stripe payment intent
     cache_checkout_data code supplied by Code Institute
     """
-    try:
-        pid = request.POST.get('client_secret').split('_secret')[0]
-        stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
-            'basket': json.dumps(request.session.get('basket', {})),
-            'save_info': request.POST.get('save_info'),
-            'username': request.user,
-        })
-        return HttpResponse(status=200)
-    except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
-        return HttpResponse(content=e, status=400)
+    if clean_basket(request):
+        try:
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+            stripe.PaymentIntent.modify(pid, metadata={
+                'basket': json.dumps(request.session.get('basket', {})),
+                'save_info': request.POST.get('save_info'),
+                'username': request.user,
+            })
+        except Exception as e:
+            messages.error(request, 'Sorry, your payment cannot be \
+                processed right now. Please try again later.')
+            return HttpResponse(content=e, status=400)
+
+        basket = basket_contents(request)
+        total = basket['grand_total']
+        total = round(total * 100)
+        print('new total', total)
+        stripe_total = int(request.session.get('stripe_total', {}))
+        print('strip total', stripe_total)
+        if total == stripe_total:
+            print('in total check')
+            return HttpResponse(status=200)
+        else:
+            messages.error(request, (
+                "Sorry, one or more of the plants "
+                " in your basket is no longer "
+                "available and has removed")
+            )
+            return HttpResponse(status=400)
+
+    else:
+        messages.error(request, (
+            "Sorry, one or more of the plants "
+            " in your basket is no longer "
+            "available and has removed")
+        )
+        return redirect(reverse('view_basket'))
 
 
 def checkout(request):
@@ -48,6 +74,7 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
+
         basket = request.session.get('basket', {})
 
         form_data = {
@@ -67,6 +94,9 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
+
+            # clean_basket(request)
+
             order.original_basket = json.dumps(basket)
             order.save()
             for item_id, item_data in basket.items():
@@ -97,41 +127,52 @@ def checkout(request):
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
-        basket = request.session.get('basket', {})
-        if not basket:
-            messages.error(request,
-                           "There's nothing in your basket at the moment")
-            return redirect(reverse('carbon_capture'))
 
-        current_basket = basket_contents(request)
-        total = current_basket['grand_total']
-        stripe_total = round(total * 100)
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+        if clean_basket(request):
 
-        # Attempt to prefill the form with any info the
-        # user maintains in their profile
-        if request.user.is_authenticated:
-            try:
-                profile = UserProfile.objects.get(user=request.user)
-                order_form = OrderForm(initial={
-                    'full_name': profile.user.get_full_name(),
-                    'email': profile.user.email,
-                    'phone_number': profile.default_phone_number,
-                    'country': profile.default_country,
-                    'postcode': profile.default_postcode,
-                    'town_or_city': profile.default_town_or_city,
-                    'street_address1': profile.default_street_address1,
-                    'street_address2': profile.default_street_address2,
-                    'county': profile.default_county,
-                })
-            except UserProfile.DoesNotExist:
+            basket = request.session.get('basket', {})
+            if not basket:
+                messages.error(request,
+                               "There's nothing in your basket at the moment")
+                return redirect(reverse('carbon_capture'))
+
+            current_basket = basket_contents(request)
+            total = current_basket['grand_total']
+            stripe_total = round(total * 100)
+            stripe.api_key = stripe_secret_key
+            request.session['stripe_total'] = stripe_total
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY,
+            )
+
+            # Attempt to prefill the form with any info the
+            # user maintains in their profile
+            if request.user.is_authenticated:
+                try:
+                    profile = UserProfile.objects.get(user=request.user)
+                    order_form = OrderForm(initial={
+                        'full_name': profile.user.get_full_name(),
+                        'email': profile.user.email,
+                        'phone_number': profile.default_phone_number,
+                        'country': profile.default_country,
+                        'postcode': profile.default_postcode,
+                        'town_or_city': profile.default_town_or_city,
+                        'street_address1': profile.default_street_address1,
+                        'street_address2': profile.default_street_address2,
+                        'county': profile.default_county,
+                    })
+                except UserProfile.DoesNotExist:
+                    order_form = OrderForm()
+            else:
                 order_form = OrderForm()
         else:
-            order_form = OrderForm()
+            messages.error(request, (
+                "Sorry, one or more of the plants "
+                " in your basket is no longer "
+                "available and has removed")
+            )
+            return redirect(reverse('view_basket'))
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -183,6 +224,7 @@ def checkout_success(request, order_number):
 
     if 'basket' in request.session:
         del request.session['basket']
+        del request.session['stripe_total']
 
     template = 'checkout/checkout_success.html'
     context = {

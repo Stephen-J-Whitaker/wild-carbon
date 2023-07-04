@@ -135,7 +135,7 @@ class StripeWH_Handler:
                     original_basket=basket,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in json.loads(bag).items():
+                for item_id, item_data in json.loads(basket).items():
                     plant = Plant.objects.get(id=item_id)
                     location = Location.objects.get(id=1)
                     order_line_item = OrderLineItem(
