@@ -78,15 +78,10 @@ def remove_from_basket(request, item_id):
     """
 
     try:
-        get_object_or_404(Location, pk=1)
-        location_plants = (Location.objects.get(pk=1).
-                           location_plants.all())
-        plant = get_object_or_404(location_plants, pk=item_id)
-
         basket = request.session.get('basket', {})
 
         basket.pop(item_id)
-        messages.success(request, f'Removed {plant.common_name} '
+        messages.success(request, f'Removed plant '
                          f'from your basket')
 
         request.session['basket'] = basket
