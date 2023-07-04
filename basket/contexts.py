@@ -3,12 +3,16 @@ from django.shortcuts import get_object_or_404
 from locations.models import Location
 from django.conf import settings
 
+from .basket_checks import clean_basket
+
 
 def basket_contents(request):
     """
     Context to hold basket contents
     basket_contents code supplied by Code Institute
     """
+    clean_basket(request)
+
     basket_items = []
     total = 0
     plant_count = 0
