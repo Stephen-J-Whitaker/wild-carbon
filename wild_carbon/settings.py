@@ -220,6 +220,7 @@ if DEBUG is True:
     DEFAULT_FROM_EMAIL = 'wild.carbon.sequestration@gmail.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'wild.carbon.sequestration@gmail.com'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'

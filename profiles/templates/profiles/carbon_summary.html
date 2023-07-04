@@ -27,6 +27,88 @@
             </div>
         </div>
     </div>
+    <div class="content-container">
+        <div class="inner-content-container">
+            <h2 class="content-header">Your Planting Records</h2>
+            <div class="text-content">
+                <div class="table-responsive rounded d-none d-md-block">
+                    <h2>Planted Trees</h2>
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col">Plant name</th>
+                                <th scope="col">plant id</th>
+                                <th scope="col">Date planted</th>
+                            </tr>
+                        </thead>
+                        {% for record in planted %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    {{ record.plant.common_name }}
+                                </td>
+                                <td class="py-3">
+                                    {{ record.plant_number }}
+                                </td>
+                                <td class="py-3">
+                                    {{ record.date_state_changed }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="table-responsive rounded d-none d-md-block">
+                    <h2>Growing Trees</h2>
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col">Plant name</th>
+                                <th scope="col">plant id</th>
+                                <th scope="col">Date started growing</th>
+                            </tr>
+                        </thead>
+                        {% for record in growing %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    {{ record.plant.common_name }}
+                                </td>
+                                <td class="py-3">
+                                    {{ record.plant_number }}
+                                </td>
+                                <td class="py-3">
+                                    {{ record.date_state_changed }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="table-responsive rounded d-none d-md-block">
+                    <h2>Pending Trees</h2>
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col">Plant name</th>
+                                <th scope="col">plant id</th>
+                                <th scope="col">Date went pending</th>
+                            </tr>
+                        </thead>
+                        {% for record in pending %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    {{ record.plant.common_name }}
+                                </td>
+                                <td class="py-3">
+                                    {{ record.plant_number }}
+                                </td>
+                                <td class="py-3">
+                                    {{ record.date_state_changed }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>                
+            </div>
+        </div>
+    </div>
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}

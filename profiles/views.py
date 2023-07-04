@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
+from checkout.models import Order
 from .forms import UserProfileForm
 import profiles.co2_calculations as co2_calculations
 from django.conf import settings
@@ -32,7 +33,7 @@ def profile(request):
     for order in orders:
         order_record_data = {}
         order_records = (order.order_plant_records.all().
-                         order_by('-plant_state'))
+                         order_by('-plant_state', 'plant'))
         order_record_data['order'] = order
         order_record_data['plant_records'] = order_records
         order_data.append(order_record_data)
@@ -74,6 +75,33 @@ def order_history(request, order_number):
     return render(request, template, context)
 
 
+def record_sort_pending(all_records):
+    """
+    Filter for pending records
+    """
+    pending = (all_records.
+               filter(plant_state__plant_state_name__contains='pending'))
+    return pending
+
+
+def record_sort_growing(all_records):
+    """
+    Filter for growing records
+    """
+    growing = (all_records.
+               filter(plant_state__plant_state_name__contains='growing'))
+    return growing
+
+
+def record_sort_planted(all_records):
+    """
+    Filter for planted records
+    """
+    planted = (all_records.
+               filter(plant_state__plant_state_name__contains='planted'))
+    return planted
+
+
 @login_required
 def carbon_summary(request):
     """
@@ -89,6 +117,26 @@ def carbon_summary(request):
                               plants_outstanding(co2_outstanding))
         tree_life = settings.TREE_LIFE_EXPECTANCY
 
+        profile = get_object_or_404(UserProfile, user=request.user)
+        all_user_orders = profile.orders.all()
+        first_pass = True
+        for order in all_user_orders:
+            all_records = (order.order_plant_records.all())
+            if first_pass:
+                pending = record_sort_pending(all_records)
+                growing = record_sort_growing(all_records)
+                planted = record_sort_planted(all_records)
+                first_pass = False
+            pending = (pending.union(record_sort_pending(all_records)).
+                       order_by('plant', 'date_state_changed'))
+            growing = (growing.union(record_sort_growing(all_records)).
+                       order_by('plant', 'date_state_changed'))
+            planted = (planted.union(record_sort_planted(all_records)).
+                       order_by('plant', 'date_state_changed'))
+        print('pending', pending)
+        print('growing', growing)
+        print('planted', planted)
+
     template = 'profiles/carbon_summary.html'
     context = {
         'plant_count': plant_count,
@@ -96,6 +144,9 @@ def carbon_summary(request):
         'sequestered_co2': sequestered_co2,
         'co2_outstanding': co2_outstanding,
         'plants_outstanding': plants_outstanding,
+        'pending': pending,
+        'growing': growing,
+        'planted': planted,
     }
 
     return render(request, template, context)
