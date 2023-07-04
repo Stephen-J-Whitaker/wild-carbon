@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block head_title %}Associate plants with a location{% endblock %}
 
@@ -23,7 +24,7 @@
                 <span>{{ plant.genus }}</span>
                 <span>{{ plant.species }}</span>
                 <div>{{ plant.description }}</div>
-                <div>&#8364 {{ plant.price }}</div>
+                <div>&#8364 {{ plant.price | calc_vat | floatformat:2 }} inc VAT</div>
                 <div>SKU: {{ plant.sku }}</div>
             </div>
             <!-- Quantity selector template code provided by Code Institute -->
