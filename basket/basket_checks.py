@@ -17,13 +17,9 @@ def clean_basket(request):
             get_object_or_404(Location, pk=1)
             location_plants = (Location.objects.get(pk=1).
                                location_plants.all())
-            print('location plants', location_plants)
             if not location_plants.filter(id=item_id).exists():
-                print('not at location', item_id)
                 clean_basket.pop(item_id)
-                print('clean_basket', clean_basket)
                 basket_clean = False
-        print(clean_basket)
         request.session['basket'] = clean_basket
         if not basket_clean:
             messages.error(request, (

@@ -41,11 +41,9 @@ def cache_checkout_data(request):
         basket = basket_contents(request)
         total = basket['grand_total']
         total = round(total * 100)
-        print('new total', total)
+
         stripe_total = int(request.session.get('stripe_total', {}))
-        print('strip total', stripe_total)
         if total == stripe_total:
-            print('in total check')
             return HttpResponse(status=200)
         else:
             messages.error(request, (
@@ -74,7 +72,6 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-
         basket = request.session.get('basket', {})
 
         form_data = {
@@ -94,9 +91,6 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
-
-            # clean_basket(request)
-
             order.original_basket = json.dumps(basket)
             order.save()
             for item_id, item_data in basket.items():
