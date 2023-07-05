@@ -133,9 +133,6 @@ def carbon_summary(request):
                        order_by('plant', 'date_state_changed'))
             planted = (planted.union(record_sort_planted(all_records)).
                        order_by('plant', 'date_state_changed'))
-        print('pending', pending)
-        print('growing', growing)
-        print('planted', planted)
 
     template = 'profiles/carbon_summary.html'
     context = {
