@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views import View, generic
+from django.views import generic
 from .forms import LocationPlantsForm
 from .models import Location
 from django.db.models.functions import Lower

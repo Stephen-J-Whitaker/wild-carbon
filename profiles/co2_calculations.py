@@ -1,7 +1,6 @@
 # Module for carbon summary calculations
 
 from django.shortcuts import get_object_or_404
-from django.db.models import Sum
 from profiles.models import UserProfile
 from django.conf import settings
 

@@ -1,4 +1,4 @@
-from locations.models import Location, Plant
+from locations.models import Location
 from django.contrib import messages
 from django.shortcuts import redirect, reverse
 from django.shortcuts import get_object_or_404

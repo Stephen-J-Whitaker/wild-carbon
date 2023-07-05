@@ -1,4 +1,3 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.urls import reverse_lazy
@@ -11,7 +10,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from wild_carbon.mixins import SuperUserRequiredMixin
 from django.http import Http404
 
-from .models import Plant, PlantRecord, PlantState
+from .models import Plant, PlantRecord
 from locations.models import Location
 from .forms import PlantForm, AddPlantRecordForm
 
@@ -81,7 +80,7 @@ def add_plant(request):
     if request.method == 'POST':
         form = PlantForm(request.POST, request.FILES)
         if form.is_valid():
-            plant = form.save()
+            form.save()
             messages.success(request, 'Successfully added plant!')
             return redirect(reverse('list_plants'))
         else:

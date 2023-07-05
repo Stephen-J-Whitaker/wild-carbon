@@ -6,4 +6,4 @@ class PlantsConfig(AppConfig):
     name = 'plants'
 
     def ready(self):
-        import plants.signals
+        import plants.signals  # noqa

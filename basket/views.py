@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse
 from django.shortcuts import HttpResponse, get_object_or_404
 from django.contrib import messages
 
-from plants.models import Plant
 from locations.models import Location
 
 
@@ -85,8 +84,8 @@ def remove_from_basket(request, item_id):
         basket = request.session.get('basket', {})
 
         basket.pop(item_id)
-        messages.success(request, f'Removed plant '
-                         f'from your basket',
+        messages.success(request, 'Removed plant '
+                         'from your basket',
                          extra_tags='show-basket')
 
         request.session['basket'] = basket

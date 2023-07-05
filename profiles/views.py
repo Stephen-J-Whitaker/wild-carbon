@@ -7,8 +7,6 @@ from .forms import UserProfileForm
 import profiles.co2_calculations as co2_calculations
 from django.conf import settings
 
-from checkout.models import Order
-
 
 @login_required
 def profile(request):
