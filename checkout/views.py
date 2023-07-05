@@ -40,10 +40,10 @@ def cache_checkout_data(request):
 
         basket = basket_contents(request)
         total = basket['grand_total']
-        total = round(total * 100)
+        total_check = round(total * 100)
 
         stripe_total = int(request.session.get('stripe_total', {}))
-        if total == stripe_total:
+        if total_check == stripe_total:
             return HttpResponse(status=200)
         else:
             messages.error(request, (

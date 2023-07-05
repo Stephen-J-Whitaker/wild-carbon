@@ -31,11 +31,11 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=90, null=True, blank=True)
     county = models.CharField(max_length=50, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    vat = models.DecimalField(max_digits=6, decimal_places=2,
+    vat = models.DecimalField(max_digits=15, decimal_places=2,
                               null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2,
+    order_total = models.DecimalField(max_digits=15, decimal_places=2,
                                       null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
+    grand_total = models.DecimalField(max_digits=15, decimal_places=2,
                                       null=False, default=0)
     original_basket = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False,
@@ -88,7 +88,7 @@ class OrderLineItem(models.Model):
                                  null=True, blank=False,
                                  related_name='location_line_items')
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
+    lineitem_total = models.DecimalField(max_digits=15, decimal_places=2,
                                          null=False, blank=False,
                                          editable=False)
 
