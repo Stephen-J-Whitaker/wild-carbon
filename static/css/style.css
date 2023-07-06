@@ -120,7 +120,7 @@ header {
 
 .nav-grid {
     display: grid;
-    grid-template-columns: 75px auto 75px;
+    grid-template-columns: 50px auto auto;
     grid-template-rows: var(--header-height);
     grid-template-areas: "header-nav-left header-nav-logo header-nav-right";
     width: 100%;
@@ -130,6 +130,7 @@ header {
     height: 40px;
     width: 40px;
     padding: 4px 4px;
+    margin-left: 10px;
 }
 
 .navbar-toggler-style {
@@ -174,7 +175,6 @@ header {
 
 #administration-link {
     color: var(--main-font-colour);
-    text-decoration: underline;
 }
 
 .dropdown-item {
@@ -186,6 +186,7 @@ header {
     display: flex;
     justify-content: center;
     font-size: large;
+    word-wrap: normal;
 }
 
 .logo-tagline {
@@ -205,7 +206,54 @@ footer {
 }
 
 .dropdown-menu {
+    background-color: transparent;
+}
+
+#account-dropdown-menu {
     background-color: var(--header-footer-background-colour);
+    margin: 0;
+    border: 0;
+}
+
+.dropdown-center {
+    height: 100%;
+}
+
+.account-dropdown-toggle:active,
+.account-dropdown-toggle {
+    background-color: transparent;
+    height: 100%;
+    border: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.basket-nav {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+.account-menu-icon,
+.basket-icon {
+    height: 30px;
+}
+
+.basket-icon {
+    margin-top: 18px;
+}
+
+.basket-total {
+    color: var(--main-font-colour);
+    text-decoration: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
 
 /* Main section styles */
@@ -375,7 +423,7 @@ main {
 
 .footer-inner-container {
     display: grid;
-    grid-template-columns: 130px auto 130px;
+    grid-template-columns: auto auto auto;
     grid-template-areas: "footer-left footer-middle footer-right";
     justify-items: center;
     align-items: center;

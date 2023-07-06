@@ -34,17 +34,18 @@
                     </div>
                     <div class="header-nav-logo">
                         <a class="navbar-brand" href="{% url 'home' %}">
-                            <div class="logo-company"><strong>Wild Carbon</strong></div>
+                            <span class="logo-company"><strong>Wild</strong></span>
+                            <span class="logo-company"><strong>Carbon</strong></span>
                             <div class="logo-tagline">Rewild your way to carbon neutrality</div>
                         </a>
                     </div>
                     <div class="header-nav-right">
                         <div class="dropdown-center">
-                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="dropdown-toggle account-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open the account menu">
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
                                 <img class="account-menu-icon" src="{% static 'icons/base_account_menu.svg' %}" alt="Open the account menu">
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <ul id="account-dropdown-menu" class="dropdown-menu dropdown-menu-end account-dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="{% url 'carbon_summary' %}">My Carbon Summary</a>
                                 </li>
@@ -65,16 +66,16 @@
                                 {% endif %}
                             </ul>
                         </div>
-                        <a href="{% url 'view_basket' %}">
+                        <a class="basket-nav" href="{% url 'view_basket' %}">
                             <!-- Icon supplied by font awesome https://fontawesome.com/  -->
                             <img class="basket-icon" src="{% static 'icons/base-basket.svg' %}" alt="Open your basket">
-                            <p class="my-0">
+                            <div class="basket-total">
                                 {% if grand_total %}
                                     €{{ grand_total|floatformat:2 }}
                                 {% else %}
                                     €0.00
                                 {% endif %}
-                            </p>
+                            </div>
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNav">
