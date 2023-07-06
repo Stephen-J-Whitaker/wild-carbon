@@ -41,7 +41,7 @@
                     </div>
                     <div class="header-nav-right">
                         <div class="dropdown-center">
-                            <button class="dropdown-toggle account-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open the account menu">
+                            <button id="account-toggle" class="dropdown-toggle account-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open the account menu">
                                 <!-- Icon supplied by font awesome https://fontawesome.com/  -->
                                 <img class="account-menu-icon" src="{% static 'icons/base_account_menu.svg' %}" alt="Open the account menu">
                             </button>
@@ -182,7 +182,7 @@
                 <div class="privacy-policy-inner-container">
                     <div class="privacy-policy-modal">
                         {% include 'includes/privacy_policy.html' %}
-                        <button id="privacy-policy-close-button" class="privacy-policy-close-button">Done</button>
+                        <button id="privacy-policy-close-button" class="privacy-policy-close-button button">Done</button>
                     </div>
                 </div>
             </section>

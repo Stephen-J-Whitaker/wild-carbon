@@ -7,13 +7,17 @@
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
     --modal-background-colour: rgba(9, 27, 14, 0.7);
     --page-title-background-colour: rgba(9, 27, 14, 0.8);
-    --inner-content-container-colour: rgb(127, 182, 131);
-    --inner-content-container-shadow: rgb(162, 167, 139);
+    --inner-content-container-colour: rgb(109, 170, 113);
+    --inner-content-container-shadow: rgb(79, 82, 66);
     --title-font-colour: rgba(200, 207, 159, 1);
     --main-font-colour: rgba(249, 255, 215, 0.8);
+    --header-font-colour:  rgba(240, 255, 152, 0.8);
     --content-font-colour:rgba(249, 255, 215, 1);
     --button-background: rgba(249, 255, 215, 0.8);
     --button-background-solid: rgb(249, 255, 215);
+    --button-green-background: rgba(9, 27, 14, 0.5);
+    --button-green-background-solid: rgba(9, 27, 14, 0.9);
+    --button-green-border: rgba(9, 27, 14, 0.2);
     --brand-background-hover: rgba(38, 70, 47, 1);
     --brand-background-colour: rgba(38, 70, 47, 0.7);
     --button-active-background: rgba(132, 138, 91, 0.8);
@@ -294,10 +298,13 @@ main {
     background: url("/static/home/images/home_how_it_works.jpg") no-repeat center center/cover;
 }
 
+.image-nav-outer-container {
+    margin-bottom: 10px;
+}
 
 .image-nav-container {
     height: 500px;
-    width: 500px;
+    width: 95%;
 }
 
 .carbon-capture-image-nav-container {
@@ -355,6 +362,7 @@ main {
 .content-container {
     display: flex;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .inner-content-container {
@@ -433,9 +441,40 @@ main {
     padding: 7px;
 }
 
+.button {
+    border: 3px solid var(--button-green-border);
+    border-radius: 10px;
+    background-color: var(--button-green-background);
+    color: var(--main-font-colour);
+}
+
+.button:hover {
+    background-color: var(--button-green-background-solid);
+}
+
+button:focus {
+    outline: none;
+}
+
+input {
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+a,
 .link,
 .privacy-policy {
     text-decoration: none;
+    color: var(--header-font-colour);
+}
+
+a:hover,
+.link:hover,
+.privacy-policy:hover {
+    text-decoration: underline;
 }
 
 .privacy-policy {
@@ -586,7 +625,7 @@ main {
 
 .shop-plant-instance:hover,
 .image-nav-container:hover {
-    box-shadow: 0px 0px 5px 1px var(--inner-content-container-shadow);
+    box-shadow: 0px 0px 10px 1px var(--inner-content-container-shadow);
 }
 
 .fact-item {
@@ -594,9 +633,25 @@ main {
 }
 
 /* Mailchimp styles */
+.mailchimp-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mc-field-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 .mc_embed_signup {
     font:14px Helvetica,Arial,sans-serif; 
-    width: 600px;
+    width: 100%;
 }
 
 #mc_embed_signup .helper_text {
@@ -605,6 +660,10 @@ main {
 
 #mc_embed_signup .asterisk {
     color: var(--content-font-colour);
+}
+
+.mc-button {
+    margin-top: 5px;
 }
 
 /* Media queries */
