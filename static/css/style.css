@@ -33,6 +33,7 @@
     --header-height: 75px;
     --footer-icon-size: 3rem;
     --footer-icon-inner-size: 2.5rem;
+    --input-background-colour: rgb(234, 238, 222);
     --success: rgb(0, 150, 62);
     --info: rgb(0, 127, 150);
     --warning: rgb(150, 97, 0);
@@ -185,6 +186,10 @@ a,
 .privacy-policy {
     padding: 11px;
     color: var(--link-font-colour);
+}
+
+.link-button {
+    padding: 0 10px;
 }
 
 .link:hover,
@@ -399,6 +404,9 @@ main {
 .error-content-container {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .inner-content-container {
@@ -496,14 +504,15 @@ h2,
 }
 
 .button {
-    border: 3px solid var(--button-green-border);
+    border: 1px solid var(--button-green-border);
     border-radius: 10px;
-    background-color: var(--button-green-background);
-    color: var(--main-font-colour);
+    background-color: var(--button-background);
+    color: var(--button-green-font);
+    height: 28px;
 }
 
 .button:hover {
-    background-color: var(--button-green-background-solid);
+    background-color: var(--button-background-solid);
 }
 
 button:focus {
@@ -521,10 +530,14 @@ button:focus {
 
 input {
     border-radius: 5px;
+    background-color: var(--input-background-colour);
+    height: 28px;
 }
 
-input:focus {
+input:focus,
+input:active {
     outline: none;
+    background-color: var(--input-background-colour);
 }
 
 a,

@@ -5,7 +5,13 @@
 {% block main_style %}main-container-offset{% endblock %}
 
 {% block content %}
-    <div>Error: 404</div>
-    <div>Sorry, this page was not found</div>
-    <a class="nav-link error-page-link" href="{% url 'home' %}">Home</a>
+    <div class="content-container error-content-container">
+        <div class="inner-content-container inner-error-container">
+            <h2 class="content-header">Error: 404</h2>
+            <p class="text-content">
+                Sorry, this page was not found       
+            </p>
+            <a class="nav-link error-page-link button link-button" href="{% url 'home' %}">Home</a>
+        </div>
+    </div>
 {% endblock %}

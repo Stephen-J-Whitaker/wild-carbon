@@ -5,7 +5,13 @@
 {% block main_style %}main-container-offset{% endblock %}
 
 {% block content %}
-    <div>Error: 500</div>
-    <div>Sorry, there was a server error</div>
-    <a class="nav-link error-page-link" href="{% url 'home' %}">Home</a>
+    <div class="content-container error-content-container">
+        <div class="inner-content-container inner-error-container">
+            <h2 class="content-header">Error: 500</h2>
+            <p class="text-content">
+                Sorry, there was a server error      
+            </p>
+            <a class="nav-link error-page-link button link-button" href="{% url 'home' %}">Home</a>
+        </div>
+    </div>
 {% endblock %}
