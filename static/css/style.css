@@ -160,7 +160,7 @@ header {
 
 .navbar-brand {
     border-radius: 7px;
-    padding: 3px;
+    padding: 5px;
     margin: 0px;
 }
 
@@ -208,11 +208,6 @@ header {
     display: flex;
     justify-content: center;
     word-wrap: normal;
-}
-
-.logo-tagline {
-    color: var(--main-font-colour);
-    display: none;
 }
 
 .basket-icon {
@@ -386,7 +381,6 @@ main {
 .inner-content-container {
     width: 95%;
     background-color: var(--inner-content-container-colour);
-    box-shadow: 0px 0px 5px 1px var(--inner-content-container-shadow);
     padding: 10px;
     margin: 10px;
     color: var(--main-font-colour);
@@ -697,12 +691,11 @@ a:hover,
     }
 }
 
-/* Media query for medium width screens */
-@media screen and (min-width: 768px) {
-
-    .logo-tagline {
-        display: flex;
-        font-size: small;
+/* Media query for 400px plus width screens */
+@media screen and (min-width: 400px) {
+    .logo-company {
+        font-size: xx-large;
+        display: inline;
     }
 }
 
