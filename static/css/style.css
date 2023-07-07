@@ -16,12 +16,14 @@
     --page-title-background-colour: rgba(9, 27, 14, 0.8);
     --inner-content-container-colour: rgb(109, 170, 113);
     --inner-content-container-shadow: rgb(79, 82, 66);
-    --title-font-colour: rgba(200, 207, 159, 1);
+    --title-font-colour: rgba(249, 255, 215, 0.9);
     --main-font-colour: rgba(249, 255, 215, 0.8);
-    --header-font-colour:  rgba(240, 255, 152, 0.8);
-    --content-font-colour:rgba(249, 255, 215, 1);
+    --header-font-colour: rgba(249, 255, 215, 0.9);
+    --content-font-colour:rgba(249, 255, 215, 0.8);
+    --link-font-colour: rgba(249, 255, 215, 0.9);
     --button-background: rgba(249, 255, 215, 0.8);
     --button-background-solid: rgb(249, 255, 215);
+    --button-green-font:rgba(38, 70, 47, 1);
     --button-green-background: rgba(9, 27, 14, 0.5);
     --button-green-background-solid: rgba(9, 27, 14, 0.9);
     --button-green-border: rgba(9, 27, 14, 0.2);
@@ -81,11 +83,14 @@
     text-align: center;
 }
 
+/* Body content styles */
+
 html,
 body {
     background-color: var(--body-background-colour);
     height: 100%;
     width: 100%;
+    font-family: var(--primary-font-family);
 }
 
 /* Header css */
@@ -162,6 +167,7 @@ header {
     border-radius: 7px;
     padding: 5px;
     margin: 0px;
+    padding-bottom: 0;
 }
 
 .navbar-brand:hover {
@@ -173,11 +179,12 @@ header {
     margin: 0;
 }
 
+a,
 .link,
 .nav-link,
 .privacy-policy {
     padding: 11px;
-    color: var(--main-font-colour);
+    color: var(--link-font-colour);
 }
 
 .link:hover,
@@ -199,6 +206,7 @@ header {
 }
 
 .logo-company {
+    color: var(--title-font-colour);
     font-family: var(--brand-font-family);
     font-weight: 300;
     font-size: xx-large;
@@ -355,19 +363,29 @@ main {
     background-color: var(--page-title-background-colour);
 }
 
-.page-title-main,
+.image-nav-container:hover {
+    text-decoration: none;
+}
+
 .image-nav-title-main {
-    font-weight: bold;
+    line-height: 40px;
+    padding: 10px;
+}
+
+.page-title-main {
+    margin-bottom: 0;
 }
 
 .page-title-secondary,
 .image-nav-title-secondary {
+    color: var(--main-font-colour);
+    font-family: var(--primary-font-family);
     font-size: small;
+    padding: 10px;
 }
 
 .page-title-image,
 .image-nav-image {
-    margin-top: 3rem;
     height: 3rem;
 }
 
@@ -388,7 +406,7 @@ main {
 
 .content-header {
     text-align: center;
-    font-weight: bold;
+    font-size: xx-large;
 }
 
 .text-content {
@@ -453,6 +471,17 @@ main {
     padding: 7px;
 }
 
+/* Compontent styles */
+h1,
+h2,
+.image-nav-title-main {
+    color: var(--header-font-colour);
+    font-family: var(--brand-font-family);
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: xx-large;
+}
+
 .button {
     border: 3px solid var(--button-green-border);
     border-radius: 10px;
@@ -468,6 +497,15 @@ button:focus {
     outline: none;
 }
 
+.light-button {
+    background-color: var(--button-background);
+    color: var(--button-green-font);
+}
+
+.light-button:hover {
+    background-color: var(--button-background-solid);
+}
+
 input {
     border-radius: 5px;
 }
@@ -480,7 +518,6 @@ a,
 .link,
 .privacy-policy {
     text-decoration: none;
-    color: var(--header-font-colour);
 }
 
 a:hover,
@@ -670,10 +707,6 @@ a:hover,
     background: none;
 }
 
-#mc_embed_signup .asterisk {
-    color: var(--content-font-colour);
-}
-
 .mc-button {
     margin-top: 5px;
 }
@@ -689,6 +722,18 @@ a:hover,
     .footer-inner-container {
         grid-template-columns: 100px auto 100px;
     }
+
+
+    .page-title-main,
+    .image-nav-title-main {
+        font-size: xxx-large;
+    }
+
+    .page-title-image,
+    .image-nav-image {
+        margin-top: 3rem;
+    }
+
 }
 
 /* Media query for 400px plus width screens */
