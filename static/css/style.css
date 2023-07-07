@@ -1,8 +1,15 @@
 /* Common css for Wild Carbon site*/
 
+/* Fonts imported from Google Fonts : https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Lato:ital,wght@0,400;0,900;1,700&display=swap');
+
+
 /* css custom variables */
 :root {
-    --body-background-colour: rgba(249, 255, 215, 0.8);
+    /* Shrikhand and Lato fonts imported from Google Fonts : https://fonts.google.com/ */
+    --brand-font-family: Khand, Lato, Helvetica, sans-serif;
+    --primary-font-family: Lato, Helvetica, sans-serif;
+    --body-background-colour: rgba(205, 213, 179, 0.5);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
     --modal-background-colour: rgba(9, 27, 14, 0.7);
@@ -106,6 +113,7 @@ header {
 .header-nav-left {
     grid-area: header-nav-left;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .header-nav-logo {
@@ -116,6 +124,7 @@ header {
 .header-nav-right {
     grid-area: header-nav-right;
     width: 100%;
+    justify-content: flex-end;
 }
 
 .header-nav-items {
@@ -124,7 +133,7 @@ header {
 
 .nav-grid {
     display: grid;
-    grid-template-columns: 50px auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: var(--header-height);
     grid-template-areas: "header-nav-left header-nav-logo header-nav-right";
     width: 100%;
@@ -151,8 +160,8 @@ header {
 
 .navbar-brand {
     border-radius: 7px;
-    padding: 7px;
-    margin: 0;
+    padding: 3px;
+    margin: 0px;
 }
 
 .navbar-brand:hover {
@@ -185,11 +194,19 @@ header {
     color: var(--main-font-colour);
 }
 
+.navbar-brand:hover {
+    text-decoration: none;
+}
+
 .logo-company {
+    font-family: var(--brand-font-family);
+    font-weight: 300;
+    font-size: xx-large;
+    line-height: 25px;
+    letter-spacing: 1px;
     color: var(--main-font-colour);
     display: flex;
     justify-content: center;
-    font-size: large;
     word-wrap: normal;
 }
 
@@ -254,6 +271,7 @@ footer {
 .basket-total {
     color: var(--main-font-colour);
     text-decoration: none;
+    padding-right: 10px;
 }
 
 .dropdown-toggle::after {
@@ -667,6 +685,17 @@ a:hover,
 }
 
 /* Media queries */
+
+/* Media query for small width screens */
+@media screen and (min-width: 340px) {
+    .nav-grid {
+        grid-template-columns: 120px auto 120px;
+    }
+
+    .footer-inner-container {
+        grid-template-columns: 100px auto 100px;
+    }
+}
 
 /* Media query for medium width screens */
 @media screen and (min-width: 768px) {
