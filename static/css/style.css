@@ -21,8 +21,8 @@
     --header-font-colour: rgba(249, 255, 215, 0.9);
     --content-font-colour:rgba(249, 255, 215, 0.8);
     --link-font-colour: rgba(249, 255, 215, 0.9);
-    --button-background: rgba(249, 255, 215, 0.8);
-    --button-background-solid: rgb(249, 255, 215);
+    --button-background: rgba(217, 223, 197);
+    --button-background-solid: rgb(234, 238, 222);
     --button-green-font:rgba(38, 70, 47, 1);
     --button-green-background: rgba(9, 27, 14, 0.5);
     --button-green-background-solid: rgba(9, 27, 14, 0.9);
@@ -396,12 +396,25 @@ main {
     border-radius: 10px;
 }
 
+.error-content-container {
+    height: 100%;
+    width: 100%;
+}
+
 .inner-content-container {
     width: 95%;
     background-color: var(--inner-content-container-colour);
     padding: 10px;
     margin: 10px;
     color: var(--main-font-colour);
+}
+
+.inner-error-container {
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .content-header {
@@ -591,12 +604,14 @@ a:hover,
 }
 
 .error-page-link {
-    color: black;
+    color: var(--button-green-font);
+    background-color: var(--button-background);
 }
 
 .error-page-link:hover {
-    color: black;
-    text-decoration: underline;
+    background-color: var(--button-background-solid);
+    color: var(--button-green-font);
+    text-decoration: none;
 }
 
 .contact-us-inner-container,
