@@ -368,6 +368,15 @@ main {
     background-color: var(--page-title-background-colour);
 }
 
+.location-title {
+    width: fit-content;
+    height: fit-content;
+}
+
+.location-page-title-secondary {
+    max-width: 350px;
+}
+
 .image-nav-container:hover {
     text-decoration: none;
 }
@@ -436,6 +445,12 @@ main {
 
 .location-text {
     text-align: center;
+}
+
+.location-search-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Footer styles */
@@ -709,6 +724,24 @@ a:hover,
     padding-top: 10px;
 }
 
+/* Forms */
+.search-form {
+    width: 100%;
+}
+
+.search-input {
+    height: 38px;
+    margin-bottom: 10px;
+}
+
+.search-button {
+    border-radius: 0;
+    border-bottom-right-radius: .375rem;
+    border-top-right-radius: .375rem;
+    height: 38px;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
 /* Mailchimp styles */
 .mailchimp-form {
     display: flex;
@@ -761,7 +794,6 @@ a:hover,
     .image-nav-image {
         margin-top: 3rem;
     }
-
 }
 
 /* Media query for 400px plus width screens */
@@ -770,6 +802,12 @@ a:hover,
         font-size: xx-large;
         display: inline;
     }
+
+    .search-form {
+        
+        width: 390px;
+    }
+
 }
 
 /* Add media query for wide screens */
