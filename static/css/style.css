@@ -9,15 +9,15 @@
     /* Shrikhand and Lato fonts imported from Google Fonts : https://fonts.google.com/ */
     --brand-font-family: Khand, Lato, Helvetica, sans-serif;
     --primary-font-family: Lato, Helvetica, sans-serif;
-    --body-background-colour: rgba(205, 213, 179, 0.5);
+    --body-background-colour: rgba(229, 233, 216, 1);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
     --modal-background-colour: rgba(9, 27, 14, 0.7);
     --page-title-background-colour: rgba(9, 27, 14, 0.8);
-    --inner-content-container-colour: rgb(109, 170, 113);
+    --inner-content-container-colour: rgb(74, 105, 76);
     --inner-content-container-shadow: rgb(79, 82, 66);
-    --title-font-colour: rgba(249, 255, 215, 0.9);
-    --main-font-colour: rgba(249, 255, 215, 0.8);
+    --title-font-colour: rgb(255, 255, 255);
+    --main-font-colour:  rgba(255, 255, 255, 0.9);
     --header-font-colour: rgba(249, 255, 215, 0.9);
     --content-font-colour:rgba(249, 255, 215, 0.8);
     --link-font-colour: rgba(249, 255, 215, 0.9);
@@ -116,6 +116,10 @@ body {
     height: 100%;
     width: 100%;
     font-family: var(--primary-font-family);
+}
+
+.body {
+    
 }
 
 /* Header css */
@@ -575,8 +579,14 @@ input,
     height: 28px;
 }
 
+.selector {
+    color: black;
+}
+
 input:focus,
-input:active {
+input:active,
+.selector:focus,
+.selector:active {
     outline: none;
     background-color: var(--input-background-colour);
 }
@@ -718,7 +728,7 @@ a:hover,
 
 /* Plant list styles */
 .plant-list-container {
-    width: 100vw;
+    width: 100%;
 }
 
 .plant-list {
@@ -726,24 +736,40 @@ a:hover,
     display: flex;
     flex-flow: wrap;
     row-gap: 10px;
-    column-gap: 10px;
+    justify-content: space-evenly;
 }
 
 .plant-instance {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    width: 100%;
+    max-width: 375px;
     min-height: 100px;
-    border: 3px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: var(--page-title-background-colour);
+    border-radius: 5px;
 }
 
 .plant-image {
     width: auto;
+    border-radius: 5px;
 }
 
 .shop-plant-instance:hover,
 .image-nav-container:hover {
     box-shadow: 0px 0px 10px 1px var(--inner-content-container-shadow);
+    background-color: var(--header-footer-background-colour);
+    text-decoration: none;
+}
+
+.plant-instance-name {
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+hr {
+    margin: 0;
 }
 
 .fact-item {
