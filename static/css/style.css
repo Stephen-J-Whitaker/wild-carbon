@@ -56,6 +56,18 @@
     display: initial;
 }
 
+.toast-message {
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.toast-basket {
+    margin-left: 10px;
+    height: fit-content;
+}
+
 .success {
     background-color: var(--success);
     color: var(--title-font-colour);
@@ -74,6 +86,18 @@
 .error {
     background-color: var(--error);
     color: var(--title-font-colour);
+}
+
+.toast-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.toast-button:hover {
+    text-decoration: none;
 }
 
 .common-name-status::after {
@@ -526,7 +550,8 @@ h2,
     height: 28px;
 }
 
-.button:hover {
+.button:hover,
+.selector:hover {
     background-color: var(--button-background-solid);
 }
 
@@ -543,7 +568,8 @@ button:focus {
     background-color: var(--button-background-solid);
 }
 
-input {
+input,
+.selector {
     border-radius: 5px;
     background-color: var(--input-background-colour);
     height: 28px;
@@ -740,6 +766,12 @@ a:hover,
     border-top-right-radius: .375rem;
     height: 38px;
     border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.sort-select-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 /* Mailchimp styles */
