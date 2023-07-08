@@ -11,6 +11,7 @@
     --primary-font-family: Lato, Helvetica, sans-serif;
     --body-background-colour: rgba(229, 233, 216, 1);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
+    --dropdown-background-colour: rgba(9, 27, 14, 1);
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
     --modal-background-colour: rgba(9, 27, 14, 0.7);
     --page-title-background-colour: rgba(9, 27, 14, 0.8);
@@ -53,7 +54,7 @@
 }
 
 .show-basket {
-    display: initial;
+    display: block;
 }
 
 .toast-message {
@@ -64,8 +65,7 @@
 }
 
 .toast-basket {
-    margin-left: 10px;
-    height: fit-content;
+    margin: 10px;
 }
 
 .success {
@@ -92,8 +92,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
-    margin-right: 10px;
 }
 
 .toast-button:hover {
@@ -268,13 +266,22 @@ footer {
 
 #account-dropdown-menu,
 #administration-dropdown-menu {
-    background-color: var(--header-footer-background-colour);
+    background-color: var(--dropdown-background-colour);
     margin: 0;
     border: 0;
 }
 
+#administration-dropdown-menu {
+    margin: 14px;
+}
+
 #administration-dropdown-menu li a:hover {
     background-color: var(--header-footer-background-colour);    
+}
+
+#account-dropdown-menu li a:hover {
+    background-color: var(--dropdown-background-colour);
+    color: var(--main-font-colour);
 }
 
 .dropdown-center {
@@ -581,6 +588,18 @@ button:focus {
     background-color: var(--button-background-solid);
 }
 
+.plant-record-button {
+    margin-bottom: 10px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.plant-record-button:hover {
+    text-decoration: none;
+}
+
 input,
 .selector {
     border-radius: 5px;
@@ -807,6 +826,26 @@ hr {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+/* Table styles */
+.table {
+    color: var(--main-font-colour);
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+}
+
+.plant-record-table th {
+    width: 25%;
+}
+
+th {
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.plant-record-table td a {
+    padding: 0;
 }
 
 /* Mailchimp styles */

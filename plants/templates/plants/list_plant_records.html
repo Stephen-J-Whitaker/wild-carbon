@@ -9,94 +9,102 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Plant Records</h1>
-    <a href="{% url 'add_plant_record' %}">Add plant record</a>
-    <div class="table-responsive rounded d-none d-md-block">
-        <h2>Pending Trees</h2>
-        <table class="table table-sm table-borderless">
-            <thead class="text-black">
-                <tr>
-                    <th scope="col">Plant name</th>
-                    <th scope="col">plant id</th>
-                    <th scope="col">Date went pending</th>
-                    <th></th>
-                </tr>
-            </thead>
-            {% for record in pending %}
-                <tr>
-                    <td class="p-3 w-25">
-                        {{ record.plant.common_name }}
-                    </td>
-                    <td class="py-3">
-                        {{ record.plant_number }}
-                    </td>
-                    <td class="py-3">
-                        {{ record.date_state_changed }}
-                    </td>
-                    <td class="py-3">
-                        <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
-                        {% if record.order is None %}<a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
+<div class="content-container">
+    <div class="inner-content-container">
+        <h1 class="content-header">Plant Records</h1>
+        <div class="text-content faq-list">
+            <a class="button plant-record-button" href="{% url 'add_plant_record' %}">Add plant record</a>
+            <div class="table-responsive rounded d-md-block">
+                <h2>Pending Trees</h2>
+                <table class="table plant-record-table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Plant name</th>
+                            <th scope="col">plant id</th>
+                            <th scope="col">Date went pending</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {% for record in pending %}
+                        <tr>
+                            <td class="p-3 w-25">
+                                {{ record.plant.common_name }}
+                            </td>
+                            <td class="py-3">
+                                {{ record.plant_number }}
+                            </td>
+                            <td class="py-3">
+                                {{ record.date_state_changed }}
+                            </td>
+                            <td class="py-3">
+                                <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
+                                {% if record.order is None %}<a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <hr>
+            <div class="table-responsive rounded d-md-block">
+                <h2>Growing Trees</h2>
+                <table class="table plant-record-table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Plant name</th>
+                            <th scope="col">plant id</th>
+                            <th scope="col">Date started growing</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {% for record in growing %}
+                        <tr>
+                            <td class="p-3 w-25">
+                                {{ record.plant.common_name }}
+                            </td>
+                            <td class="py-3">
+                                {{ record.plant_number }}
+                            </td>
+                            <td class="py-3">
+                                {{ record.date_state_changed }}
+                            </td>
+                            <td class="py-3">
+                                <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
+                                {% if record.order is None %}<a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <hr>
+            <div class="table-responsive rounded d-md-block">
+                <h2>Planted Trees</h2>
+                <table class="table plant-record-table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Plant name</th>
+                            <th scope="col">plant id</th>
+                            <th scope="col">Date planted</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {% for record in planted %}
+                        <tr>
+                            <td class="p-3 w-25">
+                                {{ record.plant.common_name }}
+                            </td>
+                            <td class="py-3">
+                                {{ record.plant_number }}
+                            </td>
+                            <td class="py-3">
+                                {{ record.date_state_changed }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="table-responsive rounded d-none d-md-block">
-        <h2>Growing Trees</h2>
-        <table class="table table-sm table-borderless">
-            <thead class="text-black">
-                <tr>
-                    <th scope="col">Plant name</th>
-                    <th scope="col">plant id</th>
-                    <th scope="col">Date started growing</th>
-                    <th></th>
-                </tr>
-            </thead>
-            {% for record in growing %}
-                <tr>
-                    <td class="p-3 w-25">
-                        {{ record.plant.common_name }}
-                    </td>
-                    <td class="py-3">
-                        {{ record.plant_number }}
-                    </td>
-                    <td class="py-3">
-                        {{ record.date_state_changed }}
-                    </td>
-                    <td class="py-3">
-                        <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
-                        {% if record.order is None %}<a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-    <div class="table-responsive rounded d-none d-md-block">
-        <h2>Planted Trees</h2>
-        <table class="table table-sm table-borderless">
-            <thead class="text-black">
-                <tr>
-                    <th scope="col">Plant name</th>
-                    <th scope="col">plant id</th>
-                    <th scope="col">Date planted</th>
-                    <th></th>
-                </tr>
-            </thead>
-            {% for record in planted %}
-                <tr>
-                    <td class="p-3 w-25">
-                        {{ record.plant.common_name }}
-                    </td>
-                    <td class="py-3">
-                        {{ record.plant_number }}
-                    </td>
-                    <td class="py-3">
-                        {{ record.date_state_changed }}
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
+</div>
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}
