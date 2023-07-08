@@ -227,11 +227,11 @@ a,
 }
 
 #administration-link {
-    color: var(--main-font-colour);
+    color: var(--link-font-colour);
 }
 
 .dropdown-item {
-    color: var(--main-font-colour);
+    color: var(--link-font-colour);
 }
 
 .navbar-brand:hover {
@@ -266,10 +266,15 @@ footer {
     background-color: transparent;
 }
 
-#account-dropdown-menu {
+#account-dropdown-menu,
+#administration-dropdown-menu {
     background-color: var(--header-footer-background-colour);
     margin: 0;
     border: 0;
+}
+
+#administration-dropdown-menu li a:hover {
+    background-color: var(--header-footer-background-colour);    
 }
 
 .dropdown-center {
@@ -469,6 +474,10 @@ main {
 
 .text-content {
     text-align: center;
+}
+
+.faq-list {
+    text-align: left;
 }
 
 .location-text {
