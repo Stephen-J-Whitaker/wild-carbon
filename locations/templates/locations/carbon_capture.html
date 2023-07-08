@@ -63,9 +63,9 @@
                         {% for plant in plants %}
                             <a  href="{% url 'plant_detail' location.pk plant.pk %}" class="plant-instance shop-plant-instance">
                                 {% if plant.image %}
-                                    <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}">
+                                    <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}" loading="lazy">
                                 {% else %}
-                                    <img class="plant-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ plant.common_name }}">
+                                    <img class="plant-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ plant.common_name }}" loading="lazy">
                                 {% endif %}
                                 <h2 class="plant-instance-name">{{ plant.common_name }}</h2>
                                 <hr>

@@ -8,7 +8,7 @@
     </div>
   <!-- Toast template provided by Code Institute -->
   {% if grand_total and not on_profile_page %}
-    <div class='toast-basket{% if message.tags %} hide-basket{{ message.tags }}{% endif %}'>
+    <div class='toast-basket hide-basket{% if message.tags %} {{ message.tags }}{% endif %}'>
       <p class="py-1">Your Basket ({{ plant_count }})</p>
       <div class="bag-notification-wrapper">
           {% for item in basket_items %}
