@@ -16,7 +16,7 @@
         <div class="standard-content">
             <form id="confirm-plant-delete-form" method="post">
                 {% csrf_token %}
-                <p class="confirm-delete"><br><br>Are you sure you want to delete '{{ object }}'?<br><br></p>
+                <p class="confirm-delete">Are you sure you want to delete '{{ object }}'?</p>
                 {{ form }}
             </form>
             <div class="button-container">
