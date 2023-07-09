@@ -951,6 +951,14 @@ hr {
     width: 25%;
 }
 
+.carbon-summary-plant-record-table th {
+    width: 33%;
+}
+
+.records-header {
+    text-align: left;
+}
+
 th {
     font-weight: 400;
     text-decoration: underline;
