@@ -956,6 +956,14 @@ hr {
     margin: 50px 0;
 }
 
+.order-number {
+    font-weight: bold;
+}
+
+.associated-record-label {
+    font-style: italic;
+}
+
 /* Table styles */
 .table {
     color: var(--main-font-colour);
@@ -963,7 +971,8 @@ hr {
     font-weight: 400;
 }
 
-.plant-record-table th {
+.plant-record-table th,
+.order-history-table th {
     width: 25%;
 }
 
