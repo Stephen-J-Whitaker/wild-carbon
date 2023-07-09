@@ -209,7 +209,8 @@ header {
 a,
 .link,
 .nav-link,
-.privacy-policy {
+.privacy-policy,
+.add-plant-plant-instance {
     padding: 11px;
     color: var(--link-font-colour);
 }
@@ -222,6 +223,10 @@ a,
 .nav-link:hover {
     color: var(--main-font-colour);
     text-decoration: underline;
+}
+
+.add-plant-links {
+    text-align: center;
 }
 
 #administration-link {
@@ -492,7 +497,8 @@ main {
     text-align: center;
 }
 
-.location-search-input {
+.location-search-input,
+.plant-list-search-input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -589,7 +595,8 @@ button:focus {
     background-color: var(--button-background-solid);
 }
 
-.plant-record-button {
+.plant-record-button,
+.add-plant-button {
     margin: auto;
     width: fit-content;
     display: flex;
@@ -597,8 +604,13 @@ button:focus {
     padding: 10px;
 }
 
-.plant-record-button:hover {
+.plant-record-button:hover,
+.add-plant-button:hover {
     text-decoration: none;
+}
+
+.add-plant-button {
+    margin-bottom: 10px;
 }
 
 input,
