@@ -9,7 +9,8 @@
     /* Shrikhand and Lato fonts imported from Google Fonts : https://fonts.google.com/ */
     --brand-font-family: Khand, Lato, Helvetica, sans-serif;
     --primary-font-family: Lato, Helvetica, sans-serif;
-    --body-background-colour: rgba(229, 233, 216, 1);
+    --body-background-colour: rgb(240, 241, 234);
+    --main-background-colour: rgba(229, 233, 216, 1);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --dropdown-background-colour: rgba(9, 27, 14, 1);
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
@@ -231,6 +232,8 @@ a,
 
 .image-select-input {
     color: var(--button-green-font);
+    width: 100%;
+    max-width: 316px;
 }
 
 .add-plant-links {
@@ -340,6 +343,10 @@ footer {
 }
 
 /* Main section styles */
+main {
+    background-color: var(--main-background-colour);
+}
+
 .main-container {
     position: absolute;
     top: 0;
@@ -478,6 +485,19 @@ main {
     padding: 10px;
     margin: 10px;
     color: var(--main-font-colour);
+}
+
+.add-edit-plant-inner-content-container {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-edit-plant-row {
+    justify-content: center;
+    width: 100%;
+    max-width: 611px;
 }
 
 .inner-error-container {
@@ -976,5 +996,19 @@ th {
         grid-template-columns: 300px auto 150px;
         grid-template-areas: "header-nav-logo navbar-collapse header-nav-right";
         width: 100%;
+    }
+}
+
+/* Add media query for wide screens */
+@media screen and (min-width: 1112px) {
+    header {
+        position: absolute;
+        margin-right: 0;
+    }
+
+    header,
+    .main-container {
+        width: 1112px;
+        right: calc(50% - (1112px / 2));
     }
 }
