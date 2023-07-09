@@ -37,8 +37,10 @@
                                 {{ record.date_state_changed }}
                             </td>
                             <td class="py-3">
-                                <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
-                                {% if record.order is None %}<a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
+                                <small>
+                                    <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
+                                    {% if record.order is None %} | <a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
+                                </small>
                             </td>
                         </tr>
                     {% endfor %}
@@ -68,8 +70,10 @@
                                 {{ record.date_state_changed }}
                             </td>
                             <td class="py-3">
-                                <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
-                                {% if record.order is None %}<a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
+                                <small>
+                                    <a href="{% url 'change_plant_state' record.pk %}">Update State</a>
+                                    {% if record.order is None %} | <a href="{% url 'delete_plant_record' record.pk %}">Delete Record</a>{% endif %}
+                                </small>
                             </td>
                         </tr>
                     {% endfor %}

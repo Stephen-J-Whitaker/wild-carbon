@@ -10,18 +10,22 @@
 {% endblock %}
 
 {% block content %}
-    <h2 class="general-header">Confirm plant deletion</h2>
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            <p class="confirm-delete"><br><br>Are you sure you want to delete "{{ object }}"?</p>
-            {{ form }}
-            <div class="button-container">
-                <button type="submit">Delete Plant</button>
-                <a href="{% url 'list_plants' %}">No Thanks</a>
-            </div>
-        </form>
+<div class="content-container">
+    <div class="inner-content-container delete-plant-inner-content-container">
+        <h1 class="content-header">Confirm plant deletion</h1>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <p class="confirm-delete"><br><br>Are you sure you want to delete "{{ object }}"?</p>
+                {{ form }}
+                <div class="button-container">
+                    <button class="width-100-button button light-button" type="submit">Delete Plant</button>
+                    <a class="button width-100-button button-content" href="{% url 'list_plants' %}">No Thanks</a>
+                </div>
+            </form>
+        </div>
     </div>
+</div>    
 {% endblock content %}
 
 {% block modal_style %}modal-offset{% endblock %}

@@ -55,8 +55,10 @@
                                 <div>&#8364; {{ plant.price }} ex VAT</div>
                                 <div>SKU: {{ plant.sku }}</div>
                                 <div class="add-plant-links">
-                                    <a class="link" href="{% url 'edit_plant' plant.id %}">Edit</a> |
-                                    <a class="link" href="{% url 'delete_plant' plant.id %}">Delete</a>
+                                    <small>
+                                        <a class="link" href="{% url 'edit_plant' plant.id %}">Edit</a> |
+                                        <a class="link" href="{% url 'delete_plant' plant.id %}">Delete</a>
+                                    </small>
                                 </div>
                             </div>
                         </div>

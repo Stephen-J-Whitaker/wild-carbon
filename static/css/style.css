@@ -10,7 +10,7 @@
     --brand-font-family: Khand, Lato, Helvetica, sans-serif;
     --primary-font-family: Lato, Helvetica, sans-serif;
     --body-background-colour: rgb(240, 241, 234);
-    --main-background-colour: rgba(229, 233, 216, 1);
+    --main-background-colour: rgb(207, 211, 195);
     --header-footer-background-colour: rgba(9, 27, 14, 0.9);
     --dropdown-background-colour: rgba(9, 27, 14, 1);
     --modal-backdrop-background-colour: rgba(9, 27, 14, 0.3);
@@ -44,6 +44,7 @@
 
 /* Message */
 .message-container {
+    max-width: 90vw;
     position: fixed;
     top: 80px;
     right: 15px;
@@ -487,7 +488,8 @@ main {
     color: var(--main-font-colour);
 }
 
-.add-edit-plant-inner-content-container {
+.add-edit-plant-inner-content-container,
+.delete-plant-inner-content-container {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
@@ -798,6 +800,7 @@ a:hover,
 }
 
 .contact-us-close-button
+.width-100-button
 .privacy-policy-close-button {
     width: 100px;
 }
