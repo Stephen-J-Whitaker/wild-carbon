@@ -10,25 +10,30 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <div class="note">Note: leading, trailing and multiple spaces in a row in the common name are removed</div>
-            <form method="POST" action="{% url 'add_plant' %}" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                {% endfor %}
-                <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'list_plants' %}">Back</a>
-                    <button id="plant-submit-btn" class="btn btn-black rounded-0" type="submit">Add</button>
-                </div>
-            </form>
-        </div>            
+<div class="content-container">
+    <div class="inner-content-container add-edit-plant-inner-content-container">
+        <h1 class="content-header">Add Plant</h1>
+        <div class="row add-edit-plant-row">
+            <div class="col-12">
+                <div class="note">Note: leading, trailing and multiple spaces in a row in the common name are removed</div>
+                <form method="POST" action="{% url 'add_plant' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                    <div class="button-container">
+                        <a class="btn button button-content" href="{% url 'list_plants' %}">Back</a>
+                        <button id="plant-submit-btn" class="btn button button-content" type="submit">Add Plant</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
     </div>
+</div>    
 {% endblock %}
 
 {% block modal_style %}modal-offset{% endblock %}
