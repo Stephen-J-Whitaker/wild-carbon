@@ -21,10 +21,14 @@
         <div class="inner-content-container">
             <h2 class="content-header">{{ location.location_friendly_name }}</h2>
             <p class="text-content location-text">
-                Located in the west of Ireland, our 80 acre site has the capacity for approximately 50000 trees! You choose the trees you want planted in you name and we will make sure it happens as soon as possible. 
-
+                Located in the west of Ireland, our 80 acre site has the capacity for 
+                approximately 50000 trees! You choose the trees you want planted in you 
+                name and we will make sure it happens as soon as possible. 
+            </p>
+            <p class="text-content location-text">
                 The trees suitable for this site are listed below. 
-                
+            </p>
+            <p class="text-content location-text">
                 We hope you enjoy browsing the collection.
             </p>
         </div>
@@ -69,10 +73,18 @@
                                 {% endif %}
                                 <h2 class="plant-instance-name">{{ plant.common_name }}</h2>
                                 <hr>
-                                <span>{{ plant.genus }}</span>
-                                <span>{{ plant.species }}</span>
-                                <div>&#8364; {{ plant.price | calc_vat | floatformat:2 }} inc VAT</div>
-                                <div>SKU: {{ plant.sku }}</div>
+                                <div>
+                                    <span class="plant-field">Genus: </span><span class="plant-field-data">{{ plant.genus }}</span>
+                                </div>
+                                <div>
+                                    <span class="plant-field">Species: </span><span class="plant-field-data">{{ plant.species }}</span>
+                                </div>
+                                <div>
+                                    <span class="plant-field">Price: </span><span class="plant-field-data">&#8364 {{ plant.price | calc_vat | floatformat:2 }} inc VAT</span>
+                                </div>
+                                <div>
+                                    <span class="plant-field">SKU: </span><span class="plant-field-data">{{ plant.sku }}</span>
+                                </div>
                             </a>
                         {% endfor %}
                     </div>

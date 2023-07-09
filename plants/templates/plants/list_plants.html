@@ -42,7 +42,7 @@
                 <div class="plant-list">
                     {% for plant in plants %}
                         <div class="plant-instance">
-                            <div class="plant-instance add-plant-plant-instance">
+                            <div class="plant-instance plant-list-plant-instance">
                                 {% if plant.image %}
                                     <img class="plant-image" src="{{ plant.image.url }}" alt="{{ plant.common_name }}" loading="lazy">
                                 {% else %}
@@ -50,10 +50,18 @@
                                 {% endif %}
                                 <h2 class="plant-instance-name">{{ plant.common_name }}</h2>
                                 <hr>
-                                <span>{{ plant.genus }}</span>
-                                <span>{{ plant.species }}</span>
-                                <div>&#8364; {{ plant.price }} ex VAT</div>
-                                <div>SKU: {{ plant.sku }}</div>
+                                <div>
+                                    <span class="plant-field">Genus: </span><span class="plant-field-data">{{ plant.genus }}</span>
+                                </div>
+                                <div>
+                                    <span class="plant-field">Species: </span><span class="plant-field-data">{{ plant.species }}</span>
+                                </div>
+                                <div>
+                                    <span class="plant-field">Price: </span><span class="plant-field-data">&#8364; {{ plant.price }} ex VAT</span>
+                                </div>
+                                <div>
+                                    <span class="plant-field">SKU: </span><span class="plant-field-data">{{ plant.sku }}</span>
+                                </div>
                                 <div class="add-plant-links">
                                     <small>
                                         <a class="link" href="{% url 'edit_plant' plant.id %}">Edit</a> |

@@ -20,6 +20,7 @@
     --inner-content-container-shadow: rgb(191, 196, 168);
     --title-font-colour: rgb(255, 255, 255);
     --main-font-colour:  rgba(255, 255, 255, 0.9);
+    --label-font-colour: rgba(249, 255, 215, 0.9);
     --header-font-colour: rgba(249, 255, 215, 0.9);
     --content-font-colour:rgba(249, 255, 215, 0.8);
     --link-font-colour: rgba(249, 255, 215, 0.9);
@@ -208,7 +209,8 @@ a,
 .link,
 .nav-link,
 .privacy-policy,
-.add-plant-plant-instance {
+.plant-list-plant-instance,
+.plant-detail-plant-instance {
     padding: 11px;
     color: var(--link-font-colour);
 }
@@ -607,7 +609,9 @@ h2,
     border-radius: 10px;
     background-color: var(--button-background);
     color: var(--button-green-font);
-    height: 28px;
+    height: fit-content;
+    text-align: center;
+    padding: 5px;
 }
 
 .button:hover,
@@ -636,7 +640,7 @@ button:focus {
     width: fit-content;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .button-container {
@@ -692,6 +696,13 @@ a:hover,
     text-decoration: underline;
 }
 
+.label {
+    color: var(--link-font-colour);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Modal styles */
 .privacy-policy {
     padding: 0;
 }
@@ -735,7 +746,6 @@ a:hover,
     width: calc(var(--footer-icon-size)/2);
 }
 
-/* Modal styles */
 .display-none {
     display: none;
 }
@@ -840,6 +850,10 @@ a:hover,
     border-radius: 5px;
 }
 
+.plant-detail-plant-instance {
+    margin: auto;
+}
+
 .plant-image {
     width: auto;
     border-radius: 5px;
@@ -858,6 +872,14 @@ a:hover,
     text-align: center;
 }
 
+.plant-field {
+    font-weight: bold;
+}
+
+.plant-field-data {
+    color: var(--main-font-colour);
+}
+
 hr {
     margin: 0;
 }
@@ -872,17 +894,36 @@ hr {
     width: 100%;
 }
 
-.search-input {
+.search-input,
+.quantity-input {
     height: 38px;
     margin-bottom: 10px;
 }
 
-.search-button {
+.search-button,
+.quantity-button {
     border-radius: 0;
     border-bottom-right-radius: .375rem;
     border-top-right-radius: .375rem;
     height: 38px;
     border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+.quantity-button {
+    width: 40px;
+}
+
+.quantity-button-left {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: .375rem;
+    border-top-left-radius: .375rem;
+    background-color: var(--button-green-background);
+    color: var(--main-font-colour);
+}
+
+.quantity-button-left:hover {
+    background-color: var(--button-green-background-solid);
 }
 
 .sort-select-wrapper {
@@ -893,6 +934,10 @@ hr {
 
 .checkbox {
     accent-color: var(--button-background);
+}
+
+.confirm-delete {
+    margin: 50px 0;
 }
 
 /* Table styles */
