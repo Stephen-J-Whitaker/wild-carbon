@@ -23,3 +23,6 @@ class AddPlantRecordForm(forms.ModelForm):
     class Meta:
         model = PlantRecord
         fields = ('plant',)
+
+    plant = forms.ModelChoiceField(queryset=Plant.objects.all(),
+                                   empty_label='Select a plant')

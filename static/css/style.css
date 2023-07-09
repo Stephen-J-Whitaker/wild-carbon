@@ -118,10 +118,6 @@ body {
     font-family: var(--primary-font-family);
 }
 
-.body {
-    
-}
-
 /* Header css */
 header {
     position: relative;
@@ -489,7 +485,8 @@ main {
 }
 
 .add-edit-plant-inner-content-container,
-.delete-plant-inner-content-container {
+.delete-plant-inner-content-container,
+.standard-inner-content-container {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
@@ -497,10 +494,16 @@ main {
 }
 
 .add-edit-plant-row,
-.add-plant-record {
-    justify-content: center;
+.standard-content {
     width: 100%;
     max-width: 611px;
+}
+
+.standard-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .inner-error-container {
@@ -865,6 +868,7 @@ hr {
 }
 
 /* Forms */
+.standard-form,
 .search-form {
     width: 100%;
 }

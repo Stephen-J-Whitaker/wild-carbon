@@ -9,13 +9,21 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Add A Plant Record</h1>
-    <form method="POST" action="{% url 'add_plant_record' %}" class="form mb-2">
-        {% csrf_token %}
-        {{ form | crispy }}
-        <button type="submit">Create Record</button>
-    </form>
-    <a href="{% url 'list_plant_records' %}">Back</a>
+<div class="content-container">
+    <div class="inner-content-container standard-inner-content-container">
+        <h1 class="content-header">Add A Plant Record</h1>
+        <div class="standard-content">
+            <form id="add-plant-record-form" method="POST" action="{% url 'add_plant_record' %}" class="standard-form">
+                {% csrf_token %}
+                {{ form | crispy }}
+            </form>
+            <div class="button-container">
+                <a class="button width-100-button button-content" href="{% url 'list_plant_records' %}">Back</a>
+                <button form="add-plant-record-form" class="width-100-button button light-button" type="submit">Create Record</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}
