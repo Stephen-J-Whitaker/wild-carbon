@@ -225,6 +225,14 @@ a,
     text-decoration: underline;
 }
 
+.image-select {
+    color: var(--main-font-colour);
+}
+
+.image-select-input {
+    color: var(--button-green-font);
+}
+
 .add-plant-links {
     text-align: center;
 }
@@ -596,7 +604,9 @@ button:focus {
 }
 
 .plant-record-button,
-.add-plant-button {
+.add-plant-button,
+.button-container,
+.button-content {
     margin: auto;
     width: fit-content;
     display: flex;
@@ -604,8 +614,21 @@ button:focus {
     padding: 10px;
 }
 
+.button-container {
+    column-gap: 10px;
+}
+
+.button-content {
+    justify-content: center;
+}
+
+.button-content:hover {
+    color: var(--button-green-font);
+}
+
 .plant-record-button:hover,
-.add-plant-button:hover {
+.add-plant-button:hover,
+.button-content:hover {
     text-decoration: none;
 }
 
