@@ -11,14 +11,12 @@
 
 {% block content %}
 <div class="content-container">
-    <div class="inner-content-container delete-plant-inner-content-container">
+    <div class="inner-content-container standard-inner-content-container">
         <h1 class="content-header">Confirm plant deletion</h1>
         <div class="standard-content">
             <form id="confirm-plant-delete-form" method="post">
                 {% csrf_token %}
-                <p class="confirm-delete"><br><br>Are you sure you want to delete "{{ object }}"?</p>
-                <br>
-                <br>
+                <p class="confirm-delete"><br><br>Are you sure you want to delete '{{ object }}'?<br><br></p>
                 {{ form }}
             </form>
             <div class="button-container">

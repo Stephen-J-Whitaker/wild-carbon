@@ -17,7 +17,7 @@
     --modal-background-colour: rgba(9, 27, 14, 0.7);
     --page-title-background-colour: rgba(9, 27, 14, 0.8);
     --inner-content-container-colour: rgb(74, 105, 76);
-    --inner-content-container-shadow: rgb(79, 82, 66);
+    --inner-content-container-shadow: rgb(191, 196, 168);
     --title-font-colour: rgb(255, 255, 255);
     --main-font-colour:  rgba(255, 255, 255, 0.9);
     --header-font-colour: rgba(249, 255, 215, 0.9);
@@ -485,7 +485,6 @@ main {
 }
 
 .add-edit-plant-inner-content-container,
-.delete-plant-inner-content-container,
 .standard-inner-content-container {
     flex-wrap: wrap;
     display: flex;
