@@ -33,21 +33,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     //End of sort search js code supplied by Code Institute
-
-    // Code to go to previous position on page refresh adapted from
-    //https://css-tricks.com/memorize-scroll-position-across-page-loads/
-    window.addEventListener('beforeunload', () => {
-    localStorage.setItem('sidebar-scroll', window.scrollY);
-    });
-
-    let top = localStorage.getItem('sidebar-scroll');
-    if (top !== null) {
-        window.scroll({
-            top: top,
-            left: 0,
-            behavior: 'smooth',
-        });
-    }
-    //End of code from https://css-tricks.com/memorize-scroll-position-across-page-loads/
-
 });

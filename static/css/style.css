@@ -496,7 +496,8 @@ main {
     align-items: center;
 }
 
-.add-edit-plant-row {
+.add-edit-plant-row,
+.add-plant-record {
     justify-content: center;
     width: 100%;
     max-width: 611px;
@@ -1003,7 +1004,7 @@ th {
 }
 
 /* Add media query for wide screens */
-@media screen and (min-width: 1112px) {
+@media screen and (min-width: 1200px) {
     header {
         position: absolute;
         margin-right: 0;
@@ -1011,7 +1012,7 @@ th {
 
     header,
     .main-container {
-        width: 1112px;
-        right: calc(50% - (1112px / 2));
+        width: 1200px;
+        right: calc(50% - (1200px / 2));
     }
 }
