@@ -20,7 +20,7 @@
                 <div>Current state: <u>{{ record.plant_state.plant_state_friendly_name }}</u></div>
                 <div>Moving the plant to the next state cannot be undone.</div>
                 <div>Please tick the box to indicate that you wish to proceed</div>
-                <input type="checkbox" required>
+                <input type="checkbox" class="checkbox" required>
             </form>
             <div class="button-container">
                 <a class="button width-100-button button-content" href="{% url 'list_plant_records' %}">Back</a>

@@ -13,16 +13,18 @@
 <div class="content-container">
     <div class="inner-content-container delete-plant-inner-content-container">
         <h1 class="content-header">Confirm plant deletion</h1>
-        <div>
-            <form method="post">
+        <div class="standard-content">
+            <form id="confirm-plant-delete-form" method="post">
                 {% csrf_token %}
                 <p class="confirm-delete"><br><br>Are you sure you want to delete "{{ object }}"?</p>
+                <br>
+                <br>
                 {{ form }}
-                <div class="button-container">
-                    <button class="width-100-button button light-button" type="submit">Delete Plant</button>
-                    <a class="button width-100-button button-content" href="{% url 'list_plants' %}">No Thanks</a>
-                </div>
             </form>
+            <div class="button-container">
+                <a class="button width-100-button button-content" href="{% url 'list_plants' %}">No Thanks</a>
+                <button form="confirm-plant-delete-form" class="width-100-button button light-button" type="submit">Delete Plant</button>
+            </div>
         </div>
     </div>
 </div>    

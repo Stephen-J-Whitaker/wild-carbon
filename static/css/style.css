@@ -892,6 +892,10 @@ hr {
     margin-bottom: 10px;
 }
 
+.checkbox {
+    accent-color: var(--button-background);
+}
+
 /* Table styles */
 .table {
     color: var(--main-font-colour);
