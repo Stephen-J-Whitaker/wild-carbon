@@ -31,10 +31,11 @@
                 <div class="order-history table-responsive">
                     {% for data in order_data %}
                         <hr>
+                        <div class="associated-record-label mt-2">Order Details:</div>
                         <table class="table order-history-table table-sm table-borderless">
                             <thead>
                                 <tr>
-                                    <th class="order-number">Order Number</th>
+                                    <th>Order Number</th>
                                     <th>Date</th>
                                     <th>Items</th>
                                     <th>Order Total</th>
@@ -62,7 +63,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="associated-record-label">Associated Plant Records</div>
+                        <div class="associated-record-label mt-2">Associated Plant Records:</div>
                         <table class="table plant-record-table table-sm table-borderless">
                             <thead>
                                 <tr>

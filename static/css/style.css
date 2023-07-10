@@ -67,6 +67,7 @@
     justify-items: center;
     align-content: center;
     flex-wrap: wrap;
+    overflow-wrap: anywhere;
 }
 
 .toast-basket {
@@ -93,13 +94,15 @@
     color: var(--title-font-colour);
 }
 
-.toast-button {
+.toast-button,
+.order-history-button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.toast-button:hover {
+.toast-button:hover,
+.order-history-button:hover {
     text-decoration: none;
 }
 
@@ -917,6 +920,15 @@ hr {
     padding-top: 10px;
 }
 
+.order-confirmation-container {
+    max-width: 500px;
+    display: flex;
+}
+
+.order-confirmation-wrapper {
+    width: inherit;
+}
+
 /* Forms */
 .standard-form,
 .search-form {
@@ -996,16 +1008,16 @@ hr {
     margin: 50px 0;
 }
 
-.order-number {
-    font-weight: bold;
-}
-
 .associated-record-label {
     font-style: italic;
 }
 
 textarea.form-control {
     height: 330px;
+}
+
+#id_default_country {
+    height: fit-content;
 }
 
 /* Table styles */
