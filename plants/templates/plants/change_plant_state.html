@@ -23,8 +23,8 @@
                 <input type="checkbox" class="checkbox" required>
             </form>
             <div class="button-container">
-                <a class="button width-100-button button-content" href="{% url 'list_plant_records' %}">Back</a>
-                <button form="change-record-state-form" id="plant-submit-btn" class="width-100-button button light-button" type="submit">Move to {{ record.plant_state.next_plant_state.plant_state_friendly_name }}</button>
+                <a class="button button-content" href="{% url 'list_plant_records' %}">Back</a>
+                <button form="change-record-state-form" id="plant-submit-btn" class="button light-button" type="submit">Move to {{ record.plant_state.next_plant_state.plant_state_friendly_name }}</button>
             </div>
         </div>
     </div>
