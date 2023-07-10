@@ -630,8 +630,7 @@ h3 {
     font-size: large;
 }
 
-.button,
-.allauth-inner-content button {
+.button {
     border: 1px solid var(--button-green-border);
     border-radius: 10px;
     background-color: var(--button-background);
@@ -641,32 +640,55 @@ h3 {
     padding: 5px;
 }
 
-.allauth-inner-content button {
-    width: 150px;
-}
-
 .button:hover,
-.selector:hover,
-.allauth-inner-content button:hover {
+.selector:hover {
     background-color: var(--button-background-solid);
 }
 
-button:focus,
-.allauth-inner-content button:focus {
+button:focus {
     outline: none;
 }
 
-.light-button,
-.allauth-inner-content button,
-.allauth-inner-content input[type=submit] {
+.light-button {
     background-color: var(--button-background);
     color: var(--button-green-font);
 }
 
-.light-button:hover,
+.light-button:hover {
+    background-color: var(--button-background-solid);
+}
+
+.allauth-inner-content button {
+    border: 1px solid var(--button-green-border);
+    border-radius: 10px;
+    background-color: var(--button-green-background);
+    color: var(--main-font-colour);
+    height: fit-content;
+    text-align: center;
+    padding: 5px;
+}
+
+.allauth-inner-content button {
+    width: 150px;
+}
+
+.allauth-inner-content button:hover {
+    background-color: var(--button-green-background-solid);
+}
+
+.allauth-inner-content button:focus {
+    outline: none;
+}
+
+.allauth-inner-content button,
+.allauth-inner-content input[type=submit] {
+    background-color: var(--button-green-background);
+    color: var(--main-font-colour);
+}
+
 .allauth-inner-content button:hover,
 .allauth-inner-content input[type=submit]:hover {
-    background-color: var(--button-background-solid);
+    background-color: var(--button-green-background-solid);
 }
 
 .plant-record-button,
