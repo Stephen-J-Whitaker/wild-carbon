@@ -43,6 +43,7 @@
     --info: rgb(0, 127, 150);
     --warning: rgb(150, 97, 0);
     --error: rgb(150, 10, 0);
+    --contact-icon-colour: rgb(249,255,215);
 }
 
 /* Message */
@@ -616,12 +617,17 @@ main {
 /* Compontent styles */
 h1,
 h2,
+h3,
 .image-nav-title-main {
     color: var(--header-font-colour);
     font-family: var(--brand-font-family);
     font-weight: 300;
     letter-spacing: 1px;
     font-size: xx-large;
+}
+
+h3 {
+    font-size: large;
 }
 
 .button {
@@ -690,7 +696,7 @@ input,
 .form-control {
     border-radius: 5px;
     background-color: var(--input-background-colour);
-    height: 28px;
+    height: 36px;
     border: none;
 }
 
@@ -775,7 +781,7 @@ a:hover,
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    background-color: var(--button-background-solid);
+    background-color: var(--contact-icon-colour);
     border-radius: 50%;
     padding: 0;
     border-width: 0;
@@ -851,10 +857,13 @@ a:hover,
     overflow: scroll;
 }
 
-.contact-us-close-button
-.width-100-button
+.contact-us-close-button,
 .privacy-policy-close-button {
     width: 100px;
+}
+
+.width-150-button {
+    width: 150px;
 }
 
 .privacy-policy-close-button {
@@ -1036,7 +1045,18 @@ textarea.form-control {
 }
 
 #id_default_country {
-    height: fit-content;
+    height: 36px;
+}
+
+#add-to-basket-form {
+    max-width: 375px;
+    margin: auto;
+}
+
+.remove-item,
+.button,
+.quantity-button {
+    cursor: pointer;
 }
 
 /* Table styles */

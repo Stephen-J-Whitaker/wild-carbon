@@ -8,8 +8,7 @@
     border: 1px solid transparent;
     border-radius: 0px;
     background-color: white;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
+    box-shadow: none;
     transition: box-shadow 150ms ease;
 }
 
@@ -24,7 +23,7 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+    color: var(--button-green-font)
 }
 
 .fieldset-label {
@@ -34,8 +33,23 @@
 
 #payment-form .form-control,
 #card-element {
-    color: #000;
-    border: 1px solid #000;
+    color: var(--button-green-font);
+    background-color: rgb(240, 241, 234);
+    border: none;
+}
+
+#payment-form .form-control {
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 6px 12px;
+    height: 36px;
+}
+
+#payment-form .form-control:active,
+#card-element:active,
+#payment-form .form-control:focus,
+#card-element:focus {
+    background-color: white;
 }
 
 select,
@@ -55,7 +69,7 @@ select option[value=""] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 162, 184, .85);
+    background: rgba(9, 27, 14, 0.9);
     z-index: 9999;
 }
 
