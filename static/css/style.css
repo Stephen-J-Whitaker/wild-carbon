@@ -630,7 +630,8 @@ h3 {
     font-size: large;
 }
 
-.button {
+.button,
+.allauth-inner-content button {
     border: 1px solid var(--button-green-border);
     border-radius: 10px;
     background-color: var(--button-background);
@@ -641,20 +642,24 @@ h3 {
 }
 
 .button:hover,
-.selector:hover {
+.selector:hover,
+.allauth-inner-content button:hover {
     background-color: var(--button-background-solid);
 }
 
-button:focus {
+button:focus,
+.allauth-inner-content button:focus {
     outline: none;
 }
 
-.light-button {
+.light-button,
+.allauth-inner-content button {
     background-color: var(--button-background);
     color: var(--button-green-font);
 }
 
-.light-button:hover {
+.light-button:hover,
+.allauth-inner-content button:hover {
     background-color: var(--button-background-solid);
 }
 
@@ -1085,6 +1090,23 @@ th {
 }
 
 .plant-record-table td a {
+    padding: 0;
+}
+
+/* Allauth style */
+.allauth-content {
+    height: 50%;
+}
+
+.allauth-inner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.allauth-inner-content a {
     padding: 0;
 }
 

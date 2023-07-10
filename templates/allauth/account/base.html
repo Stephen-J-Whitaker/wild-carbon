@@ -1,3 +1,12 @@
 {% extends "base.html" %}
 
 {% block main_style %}main-container-offset{% endblock %}
+
+{% block content %}
+<div class="content-container allauth-content">
+    <div class="inner-content-container allauth-inner-content">
+        {% block inner_content %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
