@@ -38,6 +38,7 @@
     --footer-icon-size: 3rem;
     --footer-icon-inner-size: 2.5rem;
     --input-background-colour: rgb(234, 238, 222);
+    --input-background-colour-selected: rgb(243, 245, 237);
     --success: rgb(0, 150, 62);
     --info: rgb(0, 127, 150);
     --warning: rgb(150, 97, 0);
@@ -184,6 +185,10 @@ header {
 
 .navbar-toggler-style:active {
     background-color: var(--button-active-background);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 .navbar-collapse {
@@ -335,7 +340,7 @@ footer {
 .basket-total {
     color: var(--main-font-colour);
     text-decoration: none;
-    padding-right: 10px;
+    padding-right: 3px;
 }
 
 .dropdown-toggle::after {
@@ -667,10 +672,12 @@ button:focus {
 }
 
 input,
-.selector {
+.selector,
+.form-control {
     border-radius: 5px;
     background-color: var(--input-background-colour);
     height: 28px;
+    border: none;
 }
 
 .selector {
@@ -680,9 +687,11 @@ input,
 input:focus,
 input:active,
 .selector:focus,
-.selector:active {
+.selector:active,
+.form-control:focus {
+    box-shadow: none;
     outline: none;
-    background-color: var(--input-background-colour);
+    background-color: white;
 }
 
 a,
@@ -914,6 +923,17 @@ hr {
     border: var(--bs-border-width) solid var(--bs-border-color);
 }
 
+.search-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--button-green-background);
+    color: var(--main-font-colour);
+}
+
+.search-button:hover {
+    background-color: var(--button-green-background-solid);
+}
+
 .quantity-button {
     width: 40px;
 }
@@ -938,18 +958,23 @@ hr {
 }
 
 .checkbox,
+.custom-control-input,
 .form-check-input[type=checkbox]:checked {
     accent-color: var(--button-green-background-solid);
     background-color: var(--button-green-background-solid);
-    border-color: var(--button-green-border);
+    border: 1px solid var(--button-green-border);
     color: white;
     height: 16px;
     width: 16px;
 }
 
+.custom-control-input:focus,
+.custom-control-input:active,
+.form-check-input[type=checkbox],
 .form-check-input[type=checkbox]:focus,
 .form-check-input[type=checkbox]:active {
     border-color: var(--button-green-border);
+    box-shadow: none;
 }
 
 .confirm-delete {
@@ -962,6 +987,10 @@ hr {
 
 .associated-record-label {
     font-style: italic;
+}
+
+textarea.form-control {
+    height: 330px;
 }
 
 /* Table styles */

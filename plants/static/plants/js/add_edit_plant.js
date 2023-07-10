@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 success: function(data) {
                     if (data === 'in_use') {
                         if ($('#id_common_name').val().trimStart().trimEnd().replace(/  +/g, ' ') === originalCommonName) {
-                            $('#id_common_name').css('background-color', 'white');
+                            $('#id_common_name').css('background-color', 'rgb(234, 238, 222)');
                             commonNameLabel.classList.remove('common-name-status');
                             $('#plant-submit-btn').show();
                         } else {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             $('#plant-submit-btn').hide();
                         }
                     } else {
-                        $('#id_common_name').css('background-color', 'white');
+                        $('#id_common_name').css('background-color', 'rgb(234, 238, 222)');
                         commonNameLabel.classList.remove('common-name-status');
                         $('#plant-submit-btn').show();
                     }
