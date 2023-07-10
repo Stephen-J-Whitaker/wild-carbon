@@ -921,12 +921,16 @@ hr {
 }
 
 .order-confirmation-container {
-    max-width: 500px;
-    display: flex;
+width: 100%;
 }
 
 .order-confirmation-wrapper {
-    width: inherit;
+    max-width: 600px;
+    margin: auto;
+}
+
+.text-md-right {
+    overflow-wrap: anywhere;
 }
 
 /* Forms */
@@ -1114,7 +1118,13 @@ th {
         
         width: 390px;
     }
+}
 
+/* Media query for 767px plus width screens */
+@media screen and (min-width: 767px) {
+    .text-md-right {
+        text-align: right;
+    }
 }
 
 /* Add media query for wide screens */

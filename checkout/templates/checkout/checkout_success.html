@@ -20,7 +20,7 @@
             <h1 class="content-header">Thank You</h1>
             <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             <div class="order-confirmation-container">
-                <div class="order-confirmation-wrapper col-12 p-2 border">
+                <div class="order-confirmation-wrapper p-2 border">
                     <div class="row">
                         <h2 class="col">Order Info:</h2>
                     </div>
@@ -157,7 +157,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-right">
+            <div>
                 {% if from_profile %}
                     <a href="{% url 'profile' %}" class="button order-history-button mt-2">
                         <span class="icon mr-2">
