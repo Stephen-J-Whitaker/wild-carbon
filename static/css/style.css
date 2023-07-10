@@ -25,7 +25,7 @@
     --header-font-colour: rgba(249, 255, 215, 0.9);
     --content-font-colour:rgba(249, 255, 215, 0.8);
     --link-font-colour: rgba(249, 255, 215, 0.9);
-    --button-background: rgba(217, 223, 197);
+    --button-background: rgb(203, 207, 187);
     --button-background-solid: rgb(234, 238, 222);
     --button-green-font:rgba(38, 70, 47, 1);
     --button-green-background: rgba(9, 27, 14, 0.5);
@@ -37,7 +37,7 @@
     --header-height: 75px;
     --footer-icon-size: 3rem;
     --footer-icon-inner-size: 2.5rem;
-    --input-background-colour: rgb(234, 238, 222);
+    --input-background-colour: rgb(240, 241, 234);
     --input-background-colour-selected: rgb(243, 245, 237);
     --success: rgb(0, 150, 62);
     --info: rgb(0, 127, 150);
@@ -641,6 +641,10 @@ h3 {
     padding: 5px;
 }
 
+.allauth-inner-content button {
+    width: 150px;
+}
+
 .button:hover,
 .selector:hover,
 .allauth-inner-content button:hover {
@@ -653,13 +657,15 @@ button:focus,
 }
 
 .light-button,
-.allauth-inner-content button {
+.allauth-inner-content button,
+.allauth-inner-content input[type=submit] {
     background-color: var(--button-background);
     color: var(--button-green-font);
 }
 
 .light-button:hover,
-.allauth-inner-content button:hover {
+.allauth-inner-content button:hover,
+.allauth-inner-content input[type=submit]:hover {
     background-color: var(--button-background-solid);
 }
 
@@ -1095,7 +1101,7 @@ th {
 
 /* Allauth style */
 .allauth-content {
-    height: 50%;
+    min-height: fit-content;
 }
 
 .allauth-inner-content {
@@ -1104,10 +1110,40 @@ th {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    padding-bottom: 30px;
 }
 
 .allauth-inner-content a {
+    font-weight: bold;
     padding: 0;
+}
+
+.allauth-inner-content a .button{
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+.allauth-inner-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.allauth-inner-content form p {
+    display: flex;
+    flex-direction: column;
+}
+
+.allauth-inner-content input:not([type=checkbox]) {
+    min-width: 200px;
+    margin-bottom: 10px;
+}
+
+.allauth-inner-content button {
+    margin-bottom: 20px;
 }
 
 /* Mailchimp styles */

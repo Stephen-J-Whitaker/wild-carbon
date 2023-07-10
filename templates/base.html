@@ -45,13 +45,13 @@
                                 <img class="account-menu-icon" src="{% static 'icons/base_account_menu.svg' %}" alt="Open the account menu">
                             </button>
                             <ul id="account-dropdown-menu" class="dropdown-menu dropdown-menu-end account-dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'carbon_summary' %}">My Carbon Summary</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                                </li>
                                 {% if user.is_authenticated %}
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'carbon_summary' %}">My Carbon Summary</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                                    </li>
                                     <li>
                                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                                     </li>
