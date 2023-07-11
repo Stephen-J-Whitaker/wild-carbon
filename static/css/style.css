@@ -39,6 +39,7 @@
     --footer-icon-inner-size: 2.5rem;
     --input-background-colour: rgb(240, 241, 234);
     --input-background-colour-selected: rgb(243, 245, 237);
+    --faq-background-colour: rgba(0, 0, 0, 0.3);
     --success: rgb(0, 150, 62);
     --info: rgb(0, 127, 150);
     --warning: rgb(150, 97, 0);
@@ -547,8 +548,17 @@ main {
     text-align: center;
 }
 
-.faq-list {
-    text-align: left;
+.faq-list ul {
+    padding: 0;
+    list-style: none;
+}
+
+.faq-list li {
+    padding: 5px;
+    margin: 10px 0;
+    background-color: var(--faq-background-colour);
+    border-radius: 10px;
+    border: 1px solid var(--header-footer-background-colour);
 }
 
 .location-text {
