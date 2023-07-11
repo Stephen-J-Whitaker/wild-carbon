@@ -31,6 +31,7 @@ def location_plants(request):
     location, including sort and search queries
     location_plants view code supplied by Code Institute
     """
+    plants = []
     plants = Location.objects.get(pk=1).location_plants.all()
     query = None
     sort = None
