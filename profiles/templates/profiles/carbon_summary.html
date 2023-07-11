@@ -17,100 +17,120 @@
                 <P>
                     To date you have commissioned the growing and planting of: {{ plant_count }} trees
                 </P>
-                <P>
-                    These trees will sequester approximately {{ sequestered_co2 }}kg of
-                    CO2 in their {{ tree_life }} year lives
-                </P>
-                <P>
-                    Planting another {{ plants_outstanding }} trees will offset the remaining {{ co2_outstanding }} kg of your estimated life’s carbon
-                </P>
+                {% if all_user_orders %}
+                    <P>
+                        These trees will sequester approximately {{ sequestered_co2 }}kg of
+                        CO2 in their {{ tree_life }} year lives
+                    </P>
+                    <P>
+                        Planting another {{ plants_outstanding }} trees will offset the remaining {{ co2_outstanding }} kg of your estimated life's carbon
+                    </P>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div class="content-container">
-        <div class="inner-content-container">
-            <h2 class="content-header">Your Planting Records</h2>
-            <div class="text-content">
-                <div class="table-responsive">
-                    <h2 class="records-header">Planted Trees</h2>
-                    <table class="table carbon-summary-plant-record-table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col">Plant name</th>
-                                <th scope="col">plant id</th>
-                                <th scope="col">Date planted</th>
-                            </tr>
-                        </thead>
-                        {% for record in planted %}
-                            <tr>
-                                <td class="p-3 w-25">
-                                    {{ record.plant.common_name }}
-                                </td>
-                                <td class="py-3">
-                                    {{ record.plant_number }}
-                                </td>
-                                <td class="py-3">
-                                    {{ record.date_state_changed }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
+    {% if all_user_orders %}
+        <div class="content-container">
+            <div class="inner-content-container">
+                <h2 class="content-header">Your Planting Records</h2>
+                <p class="text-center">Trees start in a state of <span class="fw-bold">'pending'</span> when you're order is placed</p>
+                <p class="text-center">A tree moves into the state <span class="fw-bold">'growing'</span> once our nursery has sown your tree's seed and whilst the tree is being grown in our nursery</p> 
+                <p class="text-center">The tree moves into the state <span class="fw-bold">'planted'</span> once it has been put in the site where it will grow on and sequester carbon for you, for the duration of its life</p>
+                </p>
+                <div class="text-content">
+                    <div class="table-responsive">
+                        <h2 class="records-header">Planted Trees</h2>
+                        {% if planted %}
+                            <table class="table carbon-summary-plant-record-table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Plant name</th>
+                                        <th scope="col">plant id</th>
+                                        <th scope="col">Date planted</th>
+                                    </tr>
+                                </thead>
+                                {% for record in planted %}
+                                    <tr>
+                                        <td class="p-3 w-25">
+                                            {{ record.plant.common_name }}
+                                        </td>
+                                        <td class="py-3">
+                                            {{ record.plant_number }}
+                                        </td>
+                                        <td class="py-3">
+                                            {{ record.date_state_changed }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        {% else %}
+                            <p class="float-start">You currently have no trees in the state 'planted'</p>    
+                        {% endif %}
+                    </div>
+                    <hr>
+                    <div class="table-responsive">
+                        <h2 class="records-header">Growing Trees</h2>
+                        {% if growing %}
+                            <table class="table carbon-summary-plant-record-table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Plant name</th>
+                                        <th scope="col">plant id</th>
+                                        <th scope="col">Date started growing</th>
+                                    </tr>
+                                </thead>
+                                {% for record in growing %}
+                                    <tr>
+                                        <td class="p-3 w-25">
+                                            {{ record.plant.common_name }}
+                                        </td>
+                                        <td class="py-3">
+                                            {{ record.plant_number }}
+                                        </td>
+                                        <td class="py-3">
+                                            {{ record.date_state_changed }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        {% else %}
+                            <p class="float-start">You currently have no trees in the state 'growing'</p>                           
+                        {% endif %}
+                    </div>
+                    <hr>
+                    <div class="table-responsive">
+                        <h2 class="records-header">Pending Trees</h2>
+                        {% if pending %}
+                            <table class="table carbon-summary-plant-record-table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Plant name</th>
+                                        <th scope="col">plant id</th>
+                                        <th scope="col">Date went pending</th>
+                                    </tr>
+                                </thead>
+                                {% for record in pending %}
+                                    <tr>
+                                        <td class="p-3 w-25">
+                                            {{ record.plant.common_name }}
+                                        </td>
+                                        <td class="py-3">
+                                            {{ record.plant_number }}
+                                        </td>
+                                        <td class="py-3">
+                                            {{ record.date_state_changed }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        {% else %}
+                            <p class="float-start">You currently have no trees in the state 'pending'</p>                                
+                        {% endif %}
+                    </div>                
                 </div>
-                <hr>
-                <div class="table-responsive">
-                    <h2 class="records-header">Growing Trees</h2>
-                    <table class="table carbon-summary-plant-record-table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col">Plant name</th>
-                                <th scope="col">plant id</th>
-                                <th scope="col">Date started growing</th>
-                            </tr>
-                        </thead>
-                        {% for record in growing %}
-                            <tr>
-                                <td class="p-3 w-25">
-                                    {{ record.plant.common_name }}
-                                </td>
-                                <td class="py-3">
-                                    {{ record.plant_number }}
-                                </td>
-                                <td class="py-3">
-                                    {{ record.date_state_changed }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-                <hr>
-                <div class="table-responsive">
-                    <h2 class="records-header">Pending Trees</h2>
-                    <table class="table carbon-summary-plant-record-table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col">Plant name</th>
-                                <th scope="col">plant id</th>
-                                <th scope="col">Date went pending</th>
-                            </tr>
-                        </thead>
-                        {% for record in pending %}
-                            <tr>
-                                <td class="p-3 w-25">
-                                    {{ record.plant.common_name }}
-                                </td>
-                                <td class="py-3">
-                                    {{ record.plant_number }}
-                                </td>
-                                <td class="py-3">
-                                    {{ record.date_state_changed }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>                
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock%}
 
 {% block modal_style %}modal-offset{% endblock %}

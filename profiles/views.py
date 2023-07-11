@@ -108,6 +108,10 @@ def carbon_summary(request):
 
     if request.method == 'GET':
 
+        all_user_orders = []
+        pending = []
+        growing = []
+        planted = []
         plant_count = co2_calculations.user_plants(request)
         sequestered_co2 = co2_calculations.sequestered_co2(plant_count)
         co2_outstanding = co2_calculations.co2_outstanding(sequestered_co2)
@@ -118,9 +122,7 @@ def carbon_summary(request):
         profile = get_object_or_404(UserProfile, user=request.user)
         all_user_orders = profile.orders.all()
         first_pass = True
-        pending = []
-        growing = []
-        planted = []
+
         for order in all_user_orders:
             all_records = (order.order_plant_records.all())
             if first_pass:
@@ -137,6 +139,7 @@ def carbon_summary(request):
 
     template = 'profiles/carbon_summary.html'
     context = {
+        'all_user_orders': all_user_orders,
         'plant_count': plant_count,
         'tree_life': tree_life,
         'sequestered_co2': sequestered_co2,
