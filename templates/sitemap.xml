@@ -9,7 +9,78 @@
 
 <url>
   <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/</loc>
-  <lastmod>2023-06-24T16:58:45+00:00</lastmod>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/basket/view_basket/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/locations/carbon_capture/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/how_it_works/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/about_us/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/8/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/9/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/10/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/11/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/12/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/13/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wild-carbon-803b1e2f6e91.herokuapp.com/plants/plant_detail/1/7/</loc>
+  <lastmod>2023-07-10T20:38:35+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
