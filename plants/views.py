@@ -207,6 +207,10 @@ def list_plant_records(request):
         return redirect(reverse('home'))
 
     if request.method == 'GET':
+        all_records = []
+        pending = []
+        growing = []
+        planted = []
         all_records = PlantRecord.objects.all()
 
         pending = ((all_records.
