@@ -904,12 +904,17 @@ a:hover,
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+    align-content: center;
 }
 
 .privacy-policy-modal {
     padding: 5px;
     padding-bottom: 10px;
     overflow: scroll;
+}
+
+.privacy-policy-modal li {
+    text-align: left;
 }
 
 .contact-us-close-button,
@@ -1303,12 +1308,18 @@ th {
     }
 
     header,
-    .main-container {
+    .main-container,
+    .contact-us-modal-container,
+    .privacy-policy-modal-container {
         width: 1200px;
         right: calc(50% - (1200px / 2));
     }
 
     .message-container {
         right: calc(50% - (1200px / 2) + 10px);       
+    }
+
+    .contact-email {
+        font-size: xxx-large;
     }
 }
