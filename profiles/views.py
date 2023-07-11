@@ -118,6 +118,9 @@ def carbon_summary(request):
         profile = get_object_or_404(UserProfile, user=request.user)
         all_user_orders = profile.orders.all()
         first_pass = True
+        pending = []
+        growing = []
+        planted = []
         for order in all_user_orders:
             all_records = (order.order_plant_records.all())
             if first_pass:
