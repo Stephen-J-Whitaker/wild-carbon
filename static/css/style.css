@@ -39,7 +39,7 @@
     --footer-icon-inner-size: 2.5rem;
     --input-background-colour: rgb(240, 241, 234);
     --input-background-colour-selected: rgb(243, 245, 237);
-    --faq-background-colour: rgba(0, 0, 0, 0.3);
+    --fact-background-colour:rgba(255, 255, 255, 0.1);
     --success: rgb(0, 150, 62);
     --info: rgb(0, 127, 150);
     --warning: rgb(150, 97, 0);
@@ -364,21 +364,19 @@ footer {
 }
 
 /* Main section styles */
-main {
-    background-color: var(--main-background-colour);
-}
-
 .main-container {
     position: absolute;
     top: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: var(--main-background-colour);
 }
 
 .main-container-offset {
     top: var(--header-height);
     height: calc(100vh - 75px);
+    padding-top: 10px;
 }
 
 main {
@@ -548,18 +546,18 @@ main {
     text-align: center;
 }
 
-.faq-list ul {
+.fact-list {
     padding: 0;
     list-style: none;
 }
 
-.faq-list li {
+.fact-item {
     padding: 5px;
     margin: 10px 0;
-    background-color: var(--faq-background-colour);
-    border-radius: 10px;
-    border: 1px solid var(--header-footer-background-colour);
+    background-color: var(--fact-background-colour);
 }
+
+
 
 .location-text {
     text-align: center;
@@ -670,7 +668,8 @@ button:focus {
     background-color: var(--button-background-solid);
 }
 
-.allauth-inner-content button {
+.allauth-inner-content button,
+.useful-link-item {
     border: 1px solid var(--button-green-border);
     border-radius: 10px;
     background-color: var(--button-green-background);
@@ -684,23 +683,34 @@ button:focus {
     width: 150px;
 }
 
-.allauth-inner-content button:hover {
-    background-color: var(--button-green-background-solid);
+.useful-link-item {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-.allauth-inner-content button:focus {
+.allauth-inner-content button:focus,
+.useful-link-item:focus {
     outline: none;
 }
 
 .allauth-inner-content button,
-.allauth-inner-content input[type=submit] {
+.allauth-inner-content input[type=submit],
+.useful-link-item {
     background-color: var(--button-green-background);
     color: var(--main-font-colour);
 }
 
 .allauth-inner-content button:hover,
-.allauth-inner-content input[type=submit]:hover {
+.allauth-inner-content input[type=submit]:hover,
+.useful-link-item:hover {
     background-color: var(--button-green-background-solid);
+}
+
+.useful-link-item:hover {
+    text-decoration: none;
+    box-shadow: 0px 0px 10px 1px var(--inner-content-container-shadow);
 }
 
 .plant-record-button,
@@ -986,7 +996,7 @@ hr {
 }
 
 .order-confirmation-container {
-width: 100%;
+    width: 100%;
 }
 
 .order-confirmation-wrapper {
