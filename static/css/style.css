@@ -392,6 +392,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .about-us-page-title-container {
@@ -504,6 +505,7 @@ main {
     background-color: var(--inner-content-container-colour);
     padding: 10px;
     margin: 10px;
+    margin-top: 0;
     color: var(--main-font-colour);
 }
 
