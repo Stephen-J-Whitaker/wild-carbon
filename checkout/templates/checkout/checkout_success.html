@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load basket_tools %}
+{% load tz %}
 
 {% block head_title %}Wild Carbon checkout success!{% endblock %}
 
@@ -37,7 +38,7 @@
                             <p class="mb-0 font-weight-bold text-decoration-underline">Order Date</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">{{ order.date }}</p>
+                            <p class="mb-0">{% timezone "Europe/Dublin" %}{{ order.date }}{% endtimezone %}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -80,7 +81,7 @@
                             <p class="mb-0 font-weight-bold text-decoration-underline">Address 2</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-0">{{ order.street_address1 }}</p>
+                            <p class="mb-0">{{ order.street_address2 }}</p>
                         </div>
                     </div>
                     {% endif %}
