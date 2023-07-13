@@ -185,6 +185,8 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 -   JQuery : Used for its implementation of Ajax
 
+-   Font Awesome : Used to source icon svg files and serve icons as referenced in the code
+
 -   Ajax : Used to validate data entered by the user
 
 -   pgAdmin : Used to access the postgres database and verify create, read, update and delete was happening as required
@@ -215,10 +217,80 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 -   [Code Institute Python Linter](https://pep8ci.herokuapp.com/#): Used to validate and check the styling of the Python code
 
-- Windows 10 snipping tool for creating screen grabbed jpeg files for the readme
+-   Windows 10 snipping tool for creating screen grabbed jpeg files for the readme
 
+-   [TinyJPG](https://tinyjpg.com/): compression of jpg files
+
+-   [Cloud Convert](https://cloudconvert.com/): For conversion of JPEG to WEBP format
+
+-   [Stripe](https://stripe.com/ie): For ecommerce payment implementation
+
+-   [MailChimp](https://mailchimp.com/): Used to handle newletter signup
 
 ## **9. Credits**
+
+-   ### **Code**
+
+    -  All code and text content was written by the author, Stephen Whitaker, unless explicitly stated within the code or as described below.
+
+    -   Code to implement the e-commerce store functionality for Wild Carbon including products, basket, and checkout handling was adapted from the Boutique Ado walkthrough project provided by [Code Institute](http://www.codeinstitute.net/). The Boutique Ado walkthrough also included instructions on sending of emails, integration with Amazon S3 Bucket for serving static and media files and the [Stripe]( https://stripe.com/ie) payment system and these instructions were followed during implementation of the Wild Carbon project. The code sourced from or adapted from the Boutique Ado project is referenced in the Wild Carbon project code at the locations where the Boutique Ado code is in use.
+
+    -	[Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) was used for the creation of the responsive navigation bar, toasts and some styles throughout the template code were implemented using Bootstraps css classes.
+
+    -	Code to show success messages on successful deletion was obtained from stack exchange at the following link : https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown. The code can be found in views.py of the plants app.
+
+    -	Settings for the configuration of an ElephantSQL database were provided by Code Institute. The code is in [Settings.py](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/wild_carbon/settings.py) for the wild_carbon project.
+
+    -	Settings required to configure allauth were provided by Code Institute. The code is in [Settings.py](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/wild_carbon/settings.py) for the wild_carbon project and [urls.py](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/wild_carbon/urls.py)
+
+    -	Code to use ajax to send and receive data to and from a Django view was adapted from code at the following link : https://www.geeksforgeeks.org/handling-ajax-request-in-django/. The code can be found in [views.py]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/plants/views.py) and [add_edit_plant.js]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/plants/static/plants/js/add_edit_plant.js) in the plants app
+
+    -	Code used to reduce multiple white spaces in a string to single spaces was taken from the following site: https://www.tutorialrepublic.com/faq/how-to-replace-multiple-spaces-with-single-space-in-javascript.php. The code can be found in [add_edit_plant.js]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/plants/static/plants/js/add_edit_plant.js) in the plants app
+
+    -   The code to serve the sitemap.xml and robots.txt were taken from the following tutorial https://ngangasn.com/sitemap-robot-txt-django/?utm_content=cmp-true . The code can be found in the [urls.py]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/wild_carbon/urls.py) of the Wild Carbon project folder
+
+    -   The [sitemap.xml]( https://wild-carbon-803b1e2f6e91.herokuapp.com/sitemap.xml) was generated at https://www.xml-sitemaps.com/
+
+    -   Code to integrate with MailChimp for newsletter signup handling was sourced at [MailChimp]( https://mailchimp.com/) and is imported in [index.html]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/home/templates/home/index.html)
+
+    -   Code to implement the creation of many to many relationships between the location and plants available at that location was sourced at https://medium.com/swlh/django-forms-for-many-to-many-fields-d977dec4b024. The code can be found in [forms.py](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/locations/forms.py) and [views.py](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/locations/views.py) of the locations app.
+    
+    -   Code to confirm if a user trying to access a view is a superuser was sourced at https://stackoverflow.com/questions/67351312/django-check-if-superuser-in-class-based-view. The code can be found in [mixins.py]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/wild_carbon/mixins.py) in the Wild Carbon project folder
+
+    -   Code to confirm deletion of a plant was sourced from the [Music Aid project]( https://github.com/Stephen-J-Whitaker/music-aid). The code can be found in the DeletePlant class in [views.py]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/plants/views.py) in the plants app
+
+    -   Code to validate whether a plant common name as entered by a user in the add and edit plant views was unique in the database was sourced from the [Music Aid project]( https://github.com/Stephen-J-Whitaker/music-aid). The code can be found in the common_name_validate function in [views.py]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/plants/views.py) and [add_edit_plant.js]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/plants/static/plants/js/add_edit_plant.js) in the plants app
+
+
+-   ### **Content**
+
+    -   The privacy policy for the site was generated at https://www.privacypolicygenerator.info/ and can be found in [privacy_policy.html]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/templates/includes/privacy_policy.html)
+
+    -   The [Facebook business page](https://www.facebook.com/wild.carbon.sequestration) for Wild Carbon was generated and is hosted by [Facebook]( https://www.facebook.com/)
+
+    -   A link to [carbonfootrint.com’s]( https://www.carbonfootprint.com/calculator.aspx) carbon footprint calculator was used in the [Useful Links]( https://wild-carbon-803b1e2f6e91.herokuapp.com/how_it_works/) section of the Wild Carbon website
+
+    -   A link to [rewildingeurope.com’s]( https://rewildingeurope.com/what-is-rewilding/) description of rewilding was used in the [Useful Links]( https://wild-carbon-803b1e2f6e91.herokuapp.com/how_it_works/) section of the Wild Carbon website
+
+    -   A link to [treecouncil.ie’s]( https://www.treecouncil.ie/carbon-footprint) carbon footprint facts was used in the [Useful Links]( https://wild-carbon-803b1e2f6e91.herokuapp.com/how_it_works/) section of the Wild Carbon website
+
+    -   Plant information was sourced at the [RHS]( https://www.rhs.org.uk/) website
+
+    -   [WordTracker](https://www.wordtracker.com/) was used for keyword research for search engine optimisation
+
+    -   [FontAwesome]( https://fontawesome.com/) used to source icon SVG files and other icons as served by them. The icons are referenced in the code
+
+-   ### **Media**
+
+    -   The main heading image of a [glade]( https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/static/images/base_home_index_glade.webp) was sourced at https://www.pexels.com/photo/green-forest-under-white-sky-during-daytime-165537/
+
+    -   The [carbon capture location]( https://raw.githubusercontent.com/Stephen-J-Whitaker/wild-carbon/main/static/images/carbon_capture_location.webp) image was soured at https://iowalandcompany.com/jones-county-iowa-80-acres-for-sale/
+
+    -   The image of [a person holding a seedling]( https://raw.githubusercontent.com/Stephen-J-Whitaker/wild-carbon/main/home/static/home/images/home_about_us_plug_plant.webp) was sourced at https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/home/static/home/images/home_about_us_plug_plant.webp
+
+    -   The image of a [tree with CO2 and O2 molecules around it]( https://raw.githubusercontent.com/Stephen-J-Whitaker/wild-carbon/main/home/static/home/images/home_how_it_works.webp) was sourced at https://ecotree.green/en/how-much-co2-does-a-tree-absorb
+
+    -   The plant images used for the plant products were sourced at [treecouncil.ie](https://www.treecouncil.ie/native-irish-trees)
 
 ## **10. Acknowledgements**
 
