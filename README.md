@@ -221,3 +221,7 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 ## **9. Credits**
 
 ## **10. Acknowledgements**
+
+-   A special thank you to my mentor Marcel Mulders
+
+-   Thank you to all those who were kind enough to test the website and provide feedback
