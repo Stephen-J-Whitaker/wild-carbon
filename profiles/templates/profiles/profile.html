@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load tz %}
 
 {% block head_title %}Your Wild Carbon profile{% endblock %}
 
@@ -51,7 +52,7 @@
                                                     {{ data.order.order_number|truncatechars:6 }}
                                                 </a>
                                             </td>
-                                            <td>{{ data.order.date }}</td>
+                                            <td>{% timezone "Europe/Dublin" %}{{ data.order.date }}{% endtimezone %}</td>
                                             <td>
                                                 <ul class="list-unstyled">
                                                     {% for item in data.order.lineitems.all %}
