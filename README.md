@@ -11,7 +11,7 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 - [Link to live ‘Wild Carbon’ website]( https://wild-carbon-803b1e2f6e91.herokuapp.com/)
 
 
-![Responsive mockup]( docs/images/readme-responsive-mockup.jpg)
+![Responsive mockup]( docs/images/readme_responsive_mockup.jpg)
 
 ## **Contents**
 
