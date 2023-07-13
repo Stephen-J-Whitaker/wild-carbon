@@ -269,7 +269,7 @@ def change_plant_state(request, record_pk):
 class AddPlantRecord(SuperUserRequiredMixin, SuccessMessageMixin,
                      generic.CreateView):
     """
-    Class based iview to add a plant record
+    Class based view to add a plant record
     """
     form_class = AddPlantRecordForm
     model = PlantRecord

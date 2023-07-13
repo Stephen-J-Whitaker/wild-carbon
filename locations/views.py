@@ -12,11 +12,15 @@ class LocationsPlants(LoginRequiredMixin, UserPassesTestMixin,
                       generic.UpdateView):
     """
     A class based view to associate plants with a location
+    Code sourced at:
+    https://medium.com/swlh/django-forms-for-many-to-many-fields-d977dec4b024
     """
     model = Location
     form_class = LocationPlantsForm
     template_name = 'locations/location_plants_link.html'
     success_url = '/locations/carbon_capture'
+    # End of code sourced from:
+    # https://medium.com/swlh/django-forms-for-many-to-many-fields-d977dec4b024
 
     def test_func(self):
         if not self.request.user.is_superuser:
