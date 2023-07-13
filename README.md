@@ -108,6 +108,69 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 ## **8. Technologies Used**
 
+- [Python](https://www.python.org/)
+
+-   Django
+
+-   HTML
+
+-   CSS
+
+-   JavaScript
+
+-   ElephantSQL : Hosts a postgres database for the project
+
+-   Amazon AWS S3 Bucket : Cloud storage for static and media files
+
+-   Bootstrap : Used to implement the responsive navigation bar, add styles using their preconfigured classes and a dependency of some Django packages
+
+-   Google Fonts : Used for fonts Khand’ and 'Lato'
+
+-   Code institute student template for GitPod and Codeanywhere: Used to install the necessary IDE tools and set up GitPod, Codeanywhere and GitHub Codespaces as required
+
+-   The W3C Markup Validation Service : Used to validate the website HTML
+
+-   The W3C CSS Validation Service - Jigsaw : Used to validate the website CSS
+
+-   JSHint, a JavaScript Code Quality Tool (linter): Used to validate and check the styling of the website JavaScript
+
+-   Favicon.io : Used to create the favicon for the site
+
+-   JQuery : Used for its implementation of Ajax
+
+-   Ajax : Used to validate data entered by the user
+
+-   pgAdmin : Used to access the postgres database and verify create, read, update and delete was happening as required
+
+-   [Corel Draw](https://www.coreldraw.com/en/) : Used for developing the mockups for the app
+
+-   [Microsoft Excel](https://www.microsoft.com/en-ie/microsoft-365/excel) : Used for documenting features and recording test results
+
+-   [Microsoft Visio](https://www.microsoft.com/en-ie/microsoft-365/visio/flowchart-software) : Used for producing Epics, User Stories and the database entity relationship diagram.
+
+-   [Chrome](https://www.google.com/intl/en_ie/chrome/) : Used for research, development and testing (including DevTools and Lighthouse test suite)
+
+-   [Safari](https://www.apple.com/safari/) : Used for testing
+
+-   [Opera](https://www.opera.com/) : Used for testing
+
+-   [Edge](https://www.microsoft.com/en-us/edge) : Used for testing
+
+-   [Firefox](https://www.mozilla.org/en-US/firefox/new/) : Used for testing
+
+-   [Notepad++](https://notepad-plus-plus.org/downloads/) : Used for text file editing
+
+-   [GitPod](https://www.gitpod.io/) : Used for product development and testing
+
+-   [GitHub](https://github.com/) : Used for accessing committed code repositories and produce development and testing in its Codespaces IDE
+
+-   [Git](https://git-scm.com/): Used for code version control
+
+-   [Code Institute Python Linter](https://pep8ci.herokuapp.com/#): Used to validate and check the styling of the Python code
+
+- Windows 10 snipping tool for creating screen grabbed jpeg files for the readme
+
+
 ## **9. Credits**
 
 ## **10. Acknowledgements**
