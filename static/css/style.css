@@ -960,6 +960,7 @@ a:hover,
 
 .plant-detail-plant-instance {
     margin: auto;
+    max-width: 500px;
 }
 
 .plant-image {
