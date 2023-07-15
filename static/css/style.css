@@ -242,7 +242,9 @@ a,
 }
 
 .link:hover,
-.nav-link:hover {
+.nav-link:hover,
+.link:focus,
+.nav-link:focus {
     color: var(--main-font-colour);
     text-decoration: underline;
 }
