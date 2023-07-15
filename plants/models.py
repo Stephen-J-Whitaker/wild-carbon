@@ -80,4 +80,7 @@ class PlantRecord(models.Model):
         """
         Override __str__ with the plant common name
         """
-        return self.plant.common_name
+        if self.plant:
+            return self.plant.common_name
+        else:
+            return 'None'

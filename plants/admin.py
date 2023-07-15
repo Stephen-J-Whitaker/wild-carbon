@@ -25,5 +25,6 @@ class PlantRecord(admin.ModelAdmin):
     """
     Plant Record admin registration class
     """
-    list_display = ('plant', 'order', 'plant_state', 'date_state_changed')
+    list_display = ('plant', 'plant_number', 'order', 'plant_state',
+                    'date_state_changed')
     search_fields = ['order', 'plant']
