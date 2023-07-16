@@ -616,6 +616,499 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 ## **3. Features**
 
+Multiple user stories are dependent on many of the features. Details of the user stories dependent on each feature are given.
+
+Use story IDs are the format: Epic ID.User Story ID
+
+During the planning and refinement phase, some features were combined with others and the feature ids of the features no longer required were removed from use, hence there are gaps in the feature id numbering system. No feature that is a requirement of the system has been omitted from the documentation.
+
+-   ### Landing Page [Feature ‘Landing Page’ (ID 1)]
+
+    The Landing page feature is a dependency of all user stories
+    
+    -   The landing page is the welcome to the Wild Carbon site.
+
+    -   Easy to navigate and is recognisable as a conventionally designed website.
+
+    The landing page contains the following features:
+
+    - #### Header [Feature ‘Header’ (ID 25)]
+
+        The header feature is a dependency of all user stories
+
+        -   The responsive header along with all of its features is present on all pages of the website with the exception of the Django admin pages and has the following features:
+
+        -   The company logo that navigates to the landing page on click and obtains a green coloured backdrop on hover to identify it as a clickable link.
+
+        -   An icon of a persons torso that toggles the account functions menu on click. The account menu contains the following links:
+
+        -   When logged out:
+
+            -   Login
+            -   Register
+
+        -   When logged in:
+
+            -   My carbon summary
+            -   My Profile
+            -   Logout
+        
+        -   A basket icon that navigates to the basket page on click and displays the total value of the products currently in the basket below it.
+
+        -   Navigation [Feature ‘Navigation’  (ID 2)]
+
+            The navigation feature is a dependency of all user stories
+
+            -   The main navigation menu that is responsive and becomes a toggle button on mobile devices. The links text turns a lighter shade and obtains an underline to identify them as clickable links. 
+
+            -   Navigation links available to all users of the site are:
+
+                -   Home
+
+                -   Carbon capture (A link to the main products page)
+
+                -   How it works
+
+                -   About us
+
+            -   Additional navigation links for logged in superusers and staff:
+
+                -   Administration
+                
+                    Clicking the administration link triggers a dropdown menu to appear that contains the following links:
+                
+                -   Plant Records
+
+                -   Plant Admin
+                
+                -   Plant Availability
+
+            -   Additional navigation links for staff:
+
+                -   Admin Page
+
+    -   #### Content:
+
+        -   On arrival at the landing page the user is greeted with a ‘hero’ image of a glade that sets the scene for what is to be presented on the rest of the site.
+
+        -   The company name and the company tagline are large and make it clear to a new user the purpose of the site.
+
+        -   The hero image is made up of the same natural green palette as the rest of the site for consistency. Green helps to invoke feeling of calm and this is a positive emotion that it’s hoped will be stimulated in the site users.
+
+        -   A search engine optimised ‘what we do’ paragraph of text details the service provided by Wild Carbon
+
+        -   Image navigation links are present so that the user can quickly identify and navigate to other areas of the site that will be of interest. The image links obtain a drop shadow on hover to indicate that they are an interactive feature.
+
+        -   An image of the Wild Carbon site that on click navigates to the carbon capture page where plants that are available to be commissioned are listed.
+
+        -   An image of a person holding a seedling that on click navigates to link to the about us page.
+
+        -   An image of a tree with CO2 and O2 molecules around it that on click navigates to the how it works page.
+
+        -   A coming soon paragraph of text that details a future venture of the company that’s in development to help encourage the visitor to sign up to the newsletter.
+
+        -   Newsletter [Feature ’Newsletter’ (ID 3)]
+
+            The newsletter feature is a dependency of user story 1.4
+
+            -   A newsletter sign up form so that the users can sign up to receive periodic information that is relevant and will be of interest to them.
+
+
+    -   #### Footer [Feature ‘Footer’ (ID 26)]
+
+        The footer feature is a dependency of all user stories
+
+        -   The footer is fully responsive.
+
+        -   An up arrow icon that on click returns the user to the top of the current page. The button obtains an outline on hover to identify it as a clickable link.
+
+        -   The company logo that obtains a rectangular green backdrop on hover that on click returns the user to the top of the landing page. 
+
+        -   An envelope icon that obtains an outline on hover to indicate that it’s a clickable item and on click opens a responsive modal displaying the company mail address.
+
+        -   A privacy policy link that turns a lighter shade on hover to identify it as a link and that, on click, opens  a responsive modal containing the privacy policy for Wild Carbon.
+
+        -   Facebook [Feature ‘Facebook’ (ID 5)]
+
+            The Facebook feature is a dependency of user story 1.5
+	
+            -   A Facebook icon that obtains an outline on hover to identify it as a clickable entity, that, on  click, opens a new tab and navigates to the Wild Carbon Facebook business page.
+
+
+-   ### About Us [Feature ‘About Us’ (ID 4)]
+
+    The about us feature is a dependency of user story 1.3
+
+    -   A relevant, responsive hero image that is pleasing to the eye and catches the users attention.
+
+    -   A large responsive eye catching page title so that the user knows what part of the site they are on.
+
+    -   A line of text below the title that informs the user of the intention of the content on the page.
+
+    -   A search engine optimised, responsive ‘who we are’ paragraph of text that describes the company ethos and the team working for Wild Carbon.
+
+-   ### How it Works [Feature ‘How it Works’ (ID 19)]
+
+    The how it works feature is a dependency of user story 1.6
+
+    -   A large, responsive eye catching image of a tree surrounded by CO2 and O2 molecules to indicate that that the page is about the science behind the Wild Carbon service.
+
+    -   A large responsive eye catching page title so that the user knows what part of the site they are on.
+
+    -   A line of text below the main header that clearly informs the user of the purpose of the page that they are on.
+
+-   ### Register [Feature ‘Register’ (ID 6)]
+
+    The register feature is a dependency of all user stories
+
+    -   A responsive and validated (presence checked, range checked and type checked) sign up form that enables a user to register on the site.
+
+    -   Registration to the site means that the user can achieve the following:
+
+        -   Maintain a personal profile
+
+        -   View  their order history
+
+        -   View their carbon summary
+
+        -   View the status of the plants that they have commissioned
+
+        -   Sends an email to the address entered by the user to verify that it is in fact the users email address.
+
+        -   The verification email contains a link that navigates to the email confirmation page.
+
+        -   The email confirmation page has a button that the user clicks to confirm that they are the owner of the email address and wish to use it to access the registered user features of the site.
+
+-   ### Login [Feature ‘Sign In’ (ID 7)]
+
+    The sign in feature is a dependency of all user stories
+
+    -   The page is responsive.
+
+    -   A ‘sign up’ link that navigates to the registration page in the event that the user has accidentally arrived and the sign in page.
+
+    -   A responsive, validated (presence checked, range checked and type checked) login form to enter the user account credentials.
+
+    -   A remember me checkbox that when checked keeps the Django session active after the user leaves the site.
+
+    -   A forgotten password link that activates the password reset feature on click.
+
+-   ### Logout [Feature ‘Sign Out’ (ID 12)]
+
+    The sign out feature is a dependency of all user stories
+
+    -   Navigated to by clicking the logout link in the account menu.
+
+    -   The responsive sign out page questions the user to ensure they want to sign out.
+
+    -   Contains a sign out button that actions logging out on click.
+
+    -   Password Reset [Feature ‘Password Reset’ (ID 32)]
+
+    -   The password reset feature is a dependency of user story 2.3
+
+    -   The password reset feature is activated by clicking the forgotten password link on the login page.
+
+    -   Clicking the forgotten password link navigates to the first password reset page.
+
+    -   The first password reset page has a login link that can be used to navigate to the login page in the event that they arrived at the password reset page accidentally or have remembered their password.
+ 
+    -   The first password reset page has a form where the user can enter their email address then click ‘reset my password’.
+
+    -   Clicking reset my password triggers the sending of an email to the user with a link to the password reset page.
+
+    -   The password reset page has a validate new password form where the new password is entered twice and on clicking it’s confirmed that the two entries 
+    match and if so, the password is changed to the newly entered password
+
+-   ### Carbon Capture Page [Feature ‘Location Plant Products’ (ID 9)]
+
+    The location plant products feature is a dependency of user stories 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
+
+    -   Fully responsive on all screen sizes.
+
+    -   An eye catching title banner with a line of text underneath to describe the action that can be taken by the user on the page.
+
+    -   A section of text headed ‘West Mayo’ that describes the west Mayo location of Wild Carbon and explains that the plants listed below are suitable for the site.
+
+    -   A list of plants available to be commissioned for the site under a heading ‘available plants’ that explains what the list of plants contains. Plants are show if there is a link between the plant and the location in the database.
+
+    -   A search box that searches the common name, genus, species and description fields of the plants  and if the search query returns any results then the plant list is reloaded to display them.
+
+    -   A sort box that enables the plants to be sorted in ascending or descending order of price or common name.
+
+    -   A list of responsive, clickable plant containers that navigate to the detail page for the plant on click. 
+
+    -   Each plant obtains a light colour drop shadow on hover to identify it as a clickable link. 
+
+    -   Each container displays all plant information with the exception of the plant description.
+
+-   ### Plant Details [Feature ‘Plant Product Details’ (ID 20)]
+
+    The plant details feature is a dependency of user stories 2.9, 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
+
+    -   A responsive content container with more detail relating to the plant than was displayed on the carbon capture plant product list page.
+
+    -   A heading that is the name (common name) of the plant that has been selected from the carbon capture page.
+
+    -   An image that on larger screens is larger than that which was on the carbon capture page.
+
+    -   A list of all plant details held including the plant description.
+
+    -   A validated (presence checked, range checked and type checked) quantity selector that enables the user to select their desired quantity of the product to put in their basket.
+
+    -   An ‘add to basket’ button that adds the selected plant with the entered quantity to the user’s basket stored in the session.
+
+    -   A ‘continue shopping’ button that returns the user to the carbon capture page should they decide not to purchase the plant described on the plant detail page or after they have added to the selected plant to their basket.
+
+-   ### Basket [Feature ‘Basket’ (ID 10)]
+
+    The basket feature is a dependency of user stories 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
+
+    -   A responsive container within the page displaying the current contents of the users basket.
+
+    -   A list of all the plants, a summary of the pertinent plant information and each plants quantity and subtotal.
+
+    -   A quantity selector for each plant that, in conjunction with a click of the update button below enables the user to update the quantity of the corresponding plant in the basket.
+
+    -   A remove button that enables the user to remove the corresponding plant from their basket.
+
+    -   The basket total, vat and grand total boldly displayed for quick and easy reference.
+
+    -   A ‘keep shopping’ button that navigates to the carbon capture page on click if the user decides to browse and / or purchase more items.
+
+    -   A ‘secure checkout’ button that navigates to the checkout page on click.
+
+-   ### Secure Checkout [Feature ‘Checkout’ (ID 11)]
+
+    The checkout feature is a dependency of user stories 2.12, 3.1, 3.2, 3.4, 3.5
+
+    -   A fully responsive checkout page.
+
+    -   An order summary displaying a list of information describing what the user will be charged and what the charges are for.
+
+    -   A validated (presence checked, range checked and type checked) order form with all the fields for the order to be placed, including a drop down country field for easy selection of the user’s country.
+
+    -   When logged in there is a checkbox that when checked results in the user’s details to be stored in the profile table of the database for retrieval when placing future orders.
+
+    -   When logged out, there are links to the register page and login page in place of the ‘save profile information’ checkbox so that the user can easily register or, if they already have an account, login, if they wish to use the save profile feature.
+
+    -   Orders can be placed if not a registered user.
+
+    -   A validated (presence checked, range checked and type checked) card detail entry box with a message below in the event of a failed transaction that describes the reason for the failure
+
+    -   A helpful message beneath a complete order button that clearly informs the user of the amount that their card will be charged on clicking complete order.
+
+    -   The ‘complete order’ button submits the customer information and actions the payment. A ‘spinner’ waiting page is loaded whist the transaction is being actioned.
+
+    -   In the event of a successful transaction, the order confirmation page is navigated to.
+
+    -   In the event of a failed transaction, the checkout page displays the reason for the failure in a message below the card detail entry box.
+
+    -   An ‘Adjust basket’ button that navigates to the basket page on click.
+
+-   ### Order Confirmation [Feature ‘Order Confirmation’ (ID 21)]
+
+    The order confirmation feature is a dependency of user story 2.10
+
+    -   The order confirmation page is fully responsive and has a header that indicates the state of the transaction to the user. Thank you implies a successful transaction.
+
+    -   A responsive table of all of the order information is displayed.
+
+    -   A done button that navigates to the landing page on click marking an end to the users purchase journey and giving them an opportunity to continue exploring the site should the wish to do so.
+
+    -   In the event that the order summary page was reached by clicking an order number from the order table on the profile page (described below) there is a ‘back to profile button’ in place of the ‘done’ button that navigates back to the profile page on click.
+
+-   ### Profile [Feature ‘Profile’ (ID 22)]
+
+    The profile feature is a dependency of user story 2.11
+
+    -   A fully responsive page with a header ‘My Profile’ indicating the purpose of the page to the user.
+
+    -   A validated (presence checked, range checked and type checked) form prepopulated with the users profile information as currently stored in the database, if any. If no information for the user currently exists in the database for any of the fields then there is a descriptive placeholder. The purpose of the profile is so that the user doesn’t have to re-enter the majority of their personal details each time they make a purchase. The values in the form fields can be altered.
+
+    -   An ‘Update Information’ button that stores or updates the user’s personal details in the database on click.
+
+    -   #### Order History [Feature ‘Order History’ (ID 17)]
+
+        The order history feature is a dependency of user story 2.12
+
+        -   Below the default billing information, the profile page has a table of the user’s previous order details. 
+
+        -   The order number for each order is a clickable link that navigates to the ‘thank you’ order confirmation pages for the order. A message is displayed notifying the user that they are viewing an old order.
+
+        -   Below each order and its details, the associated plant records (detailed in a section below) are tabulated. There is a row for each plant in the order along with that plant’s recorded details.
+
+-   ### Carbon Summary [Feature ‘Carbon Summary’ (ID 24)]
+
+    The carbon summary feature is a dependency of user stories 3.1, 3.5
+
+    -   The carbon summary page is fully responsive.
+
+    -   There is a header ‘carbon summary’ that indicates the purpose of the following details.
+
+    -   The carbon summary section of information displays the number of trees that the user has commissioned along with the carbon these trees will sequester in the trees estimated lives and how many more trees that user could commission to offset the outstanding carbon footprint of their lives.
+
+    -   #### Plant Summary [Feature ‘Plant Summary’ (ID 23)]
+
+        The plant summary feature is a dependency of user story 3.5
+
+        -   There is an area of content headed ‘Your Planting Records’ that is a table of the state of every plant commissioned by the user. Each tree has a unique id and can be in a state of pending (not yet growing), growing (in the nursery) or planted (on site in its final location).
+
+        -   The table of plants is ordered alphabetically with planted at the top, as the planted trees are deemed or most interest to the user.
+
+-   ### Plant Admin [Feature ‘Plant List’ (ID 8)]
+
+    The plant list feature is a dependency of user stories 2.6, 2.7, 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.3, 3.4, 3.5
+
+    -   A responsive list of all plants in the Wild Carbon database that is only accessible to superusers and staff.
+
+    -   A header to inform the user with superuser privileges of the area of the site that they’re on.
+
+    -   An ‘add plant’ button that navigates to the add plant page (detailed in a sections below).
+
+    -   A search box that searches the common name, genus, species and description fields of the plants  and if the search query returns any results then the plant list is reloaded to display them
+
+    -   A sort box that enables the plants to be sorted in ascending or descending order of price or common name.
+
+    -   A list of responsive plant instances. Each container displays all plant information with the exception of the plant description.
+
+    -   A placeholder image is displayed in the event that no image has been uploaded and associated with the plant.
+
+    -   Each plant instance in the list has an edit link that navigates to the ‘edit plant’ page (described in a section below) for the plant instance.
+
+    -   Each plant instance in the list has a ‘delete link’ that navigates to the ‘confirm plant deletion page’ (described in a section below) of the plant instance.
+
+-   ### Add Plant [Feature ‘Add Plant’ (ID 28)]
+
+    The add plant feature is a dependency of user stories 2.6, 2.7, 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.3, 3.4, 3.5
+
+    -   A fully responsive page with the header ‘Add Plant’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
+
+    -   A validated (presence checked, range checked and type checked) form for entry, or in the case of the image, selection, of the details of a new plant.
+
+    -   A common name input box that has additional validation to remove unnecessary white spaces that would result in duplicates in the database should they be allowed to remain. Ajax is used to confirm that the entered name is not already in the database (as duplicates are not allowed). Should the entered name already exist in the database then the ‘Add Plant’ button is removed, the input box obtains a red background and an error message is displayed until the name is altered to a unique one. Validating in this way rather than waiting until form submission on clicking ‘Add Plant’ means that the user’s time is saved by not entering duplicate data in the form and pressing Add Plant before finding out that the plant they’re entering the details for already exists in the database.
+
+    -   A back button to return to the plant list page on click
+
+-   ### Edit Plant [Feature ‘Edit Plant’ (ID 29)]
+
+    The edit plant feature is a dependency of user stories 2.6, 2.7, 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.3, 3.4, 3.5
+
+    -   The update plant page is fully responsive and has the header ‘Update Plant’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
+
+    -   A validated (presence checked, range checked and type checked) form populated with the existing plant information.
+
+    -   A common name input box that has additional validation to remove unnecessary white spaces that would result in duplicates in the database should they be allowed to remain. Ajax is used to confirm that the entered name is not already in the database (as duplicates are not allowed). Should the entered name already exist in the database then the ‘Add Plant’ button is removed, the input box obtains a red background and an error message is displayed until the name is altered to a unique one. Validating in this way rather than waiting until form submission on clicking ‘Save Plant’ means that the user’s time is saved by not entering duplicate data in the form and pressing Save Plant before finding out that the plant they’re entering the details for already exists in the database.
+
+    -   A back button to return to the plant list page on click should they have changed their mind about adding the plant or have arrived at the add plant page by mistake.
+
+-   ### Delete Plant [Feature ‘Delete Plant’ (ID 30)]
+
+    The delete plant feature is a dependency of user story 2.6
+
+    -   The confirm plant deletion page is fully responsive and has the header ‘Confirm Plant Deletion’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
+
+    -   A message to remind the user of the plant that they are considering deleting.
+
+    -   A ‘delete plant’ button that actions the deletion on click.
+
+    -   A ‘No Thanks’ button that returns the user to the plant list button on click should they have changed their mind about the plant deletion or have arrived at the confirm plant deletion page by mistake.
+
+-   ### Plant Availability [Feature ‘Plant Product Availability’  (ID 18)]
+
+    The plant availability feature is a dependency of user stories 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
+
+    -   The ‘Plant Availability’ page is fully responsive and has the header ‘Plant Availability’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
+
+    -   A list of all the plants in the database with a checkbox next to each that is pre checked should there already be a link between the location and the plant. An unchecked checkbox means there is no link between the plant and the location. Clicking the checkbox toggles its checked state.
+
+    -   A benefit of this system is that the plant dataset can grow over time and subset can be made available on the site without necessitating the deletion and potentially re-entry of plant details. The plant table becomes a reusable database of plants.
+
+    -   A ‘Save Associations’ button that creates or deletes the links between the location and the plants dependent on the checked state of the checkbox next to each plant. On successful link creation or deletion, the ‘carbon capture’ page is navigated to so that the user can review the effect of the changes they’ve made.
+
+    -   A home button that returns the user to the landing page on click should they have changed their mind about updating the location plant links.
+
+-   ### Plant Records [Feature ‘Plant Record View’ (ID 14)]
+
+    The plant record view feature is a dependency of user stories 3.2, 3.3, 3.4, 3.5
+
+    -   The ‘Plant Records’ page is fully responsive and has the header ‘Plant Records’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
+
+    -   An ‘Add Plant Record’ button that navigates to the ‘Add a Plant Record’ page (described in a section below) on click.
+
+    -   A table of all the plant records in the system grouped into the states ‘pending’, ’growing’ and ’planted’ with pending plants at the top as they require action first and ‘planted’ at the bottom for informational purposes but they do not require any action.
+
+    -   The records in the table are ordered alphabetically and oldest at the top, as the oldest records require the most immediate action.
+
+    -   A plant record is created for every plant in every order and if a superuser or staff member creates one manually using the ‘Add a Plant Record’ page. 
+
+    -   Each plant record holds a unique identifier for the plant in question that is used on the tree tag on site and sent to the user in their digital email tree certificate on movement of the plant into the state ‘planted’. 
+
+    -   Plants start in the state ‘pending’ on placement of an order, are moved to the state ‘growing’ once the plant is growing in the nursery and finally into the state ‘planted’ once on site and in the ground.
+
+    -   Any plant not in a state of ‘planted’ has an ‘update state’ link that navigates to the ‘Change Plant State’ page (described in a section below) for the plant in question. Plants in a state of ‘planted’ are in their final workflow state and this cannot be changed.
+
+    -   Any manually entered plant record (not associated with an order) that is not in the state ‘planted’ can be deleted and there is a link to the ‘Confirm Plant Record Deletion’ page (described in a section below) for the plant record in question.
+
+    -   In the event that a plant with an associated order (hence owned by a user) enters a state of ‘planted’, an email ‘digital certificate’ is sent to the user. The email contains the name of the plant, it’s ID the date it moved into the state ‘planted’ and the location where its planted.  
+
+-   ### Plant Record Status [Feature ‘Plant Record Status’ (ID 15)]
+
+    The plant record status feature is a dependency of  user stories user stories 3.2, 3.4, 3.5
+
+    -   The ‘Change Plant State’ page is fully responsive and has the header ‘Chane Plant State’ to inform the superuser of their location on the website. The page is only accessible to superusers and staff.
+
+    -   The name and unique identifier of the plant in question is displayed boldly at the top of the content for reference and to confirm that the state of the correct plant is being modified.
+
+    -   A warning of the consequence of the action the superuser is considering taking is given to ensure the user is aware of the risk.
+
+    -   There is a validated (presence checked, range checked and type checked) checkbox that must be checked to submit the form and action the change of state.
+
+    -   There is a button with the text ‘Move To’ followed by the next state in the plant’s workflow. If in a ‘pending’ state the next sate is ‘growing’ and if in a ‘growing’ state the next state is ‘planted’. Clicking the ‘Move to’ button actions the update of the record state moving the plant through its workflow.
+
+    -   A ‘back’ button is present that navigates to the plant records page on click in the event that the user has arrived at the ‘Change Plant State’ page by accident or have changed their mind about changing the plant’s state.
+
+-   ### Add Plant Record [Feature ‘Plant Record Add’ (ID 16)]
+
+    The plant record add feature is a dependency of user story 3.3
+
+    -   The ‘Add Plant Record’ page is fully responsive and has the header ‘Add a Plant Record’ to inform the superuser of their location on the website. The page is only accessible to superusers and staff.
+
+    -   A validated (presence checked, range checked and type checked) dropdown input box that allows the selection of a plant from the database to be associated with the plant record being created.
+
+    -   All details apart from the plant for the plant record (plant id, date state changed, location, order number null and plant state) are entered automatically by the system on submit of the form.
+
+    -   A ‘create record’ button that submits the form and triggers the creation of the new record in the database.
+
+    -   A back button the return the user to the Plant Records page should they have reached the ‘Add plant record page’ by mistake or changed their mind about adding a new plant record.
+
+-   ### Plant Record Delete [Feature ‘Plant Record Delete (ID 31)]
+
+    The plant record delete feature is a dependency of user story 3.3
+
+    -The ‘Confirm Plant Record Deletion’ page is fully responsive and has the header ‘Confirm Plant Record Deletion’ to inform the superuser of their location on the website. The page is only accessible to superusers and staff and for plants manually entered (with no order and therefore user associated) and / or if the plant is not in a state of ‘planted’.
+
+    -   A message to remind the user of the plant record that they are considering deleting.
+
+    -   A ‘delete plant record’ button that actions the deletion on click.
+
+    -   A ‘No Thanks’ button that returns the user to the plant list button on click should they have changed their mind about the plant record deletion or have arrived at the confirm plant record deletion page by mistake.
+
+- ###   Admin Page [Feature ‘Admin Page’ (ID 27)]
+
+    The admin page feature is a dependency of user story 2.5
+
+    -   #### Deletion of a user
+    
+        Deletion of a user can only be accessed by a staff member. The procedure is carried out from within the Django administration page. Should a user have staff privileges, there is a link to the ‘Admin’ page in the main navigation menu.
+
+        Within the administration section of the site, the administrator can navigate to the ‘User’ section of the site, locate the user to be deleted and check the box next to their name and then select that they wish for the user to be deleted.
+
+        On requesting a user deletion, the administrator is asked to confirm if they would like to action the deletion and they are informed of the data within the database that will be affected by the deletion should they wish to proceed.
+
+    -   #### Other Admin functions:
+
+        Other admin functions are available that are not a requirement of any user story but are made available in order to address maintenance should the need ever arise.
 
 
 
