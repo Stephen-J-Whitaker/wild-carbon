@@ -773,11 +773,11 @@ During the planning and refinement phase, some features were combined with other
 
         -   View the status of the plants that they have commissioned
 
-        -   Sends an email to the address entered by the user to verify that it is in fact the users email address.
+    -   Sends an email to the address entered by the user to verify that it is in fact the users email address.
 
-        -   The verification email contains a link that navigates to the email confirmation page.
+    -   The verification email contains a link that navigates to the email confirmation page.
 
-        -   The email confirmation page has a button that the user clicks to confirm that they are the owner of the email address and wish to use it to access the registered user features of the site.
+    -   The email confirmation page has a button that the user clicks to confirm that they are the owner of the email address and wish to use it to access the registered user features of the site.
 
 -   ### Login [Feature ‘Sign In’ (ID 7)]
 
@@ -1131,10 +1131,355 @@ During the planning and refinement phase, some features were combined with other
 
 ## **7. Deployment**
 
+The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch of the [Wild Carbon Repository]( https://github.com/Stephen-J-Whitaker/wild-carbon).
+
+-   Email functionality is dependent on Google MAIL
+
+-   Payment functionality is dependent on a Stripe integration.
+
+-   The website is dependent on cloud storage provided by Amazon AWS S3 bucket.
+
+-   The website is dependent on a postgres database made available by ElephantSQL.
+
+-   ### **Setting up a new Google mail account is as follows**
+
+    -   On the gmail webpage create a new gmail account for the application by following the on screen instructions and note the new email address for entry as a config var in the Heroku deployment section below.
+
+    -   Navigate to the ‘Security’ section of the site. If 2-step verification is activated skip to the next step else click 2-step verification to activate it by following the on screen instructions.
+
+    -   With 2-step verification activated, click 2-step verification and on the page that follows, select ‘App Passwords’.
+
+    -   Select Mail as the app and Other (custom name) as the device. Enter the name ‘Wild Carbon’ as the custom device name and then click generate to generate the app password.
+
+    -   Make a note of the generated app password to enter as a config var in the Heroku deployment section below.
+
+-   ### **Setting up a new Stripe account is as follows**
+
+    -   Log into Stripe or create a new account.
+
+    -   If creating a new account, follow the on screen instructions to verify your email address.
+
+    -   Navigate to the developers section of the dashboard to obtain the ‘publishable key’ and ‘secret key’. These keys must be entered as config vars during the Heroku deployment phase detailed below.
+
+    -   Stripe configuration is continued after creating a Heroku app for the deployment.
+
+-   ### **Setting up a new Amazon AWS S3 Bucket is as follows**
+
+    -   Sign in or create a new Amazon AWS account.
+
+    -   Navigate to services in the header, then to storage. Select S3 from the options presented.
+
+    -   Click ‘create bucket’.
+
+    -   Give the bucket a unique name and select the region closest to you.
+
+    -   Under Object Ownership, select ‘ACLs enabled’.
+
+    -   In the ‘block public access settings for this bucket’ section, untick ‘block all public access’ and tick the box to acknowledge that this will make the bucket and its contents public.
+
+    -   At the bottom of the page, click ‘create bucket’.
+
+    -   Navigate to the newly created bucket and then its properties tab.
+
+    -   Navigate to the static web hosting section and click edit.
+
+    -   In the static webhosting section select ‘enable’ and set the following:
+        -   Hosting Type: Host a static website
+        -   Index document: index.html
+        -   Error document: error.html
+
+    -   Click ‘save changes’.
+
+    -   Return to the permissions tab and navigate to the cross-origin resource sharing (CORS) section and click edit.
+
+    -   Paste the following into the cross-origin resource sharing (CORS) edit window and then click ‘save changes’:
+
+        ```
+        [
+            {
+                "AllowedHeaders": [
+                    "Authorization"
+                ],
+                "AllowedMethods": [
+                    "GET"
+                ],
+                "AllowedOrigins": [
+                    "*"
+                ],
+                "ExposeHeaders": []
+            }
+        ]
+        ```   
+
+    -   In the permission tab navigate to the bucket policy section and click ‘edit’.
+
+    -   In the edit bucket policy window, copy the bucket ARN displayed and then click ‘policy generator’.
+
+    -   In the policy generator set the following:
+
+    -   In Select Policy Type:
+
+        -   Select type of policy:	S3 bucket policy
+
+    -   In Add Statement(s):
+
+        -   Effect: Allow
+        -   Principle: *
+        -   Actions: select ‘GetObject’
+        -   Amazon Resource Name (ARN): copy in the ARN from the bucket policy window
+
+    -   Click ‘add statement’ followed by ‘generate policy’.
+
+    -   Copy the policy displayed in the popup ‘policy JSON document’ window and paste it into the bucket policy editor.
+
+    -   To allow access to all resources in the bucket, add ‘/*’ to the end of the resource key. The resource key should look like the following when modified:
+
+        ```
+        "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*",  
+        ```
+
+    -   In the permissions tab, navigate to the ‘Access control list (ACL)’ section and click edit.
+
+    -   In the access control list in the ‘everyone (public access)’ settings, enable ‘List’.
+
+    -   In the warning box that is displayed tick the box next to the statement ‘I understand the effects of these changes on my objects and buckets’ and click ‘save changes’.
+
+    -   Create a user groups using the Identity and Access Management service.
+
+        -   Navigate to services and then IAM.
+
+        -   Select ‘user groups’ and then ‘create group’.
+
+        -   Enter a user group name of your choice and click ‘create group’ at the bottom of the page.
+
+        -   Create an access policy for the newly created group that allows access to the S3 bucket created for the deployment:
+
+        -   Select ‘policies’ form the IAM menu and the in the policies page click ‘Create Policy’.
+
+        -   Click ‘actions’ and select ‘import policy’.
+
+        -   In the import policy popup window search for ‘AmazonS3FullAccess’, select it and click ‘Import Policy’.
+
+        -   Click ‘JSON’ to see the imported policy.
+
+        -   In the policy editor paste the ARN from the S3 bucket page into the Resource section of the policy twice, once with ‘/*’ on the end as follows:
+
+            ```
+            "Resource": [
+            "arn:aws:s3:::YOUR_BUCKET_NAME",
+            "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+            ]
+            ```
+
+        -   Click ‘next’ to navigate to the ‘review and create’ page and then enter name and description for the policy and then click ‘create policy’.
+
+        -   Attach the policy to the user group:
+
+        -   Navigate to ‘user groups’ in the access management section of the left hand menu on the IAM landing page.
+
+        -   Select the user group that was previously created.
+
+        -   In the ‘permissions policies’ section click ‘add permissions’ and select ‘attach policies’ from the revealed dropdown menu.
+
+        -   From the list that opens, select the policy that was created previously then click ‘add permissions’.
+
+    -   Create a user:
+
+        -   Select ‘users’ form the left hand menu on the IAM landing page.
+
+        -   Click ‘add users’
+
+        -   Add a user name in the ‘user name’ field on the specify user details page and then click next.
+
+        -   In the ‘set permissions’ page that opens and in the ‘permissions options’ section, ensure that ‘add user to group’ is selected.
+
+        -   In the ‘user groups’ section select the name of the user group that was created earlier and click next.
+
+        -   In the ‘review and create’ page that opens, click ‘create user’
+
+        -   In the ‘user page’, select the newly created user and navigate to the ‘security credentials’ tab in the page that opens.
+
+        -   In the ‘access keys’ section click ‘create access key’
+
+        -   In the ‘access key best practices & alternatives’ page that opens, select ‘other’ and then click ‘next’ at the bottom of the page
+
+        -   Give the key a description and then click ‘create access key’
+
+        -   When on the ‘retrieve access keys’ page that opens, make a note of the ‘access’ and the ‘secret access key’ and click ‘download .csv file’ if you wish to have a copy for your records. The ‘access key’ and ‘secret access key’ are entered as config vars in the Heroku deployment section below.
+
+        -   Click Done
+
+-   ### **Setting up a new postgres database on ElephantSQL is as follows**
+
+    <details><summary>1. Sign up for an account if necessary(click to expand)</summary>
+    
+    ![ElephantSQL step 1](docs/images/readme-elephantsql-1.jpg)
+    </details>
+
+    <br>  
+
+    <details><summary>2. Click 'Create New Instance' (click to expand)</summary>
+    
+    ![ElephantSQL step 2](docs/images/readme-elephantsql-2.jpg)
+    </details>
+
+    <br>  
+
+    <details><summary>3. Select a plan and a name for the database instance (click to expand)</summary>
+    
+    ![ElephantSQL step 3](docs/images/readme-elephantsql-3.jpg)
+    </details>
+
+    <br> 
+
+    <details><summary>4. Select a region and data center (click to expand)</summary>
+    
+    ![ElephantSQL step 4](docs/images/readme-elephantsql-4.jpg)
+    </details>
+
+    <br> 
+
+    <details><summary>5. Confirm the details to create a new instance (click to expand)</summary>
+    
+    ![ElephantSQL step 5](docs/images/readme-elephantsql-5.jpg)
+    </details>
+
+    <br> 
+
+
+    <details><summary>6. Successful creation of the instance is indicated(click to expand)</summary>
+    
+    ![ElephantSQL step 6](docs/images/readme-elephantsql-6.jpg)
+    </details>
+
+    <br> 
+
+    <details><summary>7. Retrieve the URL to access the database for entry as a 'config var' during Heroku deployment. This key must be kept secret.(click to expand)</summary>
+    
+    ![ElephantSQL step 7](docs/images/readme-elephantsql-7.jpg)
+    </details>
+
+    <br> 
+
+-   ### **The Heroku deployment procedure is as follows:**
+
+    <details><summary>1. Log in or create a new account (click to expand)</summary>
+
+    ![Deployment step 1](docs/images/readme-deployment-1.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>2. From the dashboard, select ‘Create new app’ (click to expand)</summary>
+
+    ![Deployment step 2](docs/images/readme-deployment-2.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>3. Name the app, each apps on the Heroku platform require a unique name, then select a region and click create app (click to expand)</summary>
+
+    ![Deployment step 3](docs/images/readme-deployment-3.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>4. Click on ‘Settings’ in the top menu bar (click to expand)</summary>
+
+    ![Deployment step 4](docs/images/readme-deployment-4.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>5. Take a note of your domain about half way down the settings page and then return to your Stripe dashboard. Select the webhooks tab then add an endpoint. In the endpoint URL field enter the URL you obtained from the domains section of the Heroku settings page for your app followed by ‘checkout/wh/’. In the select events to listen to select all the events, add them and then click add endpoint. The page will display your newly created webhook and on the same page will be your webhook signing secret. Make a note of the signing secret before you return to the Heroku settings page for your app as it will be needed in the next step. Click on ‘Reveal Config Vars’ to reveal the config var section then enter the config var details as shown in the image. When a field is complete, click the ‘ADD’ button next to the fields. New empty fields will appear below the previously entered field. When complete, click ADD. The config vars entered will be unique to the, Gmail account, Stripe account, Amazon S3 bucket account and database set up for your instance of the product. You must create a Django secret key that is unique. Amazon S3 cloud, Gmail, Stripe, database and Django secret Keys must be in the format shown and must be kept secret.(click to expand)</summary>
+
+    ![Deployment step 5](docs/images/readme-deployment-5.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>6. Click on ‘Deploy’ on the main menu ribbon at the top of the page and then click ‘GitHub’ (click to expand)</summary>
+
+    ![Deployment step 6](docs/images/readme-deployment-6.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>7. If necessary, confirm that you want to connect to GitHub by clicking ‘Connect to GitHub’ (click to expand)</summary>
+
+    ![Deployment step 7](docs/images/readme-deployment-7.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>8. Search for the GitHub repository name (click to expand)</summary>
+
+    ![Deployment step 8](docs/images/readme-deployment-8.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>9. Click either ‘Enable Automatic Deploys’ which will automatically redeploy the app each time the Git repository is updated, or ‘Deploy Branch’ to deploy the app manually as required(click to expand)</summary>
+
+    ![Deployment step 9](docs/images/readme-deployment-9.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>10. If ‘Deploy Branch’ was selected the screen will look like the following image when deployment is complete (click to expand)</summary>
+
+    ![Deployment step 10](docs/images/readme-deployment-10.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>11. Open a console for the Heroku app (click to expand)</summary>
+
+    ![Deployment step 11](docs/images/readme-deployment-11.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>12. Run the migrate command to migrate the database schema defined by the migrations files to the new empty ElephantSQL database (click to expand)</summary>
+
+    ![Deployment step 12](docs/images/readme-deployment-12.jpg)
+    </details>
+
+    <br>
+
+    <details><summary>13. Open the app by clicking 'Open app' (click to expand)</summary>
+
+    ![Deployment step 13](docs/images/readme-deployment-13.jpg)
+    </details>
+
+    <br>  
 
 ## Forking the Repository
 
+1.  Navigate to github and sign up or sign in
+2.  Navigate to the repository at the following link: https://github.com/Stephen-J-Whitaker/wild-carbon
+3.  Locate the fork button at the top of the page and click it:
+
+    ![Fork the repository step 3](docs/images/readme-fork-repo.jpg)
+
+4. A copy of the repository will be made in your gitHub account
+
 ## Clone the Repository
+
+1. Navigate to github and sign up or sign in
+2. Navigate to the repository at the following link: https://github.com/Stephen-J-Whitaker/wild-carbon
+3. Locate the code button and click it:
+
+    ![Clone the Repository step 3](docs/images/readme-clone-repo-1.jpg)
+
+4. Select HTTPS from the options and then click the copy button to copy the link.
+
+    ![Copy the HTTPS link setup 4](docs/images/readme-clone-repo-2.jpg)
+
+5. Open Git Bash
+6. Change the current working directory to the location where you want the directory cloned to.
+7. Type 'git clone' and then paste in the HTTPS URL link that was copied in step 4.
+8. Pressing enter result in the clone being created. 
 
 ## **8. Technologies Used**
 
