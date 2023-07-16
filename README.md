@@ -1110,11 +1110,17 @@ During the planning and refinement phase, some features were combined with other
 
         Other admin functions are available that are not a requirement of any user story but are made available in order to address maintenance should the need ever arise.
 
-
-
-
 -   ### **Potential future features**
 
+    -   The addition of more locations.
+
+    -   The ability to change the state of multiple plant records at the same time for greater efficiency.
+
+    -   More photos per product for user interest.
+
+    -   Ability to store each plants GPS location at the site to improve record keeping.
+
+    -   The ability to upload of an image of each tree planted to the plant record for audits and to send to the customer that commissioned the tree.
 
 ## **4. Testing**
 -   **Code Validation**
