@@ -105,9 +105,9 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 -   ## Business Model 
 
-        Wild Carbon has a business to customer business model, where using a single payment model, they offer the service of growing and planting trees to order on the customers behalf. The planting of the trees is to sequester carbon from the atmosphere for the site user whilst rewilding and protecting the site on which the trees are planted.
-        
-        Made apparent by an ever increasing number of extreme weather events there is a greater awareness than ever of the climate shift that is taking place and the impact that most people’s lifestyles have on our environment. There has never been a better opportunity for this business to succeed in ‘making a difference’.
+    Wild Carbon has a business to customer business model, where using a single payment model, they offer the service of growing and planting trees to order on the customers behalf. The planting of the trees is to sequester carbon from the atmosphere for the site user whilst rewilding and protecting the site on which the trees are planted.
+
+    Made apparent by an ever increasing number of extreme weather events there is a greater awareness than ever of the climate shift that is taking place and the impact that most people’s lifestyles have on our environment. There has never been a better opportunity for this business to succeed in ‘making a difference’.
 
     -   ### Customers
 
@@ -197,12 +197,6 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
         -   [Wild Carbon’s Facebook business page]( https://www.facebook.com/wild.carbon.sequestration)
         
         ![ Wild Carbon’s Facebook business page screenshot]()
-
- 
-
-
-
-
 
 - ### **Wild Carbon Style Development**
 
@@ -398,6 +392,8 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
             An exception to these above button styles is that the remove button on the basket page has red text as a warning to the user.
 
+            The ‘back to top’, ‘contact’ (symbolized with an envelope) and ‘Facebook’ button are circles that obtain an outline on hover to indicate that they are clickable. The were designed this way for aesthetics and to add interest for the user.
+
         -   Forms
 
             All forms on the site are styled with Django Python package Crispy Forms. The form inputs have a very pale green background for aesthetics.
@@ -416,6 +412,113 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
             All tables and their text is in the main site text colour and the content is responsive.
 
+-   ### Software Structure
+
+    Wild Carbon is a website implemented using the Python Django framework.
+
+    Within the standard Django framework, this project is called ‘Wild Carbon’ and there are a number of applications.
+
+    -   Django framework:
+
+        Many files are installed when Django is installed. Some of these files require customisation in order that the code will run correctly for the application being developed. 
+
+        A number of the application features are implemented with the aid of 3rd party Django packages.
+
+        -   Django Packages / Software dependencies:
+
+            A number of 3rd part Django packages were dependencies of project features.
+
+            Installed Django packages: 
+
+            |Package|Function|
+            |-------|--------|
+            |gunicorn|The webserver for Django|
+            |dj database url|Allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application|
+            |psycogpg2|A PostgreSQL database adapter for the Python programming language|
+            |boto3 and Django-storages|Facilitate connection to the Amazon S3 bucket cloud based storage repository for static and media files|
+            |Django allauth|Integrated set of Django applications addressing authentication, registration, account management|
+            |Django crispy forms|Automatic formatting of forms for aesthetics and consistency of style|
+            |pillow|Adds image management capabilities|
+            |Django-countries |Provides a country field for Django models|
+            |stripe|A python library for Stripe’s API|
+
+        -   Wild Carbon project folder:
+
+            The Wild Carbon project folder contains project wide code and configurations. Only some of the files within this folder require customisation and which ones depends on the specific project and its applications.
+
+        -   Below are the files that were customised.
+
+            |File|Function|
+            |-------|--------|
+            |Settings.py|Settings.py contains configurations such as debug mode, installed apps, widget, database, cloud storage, email and custom configuration. The majority of setting.py is created automatically when a new Django project is created|
+            |urls.py|urls.py required customisation to make use of the created apps URL paths. Urls.py also required customisation to use the paths made available by the allauth, to configure the media folder to be treated like a static folder and to serve sitemap.xml and robots.txt|
+
+        -   Applications and their files
+
+            Six applications were created for the Wild Carbon project:
+
+            |Application|Function|
+            |-------|--------|
+	        |Basket|Manages all functions related to managing items selected for purchase by a user|
+	        |Checkout|Facilitates the purchase transaction|
+	        |Home|Renders the landing, about us and how it works pages|
+	        |Locations|Holds location related data including create read update and delete of links between the location and any plants available at that location at any given time|
+	        |Plants|Hold plant information including its SKU and price when offered as an available plant|
+	        |Profiles|Holds the user profile information such as full name email and address, manages retrieval of previous order information and generates and display a summary of the carbon sequestered by the trees commissioned by a user to date|
+
+            The application folders contain all python files that are specific to the features provided by the application in question. The following required creation and/or customisation:
+
+            |File|Function|
+            |-------|-------|
+            |admin.py|Registration of custom models and customisation of the view of these models in the Django admin panel|
+            |forms.py|Custom form classes used by the applications views to create forms within rendered templates|
+            |models.py|Custom model classes that describe the database tables required, the fields within those tables and these tables and fields relationships with other tables and fields within the database as a whole. The data in these classes is used by Django to build the complete database schema required for the application|
+            |urls.py|Contains definitions for all the URL paths require by the application|
+            |views.py|Custom classes that perform functions as required, render templates with the required data and return an http response in response to a URL being requested by a site user or the system|
+
+            Additional python files were created to provide custom context generation (such as basket management and information generation) and custom data processing and complex functionality (such is the case with generation of carbon summary information or handling of stripe webhooks)
+
+        -   Static Folder
+
+            Static folders are hosted on cloud storage after deployment. It holds any static files for the project and applications. The static folder contains the following folders and files:
+
+            |Folder/File|Contents|
+            |-------|-------|
+            |CSS folder|Css styles sheets used by the site|
+	        |icons|Contains the sites icons|
+            |images|contains static images for the site|
+            |js|Javascript files and libraries used by the site|
+            |favicon.ico|The sites favicon|
+
+        -	Media folder
+
+		    Contains dynamic media uploaded through the website front. Plant product images uploaded to the system are held in here and served from an Amazon AWS S3 bucket
+
+        -   Templates folder
+
+            The templates folder contains custom templates used to implement the application and templates that can be customised. It also includes other template html files are created as necessary to implement reusable ‘include components’ such as buttons and quantity forms in the basket app.
+
+        -   Procfile
+
+            Contains a command to run the gunicorn webserver to serve the application. The command is run when the application is started.
+
+        -   Requirements.txt
+
+            A list of dependencies that require installation for the project to run correctly.
+
+        -   Env.py
+
+            Env.py contains all the environment variables for the software and is used when working in an Integrated development environment. It contains the data that must never be exposed in the public domain and so is never committed to a code repository.
+
+            The Django ‘secret key’, the application database URL, stripe keys and webhook secret, email host name and password and the Amazon Web Services S3 bucket keys are in the env.py file for use during the development phase of the project prior to deployment. 
+
+            At deployment, these environment variables are set within the environment on which they are deployed and are still kept out of the public domain after deployment.
+
+        -   Database
+
+            The database for the product is implemented using the PostgresSQL relational database management system (RDBMS).
+
+            Form validation within the website is actioned with reference to the model configuration. A form input field for any given database field will only allow the submission of data that conforms to the coded settings in the relevant model, including whether or not the field is a required field.
 
 
 ## **3. Features**
