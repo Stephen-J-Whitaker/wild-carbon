@@ -1131,6 +1131,12 @@ During the planning and refinement phase, some features were combined with other
 
 -   **Bugs Found and Resolved or Current**
 
+    |Bug|Resolution|
+    |---|----------|
+    |Because the basket context would check the basket contents on each page load, the website would constantly raise a 404 error on every page if an item in the basket was deleted from the system or made unavailable at a location|I wrote the clean_basket function to check the items in the basket to see if they exist and if not then the function removes the item from the basket prior to the basket_contents function running its processes. The user is notified with a message of the removal|
+    |Times of orders were displayed to the user without taking into account daylight saving  adjustments|The built in functionality of Django was used to correct the time in the templates|
+    |When a user tried to view the carbon summary page before placing any orders, it would raise a server 500 error|The state variables in the view needed initialising as empty lists|
+
 ## **5. Project Sign Off**
 
 ## **6. Releases**
