@@ -102,9 +102,27 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
         When it was believed that a user story development had been completed, the test script compiled to that point was run through to ensure that both the new set of tests for the most recent user story and those defined beforehand, for previous user stories, all passed as all the previous functionality was required for the new user story and any other user story that uses the feature the tests relate to.
 
 ## **2. Wild Carbon Development**
-  - ### **Website Interface Development**
 
-    - ### Interface Mockups
+-   ## Business Model 
+
+    Wild Carbon has a business to customer business model, where using a single payment model, they offer the service of growing and planting trees to order on the customers behalf. The planting of the trees is to sequester carbon from the atmosphere for the site user whilst rewilding and protecting the site on which the trees are planted.
+    Made apparent by an ever increasing number of extreme weather events there is a greater awareness than ever of the climate shift that is taking place and the impact that most people’s lifestyles have on our environment. There has never been a better opportunity for this business to succeed in ‘making a difference’.
+
+    -   ### Customers
+
+    Wild Carbons customers are conscious of the impact that their lifestyle has on the environment both in terms of the carbon dioxide their lifestyle adds to the atmosphere but also the cultivation of the landscape for the production of food.
+
+    The Wild Carbon service will appeal most to those who feel that there is an urgent need to try to restore our environment both in terms of the climate and areas of countryside. These people will often have the greatest vested interest in the future such as younger people and parents who care about the environment’s future for their children but it will also appeal to anyone who is conscious of the impact their life has had on the environment and would like to reverse this impact.
+
+    The site would also appeal to residents of Ireland who are aware of the deforested nature of the country and would like to see more of Ireland returned to its natural state.
+
+    -   ### Competition
+
+    There is competition in the field of carbon sequestration through the planting of trees but very little to none, especially in Ireland, that offer it whilst focusing on rewilding the site as part of the process.
+
+
+
+
 
 
 - ### **Wild Carbon Style Development**
@@ -227,13 +245,15 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 -   [MailChimp](https://mailchimp.com/): Used to handle newletter signup
 
+-   [AmIResponsive](https://ui.dev/amiresponsive): Used to produce the mock-up at the top of this readme
+
 ## **9. Credits**
 
 -   ### **Code**
 
     -  All code and text content was written by the author, Stephen Whitaker, unless explicitly stated within the code or as described below.
 
-    -   Code to implement the e-commerce store functionality for Wild Carbon including products, basket, and checkout handling was adapted from the Boutique Ado walkthrough project provided by [Code Institute](http://www.codeinstitute.net/). The Boutique Ado walkthrough also included instructions on sending of emails, integration with Amazon S3 Bucket for serving static and media files and the [Stripe]( https://stripe.com/ie) payment system and these instructions were followed during implementation of the Wild Carbon project. The code sourced from or adapted from the Boutique Ado project is referenced in the Wild Carbon project code at the locations where the Boutique Ado code is in use.
+    -   Code and models to implement the e-commerce store functionality for Wild Carbon including products, basket, and checkout handling was adapted from the Boutique Ado walkthrough project provided by [Code Institute](http://www.codeinstitute.net/). The Boutique Ado walkthrough also included instructions on sending of emails, integration with Amazon S3 Bucket for serving static and media files and the [Stripe]( https://stripe.com/ie) payment system and these instructions were followed during implementation of the Wild Carbon project. The code sourced from or adapted from the Boutique Ado project is referenced in the Wild Carbon project code at the locations where the Boutique Ado code is in use.
 
     -	[Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) was used for the creation of the responsive navigation bar, toasts and some styles throughout the template code were implemented using Bootstraps css classes.
 
