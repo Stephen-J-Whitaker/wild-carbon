@@ -120,6 +120,84 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
     There is competition in the field of carbon sequestration through the planting of trees but very little to none, especially in Ireland, that offer it whilst focusing on rewilding the site as part of the process.
 
+-   ## Marketing 
+    The marketing strategy is currently fourfold:
+
+    -   Search engine optimisation:
+
+        Indexing of the site
+        Optimising the website for search engines included the production of a robots.txt and sitemap.xml so that the site can be indexed appropriately.
+        
+        -   [robots.txt](https://wild-carbon-803b1e2f6e91.herokuapp.com/robots.txt)
+        
+        -   [The robots.txt file can be found here](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/templates/robots.txt)
+        
+        -   [sitemap.xml]( https://wild-carbon-803b1e2f6e91.herokuapp.com/sitemap.xml)
+        
+        -   [The sitemap.xml file can be found here](https://github.com/Stephen-J-Whitaker/wild-carbon/blob/main/templates/sitemap.xml)
+        
+    -   Keywords
+    
+        Long and short tail keywords for Wild Carbon were researched on google and in [wordtracker.com]( https://www.wordtracker.com). These keywords have been included in the headers and in the content of the website, in the landing page content in particular. The success or failure of the keywords can be monitored in Google Analytics and, as necessary, the keywords can be left in place, altered or replaced.
+    
+        -   The keywords selected are:
+        
+            -   improve biodiversity
+        
+            -   carbon footprint
+
+            -   carbon sequestration
+
+            -   carbon offset
+
+            -   rewild Ireland
+
+            -   carbon neutral
+
+            -   carbon neutrality
+
+            -   offset my carbon footprint in Ireland
+
+            -   wild carbon
+
+            -   plant trees
+
+            -   rewilding
+
+            -   carbon calculator
+
+            -   how do I sequester my life’s carbon footprint
+
+    -   Other optimisation
+
+        The site contains links to external sites with credibility and a high search engine ranking to help boost Wild Carbon’s own search engine ranking.
+        File names and alt text are relevant. By providing useful links to credible external sites that will be of interest to the users of the site, search engine ranking will be improved.
+
+        Internal URLs are relevant where possible. [for example: https://wild-carbon-803b1e2f6e91.herokuapp.com/locations/carbon_capture/]( https://wild-carbon-803b1e2f6e91.herokuapp.com/locations/carbon_capture/).
+
+    -   Coming soon
+    
+        There is a ‘coming soon’ section on the landing page of the website detailing a future opportunity of sponsoring the preservation of areas of blanket bog to ensure the carbon locked within them remains there. This essentially offsets the customers carbon in a very cost effective way. 
+
+        It is hoped that Customers will be encouraged by the coming soon section to sign up for the newsletter and return to the site on notification of the new service that they may be happier to avail of than the current tree commissioning service in place.
+
+    -   Newsletter
+    
+        There is newsletter signup functionality incorporated into the landing page. 
+
+        People who sign up for the newsletter will receive periodic information on subjects that are likely to be of interest to them. Subjects of interest would include, but are not limited to, useful hints on how to improve their carbon footprint going forward, any new initiatives that Wild Carbon are developing and events that Wild Carbon will be attending, (in case potential customers would like to meet staff members in person to help them feel confident in company and in turn its service).
+
+    -   Social media
+
+        Being a small startup company with no marketing budget currently and given the age group that the company’s rewilding carbon sequestration service will appeal to most, the company will be making the use of social media. 
+
+        A Facebook business page has been set up that is linked to via a button in the footer of the website.
+
+        -   [Wild Carbon’s Facebook business page]( https://www.facebook.com/wild.carbon.sequestration)
+        
+        ![ Wild Carbon’s Facebook business page screenshot]()
+
+ 
 
 
 
