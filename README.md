@@ -520,6 +520,99 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
             Form validation within the website is actioned with reference to the model configuration. A form input field for any given database field will only allow the submission of data that conforms to the coded settings in the relevant model, including whether or not the field is a required field.
 
+            -   Database Data Models
+
+                Some tables in the database are created as standard for all Django installations and some in response to the installation of some 3rd party packages. With the exception of the User table, (included with the definitions below due to its fields exposure on the front end in order to implement an authentication system), these tables are excluded from the ERD because they are implemented as standard as a result of the Django or a package installation and are not designed or modified by the Wild Carbon developer. 
+
+                In response to the migration of custom models Django automatically creates various helper tables to facilitate the relationships between the models. These helper link tables for the many to many relationships are also not included in the entity relationship diagram for the database as they were not designed or modified by the Wild Carbon developer. 
+
+                The relationships between entities in the ERD are shown by lines:
+
+                -   A line with no fork on either end: indicates a one to one relationship
+
+                -   A line with a three pronged fork on one end: Indicates a many to one relationship(implement with a foreign key in one of the entities linking to the primary key other entity)
+
+                -   A line with a three pronged fork on both ends: Indicates a many to many relationship (via a link table)
+
+                [ERD]()
+
+                The entire product database schema can be recreated from the documented custom models and installation of Django and the documented 3rd party packages when the manage.py makemigrations and migrate commands are run.
+
+                -   User model (A standard Django model)
+
+                    This is the default Django ‘user’ model. The fields shown below are fields installed automatically with Django and their use is handled automatically by the allauth package when the site is used by a user and Django admin should an administrator be using the admin panel for user administration.
+
+                    The user table is documented here due to some of its fields being exposed for direct data input in forms on the front end in account related pages such as signup for user registration or login for user authentication.
+
+                    There are three types of user:
+
+                    -   Staff: Access to the site admin page in addition to all other administration and public site features
+
+                    -   Superuser: Access to administrative functions, provided by the administration navigation menu and standard public site features but not the site admin pages. Superuser privileges are granted to a standard user by a ‘staff’ member as required due to their employment as a superuser by Wild Carbon.
+
+                    -   Standard User: access to publicly available site features only
+
+                    [User Model](docs/pdfs/readme-user-model.pdf)
+
+                -	Profile model
+
+                    The profile model holds default information for the authenticated user. 
+
+                    It is linked with a one to one relationship with a row in in the User table.
+
+                -	Order model
+
+                    The order model holds information relating to each order placed.
+
+                    In addition to the address used by the user for the order it also holds transaction details.
+
+                    Each order is linked to a user in the case that the user who placed the order was registered and logged in at the time of placing the order.
+
+                -	Order Line Item model
+
+                    The order line item model holds details of each plant commissioned as part of the order along with the quantity of that plant and the total price of this quantity multiplied by the value of each instance of the plant.
+
+                    The order line item also holds details relating to the location that the plant is to be planted at. This location is copied to the plant record (detailed below) created for each plant commissioned.
+
+                    Multiple order line item database rows can be connected to the same order via a foreign key
+
+                -	Plant model
+
+                    The plant model holds information on each type of plant registered in the Wild Carbon database.
+
+                -	Location model
+                
+                    The location model holds name details of the Wild Carbon site ‘West Mayo’ and is connected by a many to many relationship to the plant table so that that the plants that are available for the site at any given time are associated with the location by means of a link in a link table. This facilitates easy setting and filtering of the plant to location relationship to facilitate the carbon capture product page and, in future, should the business be a success, the addition of more locations.
+
+                -	Plant Record model
+
+                    The plant record model holds information about each plant commissioned.
+
+                    A row per plant is created each time an order is placed or can be added manually by a superuser or staff member.
+ 
+                    There is a single row for each plant that will be grown and planted.
+                    
+                    Each row in the plant record table has a link to the current state (detailed below) that the plant in question is in and the date that the plant moved into that state. It also details the location of the plant. Should additional locations be added in the future this location information would be used to filter plants by location.
+
+                    The plant record contains a unique id for the plant that would be put on the plant label on site when planted. This id, the plant name and the location of the plant are sent to the user in the form of an email ‘digital certificate’ in the event that the plant instance moves to a state of ‘planted’ (if a user commissioned the plant as opposed to the plant being ‘ordered’ by site superusers or staff)
+
+                -	Plant State model
+
+                    The plant state model holds the available states that each individual plant (as detailed in a plant record) can have:
+
+                    -   Pending
+
+                    -   Growing
+
+                    -   Planted
+
+	                Each state in the state table has a link to the next state in the workflow should a next state exist. The next state for ‘pending’ is ‘growing’ and the next state for ‘growing’ is ‘planted’. Planted is the final state and has no next state.
+
+
+                [ERD]()
+
+                [All above database model schemas]()
+
 
 ## **3. Features**
 
