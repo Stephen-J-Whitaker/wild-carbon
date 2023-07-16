@@ -194,9 +194,9 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
         A Facebook business page has been set up that is linked to via a button in the footer of the website.
 
-        -   [Wild Carbon’s Facebook business page]( https://www.facebook.com/wild.carbon.sequestration)
+        -   [Wild Carbon’s Facebook business page](https://www.facebook.com/wild.carbon.sequestration)
         
-        ![ Wild Carbon’s Facebook business page screenshot]()
+        ![ Wild Carbon’s Facebook business page screenshot](docs/images/readme_facebook.jpg)
 
 - ### **Wild Carbon Style Development**
 
