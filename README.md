@@ -206,17 +206,216 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
 - ### **Wild Carbon Style Development**
 
+  - ### **Website Interface Development**
 
+    - ### Interface Mockups
+        
+        The interface was developed to incorporate all of the features necessary to satisfy the user stories into an easy to navigate, intuitive and aesthetically pleasing design.
+	
+    -   [Mobile Interface Mockups](docs/pdfs/readme_mobile_interface_mockups.pdf)
+
+    -   [Tablet Interface Mockups](docs/pdfs/readme_tablet_interface_mockups.pdf)
+
+    -   [Desktop Interface Mockups](docs/pdfs/readme_desktop_interface_mockups.pdf)
+
+    -   ### Interface Design
+
+        The style of the interface was designed to be as conventional as possible to ensure that a user can easily identify the functions they require and that using these functions is intuitive.
+
+        Imagery is used to increase the interest of the site and content is placed into inner containers with a different background colour the body of the site to break up white space and make the site generally more aesthetically pleasing.
+
+    -	### Interface Layout
+
+        The layout was inspired by other e-commerce websites to be familiar to the user, ensuring ease of use. It is consistent across pages and easy to navigate. 
+
+        -   Header and Footer
+        
+            The header contains the main navigation menus for the site and is at the top of all pages for continuity and ease of navigation.
+
+            The header is responsive and the main navigation is activated by a toggle button on smaller devices.
+
+            The footer is at the bottom of the page and, if the content of the page is not high enough to fill the entire view port on its own, the main content expands to ensure that the footer is at the bottom of the page view port, again for aesthetics.
+
+        -   Main Content
+
+            The main content is as vertically long as necessary to contain the content so that only the window scroll bar is necessary, except in the case of some tables and the privacy statement. 
+
+            In the case of some tabulated data and the privacy statement the containers become scrollable if they overflow their containers.
+
+        -   Responsiveness
+    
+            The interface was designed using a mobile first approach.
+            
+            On large devices the width of the interface is restricted to the middle section of the screen so as not to become too large to be easily read and access functions.
+
+            The site is responsive and elements resize and in the case of the navigation menu change arrangement, as necessary to fit on the screen in use and retain usability.
+
+            With the exception of the contact email address (which resizes relative to the width of the view port), words and content, such as the order number, that do not fit on a single line are broken and wrap to the next line. 
 
     -	### Typography
 
+        A limited set of fonts were selected for the typography of the site. This helps to ensure that the site retains a consistent, coherent feel. 
 
+        Khand and Lato are imported from [google fonts]( https://fonts.google.com/). They are easy to read at all screen sizes and are relatively narrow ensuring that characters don’t take up excessive space on small, mobile devices.
+	
+        -   Brand and Headers
+
+            The brand name ‘Wild Carbon’ and the headers are the google font ‘Khand’. The use of this font for the brand and headers helps to establish a brand identity that can become recognisable and contributes to the coherence of the site. It is easy to read at all sizes required for the site.
+
+        -   Site Text
+
+            Google font Lato was selected as the primary font for all text on the site that isn’t the brand name or a header. It resizes well and is easy to read at all sizes required for the site.
 
     -   ### Colour Schemes
 
+        The colour scheme of the interface was chosen to be calming, natural shades of green.
+
+        - Interface
+
+            Various shades of green with varying transparencies were selected for the interface in conjunction with the paler harmonious colours of the text to create sufficient contrast between the background and the text ensuring excellent accessibility. 
+
+        - Text
+
+            For coherence and aesthetics, the colour of the text is either a very light shade of green or white. The depth of the shade was in part determined by the necessity for contrast between the text and the backgrounds for accessibility. 
+
+            The colour of the text was chosen for coherence with the background to help ensure a positive user experience when using the site.
+
+        -   Shading
+
+            All colours on the site are ‘flat’ except for any drop shadows used. Drop shadows are only used on hovering over an ‘image link’. Image links are used on the landing page to navigate to the ‘carbon capture’, ‘how it works’ and ‘about us’ pages and on the ‘carbon capture’ and ‘plant admin’ page to navigate to the ‘plant detail’ and ‘edit plant’ pages, respectively. 
+
+    -   ### Icons, Graphics and Images
+
+        -   Favicon
+
+            The site favicon is an image of a leaf with waves of blue, representing air, aiming at the leaf. The background of the leaf is transparent to help the favicon appear embedded into the browser tab.
+
+	        Selected to represent the sequestration process of leaves taking in air in order to extract carbon dioxide, the favicon is relevant to the Wild Carbon service and helps increase brand identity as well as aiding a user in identifying the tab containing the site. Its also intended to act as a subconscious reminder of the importance of the service and lead to additional tree planting commissions.
 
 
-    -   ### Images and Graphics
+        -	Icons
+
+	        Icons are used in various places in the site to add interest. All of the icons were either sourced from [Font Awesome]( https://fontawesome.com/) as SVG files or are linked in the site and served directly by Font Awesome.
+
+        -	Graphics
+
+            An SVG graphic of a seedling, sourced from Font Awesome, is used on the main page title on the landing page. It is relevant to the service provided by the site and is used to add interest.
+
+        -	Images
+
+            Various images are used on the site to add interest.
+
+            The landing page contains a large image of a glade that represents the vista of a site once it has been rewilded by the Wild Carbon service. The shades of green match well with the interface and is intended to be a pleasant, relevant and in the case of return visits, familiar, welcome to the site.
+
+            The same glade image is used a background for the privacy statement and contact us modals.
+
+            The images used on the landing page as navigation links are relevant to the destination of the link.
+
+            The carbon capture image link is an image of the Wild Carbon site location.
+
+            The About us image link is a picture of a person carefully holding a seedling to represent the work that is done by the company and the care that the company applies to each plant.
+
+            The How it works image link is an image of a tree with molecules of co2 and o2 floating around it representing the carbon sequestration process.
+
+            All images are responsive to changes in screen size and are configured ensure the container is filled.
+
+            Images can be uploaded against the plant products. The image should be relevant to the product that it’s used to represent.
+
+            All images are currently an artists representation of the tree product it is uploaded against. The image shows some of the plants distinguishing features and an image of a person to indicate scale and the final potential height of the tree.
+
+            Should no image be uploaded against a plant product, a generic ‘no image’ image is shown though this should only be used as a placeholder and it is preferred that a unique, relevant image be uploaded against each product.
+
+    -   ### Interface styling and User Feedback:
+
+        Features style and user feedback is consistent across the site. In all cases a successful click is indicated by the requested action taking place and any action that is related to database data manipulation is signaled by a Bootstrap toast message at the top of the screen. The toast message notifies the user of the outcome of the action. The message categories are success (background green), failure/error(background red) and information(background blue).
+
+        -   Logos
+
+            The logos on the site are all the same colour for consistency.
+
+            On hover the logos obtains a rectangular green backdrop that is a deeper shade of the logos normal backdrop. This helps to identify the logo as a clickable link.
+
+            Clicking a logo takes a user to the top of the landing page if they are on the landing page or back to the landing page if they are elsewhere on the site.
+
+        -   Navigation
+
+            -   Header Navigation
+            
+                Navigation menus are consistent across all pages of the site for consistency to help ensure using the site is a positive user experience. Having the navigation menus on all pages of the site makes navigating the site to explore and find particular features easier.
+
+                There is a icon representing a person’s torso in the header that when clicked activates a dropdown that displays account related links.
+
+                The account links change a lighter colour on hover to identify them as a clickable link. 
+
+                Links relevant to the login state of the user are displayed.
+
+                The account menu and icon are the same across all screen sizes
+
+                The header also contains an image of a basket that when clicked navigates to the basket page of the site.
+
+                Below the basket icon is the total value of the items currently in the basket.
+
+                The basket icon is the same across all screen sizes.
+
+                -   Main navigation
+
+                    The links of the main navigation bar are in a row on larger screens. The are styled with an underline and turn a lighter colour on hover to indicate that they are clickable.
+
+                    When logged in as a superuser or staff member there is an additional ‘Administration’ dropdown menu that contains links to administration functions of the site
+
+                -   Navigation on mobile devices
+
+                    The navigation becomes a drop down that is displayed when a toggle button is clicked. The styles of the links in the drop down are the same as when the navigation is viewed on larger screens and obtain an underline on hover to indicate that they are clickable.
+
+                    The toggle button is styled like all other buttons on the site, having rounded corners and being the same colour as the other buttons.
+
+
+            -   Image Navigation
+            
+                Image navigation is where an image can be clicked and another page of the site will be navigated to. There are two types of image navigation in the site.
+
+                On the landing page there is image navigation to the ‘carbon capture’, ‘how it works’ and ‘about us’ pages. The images have rounded corners to help distinguish them from content and obtain a dark green drop shadow on hover to identify them as clickable links. 
+
+                The other style of image navigation is on the plant products pages. In the ‘carbon capture’ page and the ‘plant admin’ page the plant product containers have an image in them as part of the description of the plant. 
+
+                The container for the plant information obtains a light green drop shadow on hover in contrast with the background of the content container behind it. The drop shadow to identifies them as clickable links. 
+
+        -   Buttons and links
+
+            Buttons are how actions on the site are triggered and how links to other pages are represented on the site when not in the header, footer or a table. 
+
+            In the case of tables, to aid the responsiveness of the site by making the link more compact than a button would be, the links are styled like links in the navigation. This is necessary due to the high density of the information to be conveyed within the tables.
+
+            Buttons can be found in two colour on the site. With the exception of the buttons on account related pages, ‘Useful Links’ on the ‘how it works’ page and the negative symbol button on the quantity change feature, all buttons are a grey/green that becomes a lighter shade on hover to indicate that its a clickable entity. The text within is a very deep green shade.
+
+            To help separate account functions of the site from general functions of the site, the buttons on the account related pages are a deep green that becomes deeper on hover. The text is a very light yellow/green to ensure a sufficient contrast ratio for accessibility.
+
+            ‘Useful Links’ on the how it works page are styled in the same way as account function buttons to distinguish them from buttons that carry out internal site functions or that act as internal site page links.
+
+            The choice of button colours helps to distinguish the buttons from the other features of any given.
+
+            The negative symbol button in the quantity selection features of the site is to easily distinguish them from the negative symbol button. 
+
+            An exception to these above button styles is that the remove button on the basket page has red text as a warning to the user.
+
+        -   Forms
+
+            All forms on the site are styled with Django Python package Crispy Forms. The form inputs have a very pale green background for aesthetics.
+
+            The form inputs change to a lighter shade of green when in focus or active to indicate that they are the selected input. The colours of the input fields have been selected for colour contrast between text and background and hence accessibility.
+
+        -   Content
+
+            Containers for content on the site can be found in two styles.
+
+            Title containers that are to be found on pages that are not administration related do not have margins and are fully responsive. The background image fully covers the container.
+
+            Content is inside a responsive green container that has a margin and sharp corners to help identify it as an area of content and distinguish it from image navigation.
+
+            Text is centered except where it is in the form of a list or table in which case where it is left or right justified.
+
+            All tables and their text is in the main site text colour and the content is responsive.
+
 
 
 ## **3. Features**
