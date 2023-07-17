@@ -1333,35 +1333,35 @@ The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch
 
     <details><summary>1. Sign up for an account if necessary(click to expand)</summary>
     
-    ![ElephantSQL step 1](docs/images/readme-elephantsql-1.jpg)
+    ![ElephantSQL step 1](docs/images/readme_elephantsql_1.jpg)
     </details>
 
     <br>  
 
     <details><summary>2. Click 'Create New Instance' (click to expand)</summary>
     
-    ![ElephantSQL step 2](docs/images/readme-elephantsql-2.jpg)
+    ![ElephantSQL step 2](docs/images/readme_elephantsql_2.jpg)
     </details>
 
     <br>  
 
     <details><summary>3. Select a plan and a name for the database instance (click to expand)</summary>
     
-    ![ElephantSQL step 3](docs/images/readme-elephantsql-3.jpg)
+    ![ElephantSQL step 3](docs/images/readme_elephantsql_3.jpg)
     </details>
 
     <br> 
 
     <details><summary>4. Select a region and data center (click to expand)</summary>
     
-    ![ElephantSQL step 4](docs/images/readme-elephantsql-4.jpg)
+    ![ElephantSQL step 4](docs/images/readme_elephantsql_4.jpg)
     </details>
 
     <br> 
 
     <details><summary>5. Confirm the details to create a new instance (click to expand)</summary>
     
-    ![ElephantSQL step 5](docs/images/readme-elephantsql-5.jpg)
+    ![ElephantSQL step 5](docs/images/readme_elephantsql_5.jpg)
     </details>
 
     <br> 
@@ -1369,14 +1369,14 @@ The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch
 
     <details><summary>6. Successful creation of the instance is indicated(click to expand)</summary>
     
-    ![ElephantSQL step 6](docs/images/readme-elephantsql-6.jpg)
+    ![ElephantSQL step 6](docs/images/readme_elephantsql_6.jpg)
     </details>
 
     <br> 
 
     <details><summary>7. Retrieve the URL to access the database for entry as a 'config var' during Heroku deployment. This key must be kept secret.(click to expand)</summary>
     
-    ![ElephantSQL step 7](docs/images/readme-elephantsql-7.jpg)
+    ![ElephantSQL step 7](docs/images/readme_elephantsql_7.jpg)
     </details>
 
     <br> 
@@ -1385,91 +1385,99 @@ The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch
 
     <details><summary>1. Log in or create a new account (click to expand)</summary>
 
-    ![Deployment step 1](docs/images/readme-deployment-1.jpg)
+    ![Deployment step 1](docs/images/readme_deployment_1.jpg)
     </details>
 
     <br>
 
     <details><summary>2. From the dashboard, select ‘Create new app’ (click to expand)</summary>
 
-    ![Deployment step 2](docs/images/readme-deployment-2.jpg)
+    ![Deployment step 2](docs/images/readme_deployment_2.jpg)
     </details>
 
     <br>
 
     <details><summary>3. Name the app, each apps on the Heroku platform require a unique name, then select a region and click create app (click to expand)</summary>
 
-    ![Deployment step 3](docs/images/readme-deployment-3.jpg)
+    ![Deployment step 3](docs/images/readme_deployment_3.jpg)
     </details>
 
     <br>
 
     <details><summary>4. Click on ‘Settings’ in the top menu bar (click to expand)</summary>
 
-    ![Deployment step 4](docs/images/readme-deployment-4.jpg)
+    ![Deployment step 4](docs/images/readme_deployment_4.jpg)
     </details>
 
     <br>
 
-    <details><summary>5. Take a note of your domain about half way down the settings page and then return to your Stripe dashboard. Select the webhooks tab then add an endpoint. In the endpoint URL field enter the URL you obtained from the domains section of the Heroku settings page for your app followed by ‘checkout/wh/’. In the select events to listen to select all the events, add them and then click add endpoint. The page will display your newly created webhook and on the same page will be your webhook signing secret. Make a note of the signing secret before you return to the Heroku settings page for your app as it will be needed in the next step. Click on ‘Reveal Config Vars’ to reveal the config var section then enter the config var details as shown in the image. When a field is complete, click the ‘ADD’ button next to the fields. New empty fields will appear below the previously entered field. When complete, click ADD. The config vars entered will be unique to the, Gmail account, Stripe account, Amazon S3 bucket account and database set up for your instance of the product. You must create a Django secret key that is unique. Amazon S3 cloud, Gmail, Stripe, database and Django secret Keys must be in the format shown and must be kept secret.(click to expand)</summary>
+    <details><summary>5. Take a note of your domain about half way down the settings page and then return to your Stripe dashboard. 
+    
+    Select the webhooks tab then add an endpoint. In the endpoint URL field enter the URL you obtained from the domains section of the Heroku settings page for your app followed by ‘checkout/wh/’.
+    
+    In the select events to listen to select all the events, add them and then click add endpoint.
+    
+    The page will display your newly created webhook and on the same page will be your webhook signing secret. Make a note of the signing secret before you return to the Heroku settings page for your app as it will be needed in the next step. 
+    
+    Back in Heroku Click on ‘Reveal Config Vars’ to reveal the config var section then enter the config var details as shown in the image. When a field is complete, click the ‘ADD’ button next to the fields. New empty fields will appear below the previously entered field. When complete, click ADD. The config vars entered will be unique to the, Gmail account, Stripe account, Amazon S3 bucket account and database set up for your instance of the product. You must create a Django secret key that is unique. Amazon S3 cloud, Gmail, Stripe, database and Django secret Keys must be in the format shown and must be kept secret.(click to expand)</summary>
 
-    ![Deployment step 5](docs/images/readme-deployment-5.jpg)
+    ![Deployment step 5](docs/images/readme_deployment_5.jpg)
     </details>
 
     <br>
 
     <details><summary>6. Click on ‘Deploy’ on the main menu ribbon at the top of the page and then click ‘GitHub’ (click to expand)</summary>
 
-    ![Deployment step 6](docs/images/readme-deployment-6.jpg)
+    ![Deployment step 6](docs/images/readme_deployment_6.jpg)
     </details>
 
     <br>
 
     <details><summary>7. If necessary, confirm that you want to connect to GitHub by clicking ‘Connect to GitHub’ (click to expand)</summary>
 
-    ![Deployment step 7](docs/images/readme-deployment-7.jpg)
+    ![Deployment step 7](docs/images/readme_deployment_7.jpg)
     </details>
 
     <br>
 
     <details><summary>8. Search for the GitHub repository name (click to expand)</summary>
 
-    ![Deployment step 8](docs/images/readme-deployment-8.jpg)
+    ![Deployment step 8](docs/images/readme_deployment_8.jpg)
     </details>
 
     <br>
 
     <details><summary>9. Click either ‘Enable Automatic Deploys’ which will automatically redeploy the app each time the Git repository is updated, or ‘Deploy Branch’ to deploy the app manually as required(click to expand)</summary>
 
-    ![Deployment step 9](docs/images/readme-deployment-9.jpg)
+    ![Deployment step 9](docs/images/readme_deployment_9.jpg)
     </details>
 
     <br>
 
     <details><summary>10. If ‘Deploy Branch’ was selected the screen will look like the following image when deployment is complete (click to expand)</summary>
 
-    ![Deployment step 10](docs/images/readme-deployment-10.jpg)
+    ![Deployment step 10](docs/images/readme_deployment_10.jpg)
     </details>
 
     <br>
 
     <details><summary>11. Open a console for the Heroku app (click to expand)</summary>
 
-    ![Deployment step 11](docs/images/readme-deployment-11.jpg)
+    ![Deployment step 11](docs/images/readme_deployment_11.jpg)
     </details>
 
     <br>
 
     <details><summary>12. Run the migrate command to migrate the database schema defined by the migrations files to the new empty ElephantSQL database (click to expand)</summary>
 
-    ![Deployment step 12](docs/images/readme-deployment-12.jpg)
+    ![Deployment step 12](docs/images/readme_deployment_12.jpg)
     </details>
 
     <br>
 
     <details><summary>13. Open the app by clicking 'Open app' (click to expand)</summary>
 
-    ![Deployment step 13](docs/images/readme-deployment-13.jpg)
+    ![Deployment step 13](docs/images/readme_deployment_13.jpg)
     </details>
 
     <br>  
@@ -1480,7 +1488,7 @@ The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch
 2.  Navigate to the repository at the following link: https://github.com/Stephen-J-Whitaker/wild-carbon
 3.  Locate the fork button at the top of the page and click it:
 
-    ![Fork the repository step 3](docs/images/readme-fork-repo.jpg)
+    ![Fork the repository step 3](docs/images/readme_fork_repo.jpg)
 
 4. A copy of the repository will be made in your gitHub account
 
@@ -1490,11 +1498,11 @@ The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch
 2. Navigate to the repository at the following link: https://github.com/Stephen-J-Whitaker/wild-carbon
 3. Locate the code button and click it:
 
-    ![Clone the Repository step 3](docs/images/readme-clone-repo-1.jpg)
+    ![Clone the Repository step 3](docs/images/readme_clone_repo-1.jpg)
 
 4. Select HTTPS from the options and then click the copy button to copy the link.
 
-    ![Copy the HTTPS link setup 4](docs/images/readme-clone-repo-2.jpg)
+    ![Copy the HTTPS link setup 4](docs/images/readme_clone_repo_2.jpg)
 
 5. Open Git Bash
 6. Change the current working directory to the location where you want the directory cloned to.
