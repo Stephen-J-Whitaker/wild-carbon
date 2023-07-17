@@ -534,7 +534,7 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
                 -   A line with a three pronged fork on both ends: Indicates a many to many relationship (via a link table)
 
-                [ERD]()
+                [ERD](docs/pdfs/readme_erd.pdf)
 
                 The entire product database schema can be recreated from the documented custom models and installation of Django and the documented 3rd party packages when the manage.py makemigrations and migrate commands are run.
 
@@ -621,12 +621,6 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 	                Each state in the state table has a link to the next state in the workflow should a next state exist. The next state for ‘pending’ is ‘growing’ and the next state for ‘growing’ is ‘planted’. Planted is the final state and has no next state.
 
                     [Plant State Model](docs/pdfs/readme_plant_state_model.pdf)
-
-
-                [ERD]()
-
-                [All above database model schemas]()
-
 
 ## **3. Features**
 
