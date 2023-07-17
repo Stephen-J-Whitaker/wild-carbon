@@ -48,15 +48,15 @@
                     <div>
                         <div class="input-group input-group-{{ plant.id }}">
                             <div class="input-group-prepend">
-                                <button class="decrement-qty quantity-button quantity-button-left decrement-qty_{{ plant.id }}" data-item_id="{{ plant.id }}">
+                                <button class="decrement-qty quantity-button quantity-button-left decrement-qty_{{ plant.id }}" aria-label="decrement quanitity" data-item_id="{{ plant.id }}">
                                     <span class="icon">
                                         <i class="fas fa-minus"></i>
                                     </span>
                                 </button>
                             </div>
-                            <input class="form-control quantity-input qty_input id_qty_{{ plant.id }}" data-item_id="{{ plant.id }}" type="number" name="quantity" value="1" min="1" max="99">
+                            <input class="form-control quantity-input qty_input id_qty_{{ plant.id }}" aria-label="quanitity" data-item_id="{{ plant.id }}" type="number" name="quantity" value="1" min="1" max="99">
                             <div class="input-group-append">
-                                <button class="increment-qty button quantity-button increment-qty_{{ plant.id }}" data-item_id="{{ plant.id }}">
+                                <button class="increment-qty button quantity-button increment-qty_{{ plant.id }}" aria-label="increment quanitity" data-item_id="{{ plant.id }}">
                                     <span class="icon">
                                         <i class="fas fa-plus"></i>
                                     </span>
