@@ -552,13 +552,15 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
                     -   Standard User: access to publicly available site features only
 
-                    [User Model](docs/pdfs/readme-user-model.pdf)
+                    [User Model](docs/pdfs/readme_user_model.pdf)
 
                 -	Profile model
 
-                    The profile model holds default information for the authenticated user. 
+                    The user profile model holds default information for the authenticated user. 
 
                     It is linked with a one to one relationship with a row in in the User table.
+
+                    [User Profile Model](docs/pdfs/readme_user_profile_model.pdf)
 
                 -	Order model
 
@@ -568,6 +570,8 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
                     Each order is linked to a user in the case that the user who placed the order was registered and logged in at the time of placing the order.
 
+                    [Order Model](docs/pdfs/readme_order_model.pdf)
+
                 -	Order Line Item model
 
                     The order line item model holds details of each plant commissioned as part of the order along with the quantity of that plant and the total price of this quantity multiplied by the value of each instance of the plant.
@@ -576,13 +580,19 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
                     Multiple order line item database rows can be connected to the same order via a foreign key
 
+                    [Order Line Item Model](docs/pdfs/readme_order_line_item_model.pdf)
+
                 -	Plant model
 
                     The plant model holds information on each type of plant registered in the Wild Carbon database.
 
+                    [Plant Model](docs/pdfs/readme_plant_model.pdf)
+
                 -	Location model
                 
                     The location model holds name details of the Wild Carbon site ‘West Mayo’ and is connected by a many to many relationship to the plant table so that that the plants that are available for the site at any given time are associated with the location by means of a link in a link table. This facilitates easy setting and filtering of the plant to location relationship to facilitate the carbon capture product page and, in future, should the business be a success, the addition of more locations.
+
+                    [Location Model](docs/pdfs/readme_location_model.pdf)
 
                 -	Plant Record model
 
@@ -596,6 +606,8 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
 
                     The plant record contains a unique id for the plant that would be put on the plant label on site when planted. This id, the plant name and the location of the plant are sent to the user in the form of an email ‘digital certificate’ in the event that the plant instance moves to a state of ‘planted’ (if a user commissioned the plant as opposed to the plant being ‘ordered’ by site superusers or staff)
 
+                    [Plant Record Model](docs/pdfs/readme_plant_record_model.pdf)
+
                 -	Plant State model
 
                     The plant state model holds the available states that each individual plant (as detailed in a plant record) can have:
@@ -607,6 +619,8 @@ Sequestering carbon for the Wild Carbon customers whilst increasing the natural 
                     -   Planted
 
 	                Each state in the state table has a link to the next state in the workflow should a next state exist. The next state for ‘pending’ is ‘growing’ and the next state for ‘growing’ is ‘planted’. Planted is the final state and has no next state.
+
+                    [Plant State Model](docs/pdfs/readme_plant_state_model.pdf)
 
 
                 [ERD]()
