@@ -13,6 +13,6 @@
     {{ widget.input_text }}
 {% endif %}
 <span class="btn image-select mt-2 button btn-file">
-    Select Image <input class="image-select-input" id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    Select Image <input class="image-select-input" aria-label="Select Image" id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
 </span>
 <strong><p class="text-danger" id="filename"></p></strong>
