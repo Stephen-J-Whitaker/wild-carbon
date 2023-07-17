@@ -39,7 +39,7 @@
     --footer-icon-inner-size: 2.5rem;
     --input-background-colour: rgb(240, 241, 234);
     --input-background-colour-selected: rgb(243, 245, 237);
-    --fact-background-colour:rgba(255, 255, 255, 0.1);
+    --fact-background-colour:rgba(255, 255, 255, 0.01);
     --success: rgb(0, 150, 62);
     --info: rgb(0, 127, 150);
     --warning: rgb(150, 97, 0);
@@ -686,6 +686,7 @@ button:focus {
 }
 
 .useful-link-item {
+    color: white;
     display: block;
     width: 100%;
     padding: 10px;
@@ -1000,6 +1001,7 @@ hr {
 }
 
 .fact-item {
+    color: white;
     padding-top: 10px;
 }
 
