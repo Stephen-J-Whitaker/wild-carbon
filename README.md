@@ -1248,6 +1248,8 @@ The overall user story acceptance test results along with the acceptance test re
 
 ## **6. Releases**
 
+Version 1.0 First release : Date 17/07/2023
+
 ## **7. Deployment**
 
 The website is hosted on [Heroku]( https://www.heroku.com/) from the main branch of the [Wild Carbon Repository]( https://github.com/Stephen-J-Whitaker/wild-carbon).
