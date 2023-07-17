@@ -1217,7 +1217,17 @@ During the planning and refinement phase, some features were combined with other
 
 -   **Functionality Test Results**
 
+    Tests were carried out on the Wild Carbon site deployed to Heroku
+
+    -   [User Story Test Results](docs/pdfs/readme_user_story_test_results.pdf)
+
     **Other Testing**
+
+    The software was made available to third parties to test to test its useability.
+
+    The software has not currently been tested on a Linux operating system.
+
+    Responsiveness was tested using chrome devtools and was tested on both mobile and desktop devices.
 
 -   **Bugs Found and Resolved or Current**
 
