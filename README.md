@@ -1209,6 +1209,12 @@ During the planning and refinement phase, some features were combined with other
 ## **4. Testing**
 -   **Code Validation**
 
+    -   [CSS validation](docs/pdfs/readme_css_validation.pdf)
+    -   [HTML validation](docs/pdfs/readme_html_validation.pdf)
+    -   [JavaScript validation](docs/pdfs/readme_js_validation.pdf)
+    -   [Python validation](docs/pdfs/readme_python_validation.pdf)
+    -   [Lighthouse Tests](docs/pdfs/readme_lighthouse_tests.pdf)
+
 -   **Functionality Test Results**
 
     **Other Testing**
