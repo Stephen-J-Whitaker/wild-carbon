@@ -634,7 +634,7 @@ During the planning and refinement phase, some features were combined with other
 
     The Landing page feature is a dependency of all user stories
 
-    ![Landing Page](docs/pdfs/readme_landing_page.jpg)
+    ![Landing Page](docs/images/readme_landing_page.jpg)
     
     -   The landing page is the welcome to the Wild Carbon site.
 
@@ -646,7 +646,7 @@ During the planning and refinement phase, some features were combined with other
 
         The header feature is a dependency of all user stories
 
-        ![Header](docs/pdfs/readme_header.jpg)
+        ![Header](docs/images/readme_header.jpg)
 
         -   The responsive header along with all of its features is present on all pages of the website with the exception of the Django admin pages and has the following features:
 
@@ -671,11 +671,11 @@ During the planning and refinement phase, some features were combined with other
 
             The navigation feature is a dependency of all user stories
 
-            ![Mobile Navigation](docs/pdfs/readme_mobile_navigation.jpg)
+            ![Mobile Navigation](docs/images/readme_mobile_navigation.jpg)
 
-            ![Desktop Navigation](docs/pdfs/readme_desktop_navigation.jpg)
+            ![Desktop Navigation](docs/images/readme_desktop_navigation.jpg)
 
-            ![Logged Out Navigation](docs/pdfs/readme_logged_out_navigation.jpg)
+            ![Logged Out Navigation](docs/images/readme_logged_out_navigation.jpg)
 
             -   The main navigation menu that is responsive and becomes a toggle button on mobile devices. The links text turns a lighter shade and obtains an underline to identify them as clickable links. 
 
@@ -707,9 +707,9 @@ During the planning and refinement phase, some features were combined with other
 
     -   #### Content:
 
-        ![Landing Content 1](docs/pdfs/readme_landing_content_1.jpg)
+        ![Landing Content 1](docs/images/readme_landing_content_1.jpg)
 
-        ![Landing Content 2](docs/pdfs/readme_landing_content_2.jpg)
+        ![Landing Content 2](docs/images/readme_landing_content_2.jpg)
 
         -   On arrival at the landing page the user is greeted with a ‘hero’ image of a glade that sets the scene for what is to be presented on the rest of the site.
 
@@ -740,7 +740,7 @@ During the planning and refinement phase, some features were combined with other
 
         The footer feature is a dependency of all user stories
 
-        ![Footer](docs/pdfs/readme_footer.jpg)
+        ![Footer](docs/images/readme_footer.jpg)
 
         -   The footer is fully responsive.
 
@@ -756,7 +756,7 @@ During the planning and refinement phase, some features were combined with other
 
             The Facebook feature is a dependency of user story 1.5
 
-            ![Facebook Button](docs/pdfs/readme_facebook_button.jpg)
+            ![Facebook Button](docs/images/readme_facebook_button.jpg)
 	
             -   A Facebook icon that obtains an outline on hover to identify it as a clickable entity, that, on  click, opens a new tab and navigates to the Wild Carbon Facebook business page.
 
@@ -765,9 +765,9 @@ During the planning and refinement phase, some features were combined with other
 
     The about us feature is a dependency of user story 1.3
 
-    ![About Us](docs/pdfs/readme_about_us.jpg)
+    ![About Us](docs/images/readme_about_us.jpg)
 
-    ![About Us 1](docs/pdfs/readme_about_us_1.jpg)
+    ![About Us 1](docs/images/readme_about_us_1.jpg)
 
     -   A relevant, responsive hero image that is pleasing to the eye and catches the users attention.
 
@@ -781,9 +781,9 @@ During the planning and refinement phase, some features were combined with other
 
     The how it works feature is a dependency of user story 1.6
 
-    ![How It Works](docs/pdfs/readme_how_it_works.jpg)
+    ![How It Works](docs/images/readme_how_it_works.jpg)
 
-    ![How It Works 1](docs/pdfs/readme_how_it_works_1.jpg)
+    ![How It Works 1](docs/images/readme_how_it_works_1.jpg)
 
     -   A large, responsive eye catching image of a tree surrounded by CO2 and O2 molecules to indicate that that the page is about the science behind the Wild Carbon service.
 
@@ -795,7 +795,7 @@ During the planning and refinement phase, some features were combined with other
 
     The register feature is a dependency of all user stories
 
-    ![Register](docs/pdfs/readme_register.jpg)
+    ![Register](docs/images/readme_register.jpg)
 
     -   A responsive and validated (presence checked, range checked and type checked) sign up form that enables a user to register on the site.
 
@@ -819,7 +819,7 @@ During the planning and refinement phase, some features were combined with other
 
     The sign in feature is a dependency of all user stories
 
-    ![Sign In](docs/pdfs/readme_sign_in.jpg)
+    ![Sign In](docs/images/readme_sign_in.jpg)
 
     -   The page is responsive.
 
@@ -835,7 +835,7 @@ During the planning and refinement phase, some features were combined with other
 
     The sign out feature is a dependency of all user stories
 
-    ![Sign Out](docs/pdfs/readme_sign_out.jpg)
+    ![Sign Out](docs/images/readme_sign_out.jpg)
 
     -   Navigated to by clicking the logout link in the account menu.
 
@@ -847,7 +847,7 @@ During the planning and refinement phase, some features were combined with other
 
     -   The password reset feature is a dependency of user story 2.3
 
-    ![Password Reset](docs/pdfs/readme_password_reset.jpg)
+    ![Password Reset](docs/images/readme_password_reset.jpg)
 
     -   The password reset feature is activated by clicking the forgotten password link on the login page.
 
@@ -866,7 +866,7 @@ During the planning and refinement phase, some features were combined with other
 
     The location plant products feature is a dependency of user stories 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
 
-    ![Carbon Capture](docs/pdfs/readme_carbon_capture.jpg)
+    ![Carbon Capture](docs/images/readme_carbon_capture.jpg)
 
     -   Fully responsive on all screen sizes.
 
@@ -890,7 +890,7 @@ During the planning and refinement phase, some features were combined with other
 
     The plant details feature is a dependency of user stories 2.9, 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
 
-    ![Plant Details](docs/pdfs/readme_plant_details.jpg)
+    ![Plant Details](docs/images/readme_plant_details.jpg)
 
     -   A responsive content container with more detail relating to the plant than was displayed on the carbon capture plant product list page.
 
@@ -910,7 +910,7 @@ During the planning and refinement phase, some features were combined with other
 
     The basket feature is a dependency of user stories 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
 
-    ![Basket](docs/pdfs/readme_basket.jpg)
+    ![Basket](docs/images/readme_basket.jpg)
 
     -   A responsive container within the page displaying the current contents of the users basket.
 
@@ -930,7 +930,7 @@ During the planning and refinement phase, some features were combined with other
 
     The checkout feature is a dependency of user stories 2.12, 3.1, 3.2, 3.4, 3.5
 
-    ![Checkout](docs/pdfs/readme_checkout.jpg)
+    ![Checkout](docs/images/readme_checkout.jpg)
 
     -   A fully responsive checkout page.
 
@@ -960,7 +960,7 @@ During the planning and refinement phase, some features were combined with other
 
     The order confirmation feature is a dependency of user story 2.10
 
-    ![Order Confirmation](docs/pdfs/readme_order_confirmation.jpg)
+    ![Order Confirmation](docs/images/readme_order_confirmation.jpg)
 
     -   The order confirmation page is fully responsive and has a header that indicates the state of the transaction to the user. Thank you implies a successful transaction.
 
@@ -974,7 +974,7 @@ During the planning and refinement phase, some features were combined with other
 
     The profile feature is a dependency of user story 2.11
 
-    ![Profile](docs/pdfs/readme_profile.jpg)
+    ![Profile](docs/images/readme_profile.jpg)
 
     -   A fully responsive page with a header ‘My Profile’ indicating the purpose of the page to the user.
 
@@ -986,7 +986,7 @@ During the planning and refinement phase, some features were combined with other
 
         The order history feature is a dependency of user story 2.12
 
-        ![Order History](docs/pdfs/readme_order_history.jpg)
+        ![Order History](docs/images/readme_order_history.jpg)
 
         -   Below the default billing information, the profile page has a table of the user’s previous order details. 
 
@@ -998,7 +998,7 @@ During the planning and refinement phase, some features were combined with other
 
     The carbon summary feature is a dependency of user stories 3.1, 3.5
 
-    ![Carbon Summary](docs/pdfs/readme_carbon_summary.jpg)
+    ![Carbon Summary](docs/images/readme_carbon_summary.jpg)
 
     -   The carbon summary page is fully responsive.
 
@@ -1010,7 +1010,7 @@ During the planning and refinement phase, some features were combined with other
 
         The plant summary feature is a dependency of user story 3.5
 
-        ![Plant Summary](docs/pdfs/readme_plant_summary.jpg)
+        ![Plant Summary](docs/images/readme_plant_summary.jpg)
 
         -   There is an area of content headed ‘Your Planting Records’ that is a table of the state of every plant commissioned by the user. Each tree has a unique id and can be in a state of pending (not yet growing), growing (in the nursery) or planted (on site in its final location).
 
@@ -1020,7 +1020,7 @@ During the planning and refinement phase, some features were combined with other
 
     The plant list feature is a dependency of user stories 2.6, 2.7, 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.3, 3.4, 3.5
 
-    ![Plant Admin](docs/pdfs/readme_plant_admin.jpg)
+    ![Plant Admin](docs/images/readme_plant_admin.jpg)
 
     -   A responsive list of all plants in the Wild Carbon database that is only accessible to superusers and staff.
 
@@ -1044,7 +1044,7 @@ During the planning and refinement phase, some features were combined with other
 
     The add plant feature is a dependency of user stories 2.6, 2.7, 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.3, 3.4, 3.5
 
-    ![Add Plant](docs/pdfs/readme_add_plant.jpg)
+    ![Add Plant](docs/images/readme_add_plant.jpg)
 
     -   A fully responsive page with the header ‘Add Plant’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
 
@@ -1058,7 +1058,7 @@ During the planning and refinement phase, some features were combined with other
 
     The edit plant feature is a dependency of user stories 2.6, 2.7, 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.3, 3.4, 3.5
 
-    ![Edit Plant](docs/pdfs/readme_edit_plant.jpg)
+    ![Edit Plant](docs/images/readme_edit_plant.jpg)
 
     -   The update plant page is fully responsive and has the header ‘Update Plant’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
 
@@ -1072,7 +1072,7 @@ During the planning and refinement phase, some features were combined with other
 
     The delete plant feature is a dependency of user story 2.6
 
-    ![Plant Delete](docs/pdfs/readme_plant_delete.jpg)
+    ![Plant Delete](docs/images/readme_plant_delete.jpg)
 
     -   The confirm plant deletion page is fully responsive and has the header ‘Confirm Plant Deletion’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
 
@@ -1086,7 +1086,7 @@ During the planning and refinement phase, some features were combined with other
 
     The plant availability feature is a dependency of user stories 2.8, 2.9, 2.10, 2.12, 3.1, 3.2, 3.4, 3.5
 
-    ![Plant Availability](docs/pdfs/readme_plant_availability.jpg)
+    ![Plant Availability](docs/images/readme_plant_availability.jpg)
 
     -   The ‘Plant Availability’ page is fully responsive and has the header ‘Plant Availability’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
 
@@ -1102,9 +1102,9 @@ During the planning and refinement phase, some features were combined with other
 
     The plant record view feature is a dependency of user stories 3.2, 3.3, 3.4, 3.5
 
-    ![Plant Records](docs/pdfs/readme_plant_records.jpg)
+    ![Plant Records](docs/images/readme_plant_records.jpg)
 
-    ![Plant Records 1](docs/pdfs/readme_plant_records_1.jpg)
+    ![Plant Records 1](docs/images/readme_plant_records_1.jpg)
 
     -   The ‘Plant Records’ page is fully responsive and has the header ‘Plant Records’ to inform the superuser of their location on the site. The page is only accessible to superusers and staff.
 
@@ -1130,7 +1130,7 @@ During the planning and refinement phase, some features were combined with other
 
     The plant record status feature is a dependency of  user stories user stories 3.2, 3.4, 3.5
 
-    ![Plant Status](docs/pdfs/readme_plant_status.jpg)
+    ![Plant Status](docs/images/readme_plant_status.jpg)
 
     -   The ‘Change Plant State’ page is fully responsive and has the header ‘Chane Plant State’ to inform the superuser of their location on the website. The page is only accessible to superusers and staff.
 
@@ -1148,7 +1148,7 @@ During the planning and refinement phase, some features were combined with other
 
     The plant record add feature is a dependency of user story 3.3
 
-    ![Add Plant Record](docs/pdfs/readme_add_plant_record.jpg)
+    ![Add Plant Record](docs/images/readme_add_plant_record.jpg)
 
     -   The ‘Add Plant Record’ page is fully responsive and has the header ‘Add a Plant Record’ to inform the superuser of their location on the website. The page is only accessible to superusers and staff.
 
@@ -1164,7 +1164,7 @@ During the planning and refinement phase, some features were combined with other
 
     The plant record delete feature is a dependency of user story 3.3
 
-    ![Delete Plant Record](docs/pdfs/readme_delete_plant_record.jpg)
+    ![Delete Plant Record](docs/images/readme_delete_plant_record.jpg)
 
     -The ‘Confirm Plant Record Deletion’ page is fully responsive and has the header ‘Confirm Plant Record Deletion’ to inform the superuser of their location on the website. The page is only accessible to superusers and staff and for plants manually entered (with no order and therefore user associated) and / or if the plant is not in a state of ‘planted’.
 
@@ -1178,11 +1178,11 @@ During the planning and refinement phase, some features were combined with other
 
     The admin page feature is a dependency of user story 2.5
 
-    ![Django User Admin](docs/pdfs/readme_django_admin_user.jpg)
+    ![Django User Admin](docs/images/readme_django_admin_user.jpg)
 
     -   #### Deletion of a user
 
-        ![User Delete](docs/pdfs/readme_admin_user_delete.jpg)
+        ![User Delete](docs/images/readme_admin_user_delete.jpg)
     
         Deletion of a user can only be accessed by a staff member. The procedure is carried out from within the Django administration page. Should a user have staff privileges, there is a link to the ‘Admin’ page in the main navigation menu.
 
