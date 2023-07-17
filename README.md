@@ -1220,6 +1220,7 @@ During the planning and refinement phase, some features were combined with other
     Tests were carried out on the Wild Carbon site deployed to Heroku
 
     -   [User Story Test Results](docs/pdfs/readme_user_story_test_results.pdf)
+    -   [Feature test results](docs/pdfs/readme_feature_test_results.pdf)
 
     **Other Testing**
 
@@ -1238,6 +1239,12 @@ During the planning and refinement phase, some features were combined with other
     |When a user tried to view the carbon summary page before placing any orders, it would raise a server 500 error|The state variables in the view needed initialising as empty lists|
 
 ## **5. Project Sign Off**
+
+Once all of the user stories and their feature dependencies have passed their respective acceptance tests then the user story as a whole is deemed ready for release.
+
+The overall user story acceptance test results along with the acceptance test result summaries of their feature dependencies are detailed in the following sign off sheet.
+
+-   [Product sign off](docs/pdfs/readme_product_sign_off.pdf)
 
 ## **6. Releases**
 
